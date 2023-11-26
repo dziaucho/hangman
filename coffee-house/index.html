@@ -4,159 +4,179 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
     <title>Coffee House</title>
   </head>
 
   <body>
-
-    <header>
-      <a href="#">
-        <img src="img/logo/logo.png" alt="logo">
-      </a>
-
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Favorite coffee</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Mobile app</a>
-          </li>
-          <li>
-            <a href="#">Contact us</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="menu-wrapper">
-        <p>Menu</p>
+    <div class="max-size-wrapper">
+      <header>
         <a href="#">
-          <img src="img/icons/coffee-cup.png" alt="coffee cup">
+          <img src="img/logo/logo.svg" alt="logo">
         </a>
-      </div>
-    </header>
 
-    <main>
-
-      <section class="hero-section">
-        <h1><span>Enjoy</span> premium coffee at our charming cafe</h1>
-        <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination
-          for coffee
-          lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
-        <button>Menu</button>
-      </section>
-
-      <section class="favorite-section">
-        <h2>Choose your favorite coffee</h2>
-        <div class="carousel-wrapepr">
-          <img src="img/icons/arrow.png" alt="arrow">
-          <ul class="show">
+        <nav>
+          <ul>
             <li>
-              <img src="img/favorite/coffee-slider-1.png" alt="S’mores Frappuccino">
+              <a href="#">Favorite coffee</a>
             </li>
-            <li>S’mores Frappuccino</li>
-            <li>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat
-              milk.</li>
-            <li>$5.50</li>
-          </ul>
-
-          <ul class="hide">
             <li>
-              <img src="img/favorite/coffee-slider-2.png" alt="Caramel Macchiato">
+              <a href="#">About</a>
             </li>
-            <li>Caramel Macchiato</li>
-            <li>Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick
-              foam.</li>
-            <li>$5.00</li>
-          </ul>
-
-          <ul class="hide">
             <li>
-              <img src="img/favorite/coffee-slider-3.png" alt="Ice coffee">
+              <a href="#">Mobile app</a>
             </li>
-            <li>Ice coffee</li>
-            <li>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</li>
-            <li>$4.50</li>
+            <li>
+              <a href="#">Contact us</a>
+            </li>
           </ul>
+        </nav>
 
-          <img src="img/icons/arrow.png" alt="arrow">
+        <div class="menu-wrapper">
+          <p>Menu</p>
+          <a href="#">
+            <img src="img/icons/coffee-cup.svg" alt="coffee cup">
+          </a>
         </div>
-        <ul class="control-list">
-          <li class="active control-list-item"></li>
-          <li class="unactive control-list-item"></li>
-          <li class="unactive control-list-item"></li>
-        </ul>
-      </section>
+      </header>
 
-      <section class="about-section">
-        <h2>Resource is <span>the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax,
-          catch up with
-          friends, or
-          get some work done.</h2>
-        <div class="about-img-wrapper">
-          <img src="img/about/about-1.jpg" alt="smiling woman with a cup of coffee">
-          <img src="img/about/about-2.jpg" alt="a cup of coffee, a garlang behind">
-          <img src="img/about/about-3.jpg" alt="busy man and a cup of coffee near by him">
-          <img src="img/about/about-4.jpg" alt="a couple hugging, they hold a cups of coffee">
-        </div>
-      </section>
+      <main>
 
-      <section class="mobile-app-section">
-        <h2><span>Download</span> our apps to start ordering</h2>
-        <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you
-          are</p>
-        <ul>
+        <section class="hero-section">
+          <div class="hero-wrapper">
+            <h1><span>Enjoy</span> premium coffee at our charming cafe</h1>
+            <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular
+              destination
+              for coffee
+              lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
+            <button>Menu</button>
+          </div>
+        </section>
+
+        <section class="favorite-section">
+          <h2>Choose your <span>favorite</span> coffee</h2>
+          <div class="carousel-wrapper">
+            <img src="img/icons/arrow-left.svg" alt="arrow" width="24px" height="24px" class="go-left">
+            <ul class="show coffe-card">
+              <li>
+                <img src="img/favorite/coffee-slider-1.png" alt="S’mores Frappuccino">
+              </li>
+              <li>S’mores Frappuccino</li>
+              <li>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with
+                oat
+                milk.</li>
+              <li>$5.50</li>
+            </ul>
+
+            <ul class="hide coffe-card">
+              <li>
+                <img src="img/favorite/coffee-slider-2.png" alt="Caramel Macchiato">
+              </li>
+              <li>Caramel Macchiato</li>
+              <li>Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick
+                foam.</li>
+              <li>$5.00</li>
+            </ul>
+
+            <ul class="hide coffe-card">
+              <li>
+                <img src="img/favorite/coffee-slider-3.png" alt="Ice coffee">
+              </li>
+              <li>Ice coffee</li>
+              <li>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</li>
+              <li>$4.50</li>
+            </ul>
+            <img src="img/icons/arrow-right.svg" alt="arrow" width="24px" height="24px" class="go-right">
+          </div>
+          <ul class="control-list">
+            <li class="active control-list-item"></li>
+            <li class="unactive control-list-item"></li>
+            <li class="unactive control-list-item"></li>
+          </ul>
+        </section>
+
+        <section class="about-section">
+          <h2>Resource is <span>the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax,
+            catch up with
+            friends, or
+            get some work done.</h2>
+          <div class="photos-wrapper">
+            <ul class="about-img-list column-1">
+              <li class="about-list-item about-1"></li>
+              <li class="about-list-item about-2"></li>
+            </ul>
+
+            <ul class="about-img-list column-2">
+              <li class="about-list-item about-3"></li>
+              <li class="about-list-item about-4"></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mobile-app-section">
+          <h2><span>Download</span> our apps to start ordering</h2>
+          <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever
+            you
+            are</p>
+          <ul>
+            <li>
+              <div class="app-store-button">
+                <img src="img/icons/app-store.svg" alt="App Store logo">
+                <p>Available on the <span>App Store</span></p>
+              </div>
+            </li>
+            <li>
+              <div class="play-store-button">
+                <img src="img/icons/play-store.svg" alt="Google Play logo">
+                <p>Available on the <span>Google Play</span></p>
+              </div>
+            </li>
+          </ul>
+          <img src="img/mobile-app/mobile-screens.png" alt="two mobiles, on screens our mobile app">
+        </section>
+
+      </main>
+
+      <footer>
+        <ul class="col-1">
           <li>
-            <div class="app-store-button">
-              <img src="img/icons/app-store.png" alt="App Store logo">
-              <p>Available on the <span>App Store</span></p>
-            </div>
+            <h2>Sip, Savor, Smile.<br> <span>It’s coffee time!</span></h2>
           </li>
           <li>
-            <div class="play-store-button">
-              <img src="img/icons/play-store.png" alt="Google Play logo">
-              <p>Available on the <span>Google Play</span></p>
-            </div>
+            <ul class="social-links-list">
+              <li>
+                <img src="img/icons/twitter.svg" alt="twitter logo">
+              </li>
+              <li>
+                <img src="img/icons/instagram.svg" alt="instagram logo">
+              </li>
+              <li>
+                <img src="img/icons/facebook.svg" alt="facebook logo">
+              </li>
+            </ul>
           </li>
         </ul>
-        <img src="img/mobile-app/mobile-screens.png" alt="two mobiles, on screens our mobile app">
-      </section>
 
-    </main>
-
-    <footer>
-      <h2>Sip, Savor, Smile. It’s coffee time!</h2>
-      <ul class="social-links-list">
-        <li>
-          <img src="img/icons/twitter.png" alt="twitter logo">
-        </li>
-        <li>
-          <img src="img/icons/instagram.png" alt="instagram logo">
-        </li>
-        <li>
-          <img src="img/icons/facebook.png" alt="facebook logo">
-        </li>
-      </ul>
-
-      <ul class="contants-list">
-        <li>Contact us</li>
-        <li>
-          <img src="img/icons/pin-alt.png" alt="pin icon">
-          <p>8558 Green Rd., LA</p>
-        </li>
-        <li>
-          <img src="img/icons/phone.png" alt="phone icon">
-          <p>+1 (603) 555-0123</p>
-        </li>
-        <li>
-          <img src="img/icons/clock.png" alt="clock icon">
-          <p>Mon-Sat: 9:00 AM – 23:00 PM</p>
-        </li>
-      </ul>
-    </footer>
+        <ul class="contacts-list col-2">
+          <li>Contact us</li>
+          <li>
+            <img src="img/icons/pin-alt.svg" alt="pin icon">
+            <p>8558 Green Rd., LA</p>
+          </li>
+          <li>
+            <img src="img/icons/phone.svg" alt="phone icon">
+            <p>+1 (603) 555-0123</p>
+          </li>
+          <li>
+            <img src="img/icons/clock.svg" alt="clock icon">
+            <p>Mon-Sat: 9:00 AM – 23:00 PM</p>
+          </li>
+        </ul>
+      </footer>
+    </div>
   </body>
 
 </html>

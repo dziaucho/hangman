@@ -1,0 +1,381 @@
+/* normalize */
+
+.max-size-wrapper {
+  max-width: 1440px;
+}
+
+body {
+  background-color: #E1D4C9;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* header */
+
+header {
+  display: flex;
+  margin: 20px 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #403F3D;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.menu-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-wrapper p {
+  color: #403F3D;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+/* hero */
+
+.hero-section {
+  margin: 20px 40px 100px;
+  background: url(/coffee-house/img/hero/img-hero.jpg) lightgray 50% / cover no-repeat;
+  border-radius: 40px;
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 100px;
+  width: 530px;
+}
+
+h1 {
+  color: #E1D4C9;
+  font-family: Inter;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 105%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 span {
+  color: #B0907A;
+  font-family: Inter;
+  font-size: 72px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 105%;
+}
+
+.hero-section p {
+  color: #E1D4C9;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section button {
+  width: 200px;
+  padding: 20px 78px;
+  background-color: #E1D4C9;
+  border-radius: 100px;
+  border: none;
+  color: #403F3D;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0;
+}
+
+/* favorite */
+
+.favorite-section {
+  margin: 100px 40px;
+}
+
+.favorite-section h2 {
+  color: var(--text-dark, #403F3D);
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.favorite-section h2 span {
+  color: var(--text-accent, #B0907A);
+  font-family: Inter;
+  font-size: 60px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.go-left {
+  padding: 18px;
+  border: 1px solid #665F55;
+  border-radius: 100px;
+}
+
+.go-right {
+  padding: 18px;
+  border: 1px solid #665F55;
+  border-radius: 100px;
+}
+
+.coffe-card {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 480px;
+}
+
+.coffe-card img {
+  margin-bottom: 20px;
+}
+
+.coffe-card li:nth-child(2) {
+  margin-bottom: 16px;
+  color: #403F3D;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.coffe-card li:nth-child(3) {
+  margin-bottom: 16px;
+  text-align: center;
+  color: #403F3D;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.coffe-card li:nth-child(4) {
+  color: #403F3D;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.control-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.control-list-item {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+}
+
+.active {
+  background-color: #665F55;
+}
+
+.unactive {
+  background-color: #C1B6AD;
+}
+
+.hide {
+  display: none;
+}
+
+/* about-section */
+
+.about-section {
+  margin: 100px 40px;
+}
+
+.about-section h2 {
+  color: #403F3D;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.about-section h2 span {
+  color: #B0907A;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.photos-wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.about-img-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.about-1 {
+  width: 660px;
+  height: 590px;
+  border-radius: 20px;
+  background: url(/coffee-house/img/about/about-1.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.about-2 {
+  width: 660px;
+  height: 430px;
+  border-radius: 20px;
+  background: url(/coffee-house/img/about/about-2.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.about-3 {
+  width: 660px;
+  height: 430px;
+  border-radius: 20px;
+  background: url(/coffee-house/img/about/about-3.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.about-4 {
+  width: 660px;
+  height: 590px;
+  border-radius: 20px;
+  background: url(/coffee-house/img/about/about-4.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+/* footer */
+
+footer {
+  margin: 100px 40px 40px;
+  background-color: #665F55;
+  border-radius: 40px;
+  padding: 100px;
+  display: flex;
+  gap: 100px;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer h2 {
+  color: #E1D4C9;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+footer h2 span {
+  color: #B0907A;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.social-links-list {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links-list img {
+  padding: 18px;
+  border: 1px solid #E1D4C9;
+  border-radius: 100px;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.contacts-list li:nth-child(1) {
+  color: #E1D4C9;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 24px;
+}
+
+.contacts-list p {
+  display: inline;
+  color: #E1D4C9;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  margin-left: 8px;
+}
