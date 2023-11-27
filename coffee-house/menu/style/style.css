@@ -55,15 +55,152 @@ nav ul a {
   line-height: 150%;
 }
 
+/* offer-section */
+
+.offer-section {
+  margin: 20px 40px 40px;
+}
+
+.offer-section h1 {
+  color: #403F3D;
+  text-align: center;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin: 0 280px 35px;
+}
+
+.offer-section h1 span {
+  color: #B0907A;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.offer-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  gap: 16px;
+}
+
+.offer-list-item {
+  display: flex;
+  padding: 8px 16px 8px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.offer-list .active {
+  background-color: #665F55;
+  color: #E1D4C9;
+}
+
+.offer-list .active span {
+  padding: 3px 7px;
+  border-radius: 100px;
+  background-color: #E1D4C9;
+}
+
+.offer-list .unactive {
+  border: 1px solid #C1B6AD;
+  color: #403F3D;
+}
+
+.offer-list .unactive span {
+  padding: 3px 7px;
+  border-radius: 100px;
+  background: #C1B6AD;
+}
+
+/* coffee section */
+
+.coffee-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 40px 20px 100px 40px;
+}
+
+.coffee-section .photo-card-list {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+  border-radius: 40px;
+  border: 1px solid #C1B6AD;
+}
+
+.coffee-section .photo-card-list img {
+  width: 308px;
+  height: 308px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.coffee-section .info-card-list {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+  gap: 10px;
+}
+
+.coffee-section .info-card-list li:nth-child(1) {
+  color: #403F3D;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.coffee-section .info-card-list li:nth-child(2) {
+  color: #403F3D;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.coffee-section .info-card-list li:nth-child(3) {
+  color: #403F3D;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-top: auto;
+}
+
+
 /* footer */
 
 footer {
   margin: 100px 40px 40px;
   background-color: #665F55;
   border-radius: 40px;
-  padding: 100px;
+  padding: 50px 100px 100px;
   display: flex;
-  gap: 100px;
+  gap: 130px;
 }
 
 footer ul {
@@ -79,6 +216,7 @@ footer h2 {
   font-style: normal;
   font-weight: 600;
   line-height: 125%;
+  margin-bottom: 40px;
 }
 
 footer h2 span {
@@ -106,6 +244,7 @@ footer h2 span {
   flex-direction: column;
   gap: 16px;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .contacts-list li:nth-child(1) {
