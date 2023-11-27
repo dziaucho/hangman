@@ -1,7 +1,12 @@
 /* normalize */
 
+* {
+  scroll-behavior: smooth;
+}
+
 .max-size-wrapper {
   max-width: 1440px;
+  margin: 0 auto;
 }
 
 body {
@@ -132,11 +137,10 @@ nav ul a {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  margin: 40px 20px 100px 40px;
+  margin: 40px 0 100px 40px;
 }
 
-.coffee-section .photo-card-list {
-  box-sizing: border-box;
+.offer-card-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -145,13 +149,15 @@ nav ul a {
   width: 310px;
   border-radius: 40px;
   border: 1px solid #C1B6AD;
+  padding-bottom: 20px;
+  gap: 12px;
 }
 
-.coffee-section .photo-card-list img {
-  width: 308px;
-  height: 308px;
+.offer-card-photo {
+  width: 310px;
+  height: 310px;
   border-radius: 40px;
-  overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .coffee-section .info-card-list {
@@ -163,25 +169,27 @@ nav ul a {
   gap: 10px;
 }
 
-.coffee-section .info-card-list li:nth-child(1) {
+.offer-card-list li:nth-child(2) {
   color: #403F3D;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: 125%;
+  padding: 0 20px;
 }
 
-.coffee-section .info-card-list li:nth-child(2) {
+.offer-card-list li:nth-child(3) {
   color: #403F3D;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  padding: 0 20px;
 }
 
-.coffee-section .info-card-list li:nth-child(3) {
+.offer-card-list li:nth-child(4) {
   color: #403F3D;
   font-family: Inter;
   font-size: 24px;
@@ -189,8 +197,50 @@ nav ul a {
   font-weight: 600;
   line-height: 125%;
   margin-top: auto;
+  padding: 0 20px;
 }
 
+/*adding photos */
+
+.coffee-1 {
+  background: url(/coffee-house/img/menu/coffee/coffee-1.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.coffee-2 {
+  background: url(/coffee-house/img/menu/coffee/coffee-2.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.coffee-3 {
+  background: url(/coffee-house/img/menu/coffee/coffee-3.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.coffee-4 {
+  background: url(/coffee-house/img/menu/coffee/coffee-4.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.coffee-5 {
+  background: url(/coffee-house/img/menu/coffee/coffee-5.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.coffee-6 {
+  background: url(/coffee-house/img/menu/coffee/coffee-6.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.coffee-7 {
+  background: url(/coffee-house/img/menu/coffee/coffee-7.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
+
+.coffee-8 {
+  background: url(/coffee-house/img/menu/coffee/coffee-8.jpg), lightgray 50% / cover no-repeat;
+  background-position: center;
+}
 
 /* footer */
 
@@ -266,4 +316,12 @@ footer h2 span {
   font-weight: 600;
   line-height: 150%;
   margin-left: 8px;
+}
+
+.tel {
+  text-decoration: none;
+}
+
+.location {
+  text-decoration: none;
 }

@@ -13,31 +13,31 @@
 
   <body>
     <div class="max-size-wrapper">
-      <header>
-        <a href="#">
+      <header id="home-page">
+        <a href="#home-page">
           <img src="img/logo/logo.svg" alt="logo">
         </a>
 
         <nav>
           <ul>
             <li>
-              <a href="#">Favorite coffee</a>
+              <a href="#favorite-section">Favorite coffee</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#about-section">About</a>
             </li>
             <li>
-              <a href="#">Mobile app</a>
+              <a href="#mobile-app-section">Mobile app</a>
             </li>
             <li>
-              <a href="#">Contact us</a>
+              <a href="#contact-us">Contact us</a>
             </li>
           </ul>
         </nav>
 
         <div class="menu-wrapper">
-          <p>Menu</p>
-          <a href="#">
+          <a href="menu/index.html#menu-page">
+            <p>Menu</p>
             <img src="img/icons/coffee-cup.svg" alt="coffee cup">
           </a>
         </div>
@@ -47,7 +47,7 @@
 
         <section class="hero-section">
           <div class="hero-wrapper">
-            <h1><span>Enjoy</span> premium coffee at our charming cafe</h1>
+            <h1><a href="menu/index.html#menu-page">Enjoy</a> premium coffee at our charming cafe</h1>
             <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular
               destination
               for coffee
@@ -56,7 +56,7 @@
           </div>
         </section>
 
-        <section class="favorite-section">
+        <section class="favorite-section" id="favorite-section">
           <h2>Choose your <span>favorite</span> coffee</h2>
           <div class="carousel-wrapper">
             <img src="img/icons/arrow-left.svg" alt="arrow" class="go-left">
@@ -98,7 +98,7 @@
           </ul>
         </section>
 
-        <section class="about-section">
+        <section class="about-section" id="about-section">
           <h2>Resource is <span>the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax,
             catch up with
             friends, or
@@ -116,7 +116,7 @@
           </div>
         </section>
 
-        <section class="mobile-app-section">
+        <section class="mobile-app-section" id="mobile-app-section">
           <div class="mobile-app-info-wrapper">
             <h2><span>Download</span> our apps to start ordering</h2>
             <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever
@@ -142,7 +142,7 @@
 
       </main>
 
-      <footer>
+      <footer id="contact-us">
         <ul class="col-1">
           <li>
             <h2>Sip, Savor, Smile.<br> <span>It’s coffee time!</span></h2>
@@ -165,12 +165,16 @@
         <ul class="contacts-list col-2">
           <li>Contact us</li>
           <li>
-            <img src="img/icons/pin-alt.svg" alt="pin icon">
-            <p>8558 Green Rd., LA</p>
+            <a href="https://maps.app.goo.gl/GFqj6mRDYcy4zfXE8" class="location">
+              <img src="img/icons/pin-alt.svg" alt="pin icon">
+              <p>8558 Green Rd., LA</p>
+            </a>
           </li>
           <li>
-            <img src="img/icons/phone.svg" alt="phone icon">
-            <p>+1 (603) 555-0123</p>
+            <a href="tel:+1000000" class="tel">
+              <img src="img/icons/phone.svg" alt="phone icon">
+              <p>+1 (603) 555-0123</p>
+            </a>
           </li>
           <li>
             <img src="img/icons/clock.svg" alt="clock icon">
