@@ -1,0 +1,90 @@
+@import "../colors/colors";
+@import "../typography/desktop";
+@import "../typography/mobile";
+@import "../paths-to-images/paths";
+@import "../links-and-buttons/links-and-buttons";
+
+/* normalize */
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.max-size-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: $background-body;
+  margin: 0 auto;
+}
+
+/* header */
+
+header {
+  display: flex;
+  margin: 20px 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+
+    a {
+      @extend %link-button;
+      color: $text-dark;
+      position: relative;
+
+      &::after {
+        @include underline-unfocus($text-dark, 5px);
+      }
+
+      &:hover::after {
+        @extend %underline-focus;
+        ;
+      }
+    }
+  }
+}
+
+.menu-wrapper {
+  position: relative;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    p {
+      @extend %link-button;
+      color: $text-dark;
+    }
+  }
+
+  &::after {
+    @include underline-unfocus($text-dark, -15px);
+  }
+
+  &:hover::after {
+    @extend %underline-focus;
+  }
+
+}

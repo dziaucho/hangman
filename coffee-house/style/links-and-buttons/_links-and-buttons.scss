@@ -1,0 +1,19 @@
+// underline
+
+@mixin underline-unfocus($underline-color, $maring-top) {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: $underline-color;
+  margin-top: $maring-top;
+  transition: all 0.7s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%underline-focus {
+  width: 100%;
+  transition: all 0.7s;
+}

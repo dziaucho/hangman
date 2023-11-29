@@ -1,0 +1,101 @@
+/*heading*/
+/*body*/
+/*action*/
+.menu-wrapper a p, nav ul a {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+/*heading*/
+/*home-hero*/
+/*home-about*/
+/*menu-offer-section-coffee*/
+/*menu-offer-section-tea*/
+/*menu-offer-section-desserts*/
+.menu-wrapper:hover::after, nav ul a:hover::after {
+  width: 100%;
+  transition: all 0.7s;
+}
+
+/* normalize */
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+* ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+* a {
+  text-decoration: none;
+}
+
+.max-size-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #E1D4C9;
+  margin: 0 auto;
+}
+
+/* header */
+header {
+  display: flex;
+  margin: 20px 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+nav ul a {
+  color: #403F3D;
+  position: relative;
+}
+nav ul a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #403F3D;
+  margin-top: 5px;
+  transition: all 0.7s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu-wrapper {
+  position: relative;
+}
+.menu-wrapper a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.menu-wrapper a p {
+  color: #403F3D;
+}
+.menu-wrapper::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #403F3D;
+  margin-top: -15px;
+  transition: all 0.7s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*# sourceMappingURL=test.css.map */
