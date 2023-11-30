@@ -101,6 +101,183 @@ nav {
   }
 }
 
+// offer-section
+
+.offer-section {
+  margin-top: 20px;
+}
+
+h1 {
+  @extend %heading-2;
+  color: $text-dark;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto 40px;
+
+  span {
+    @extend %heading-2-accent;
+    color: $text-accent;
+  }
+}
+
+.offer-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  .offer-list-item {
+    display: flex;
+    padding: 8px 16px 8px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    @extend %link-button;
+
+    h2 {
+      @extend %link-button;
+      margin: 0;
+    }
+
+    span {
+      padding: 3px 7px;
+      border-radius: 100px;
+    }
+  }
+
+  .active {
+    background-color: $background-container;
+    color: $text-light;
+
+    span {
+      background-color: $text-light;
+    }
+  }
+
+  .unactive {
+    border: 1px solid $border-light;
+    color: $text-dark;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    span {
+      background-color: $border-light;
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      background-color: $background-container;
+      color: $text-light;
+      transition: all 0.5s;
+
+      span {
+        background-color: $text-light;
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+// coffee-section
+
+.coffee-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+
+  .offer-card-list {
+    width: 310px;
+    padding-bottom: 20px;
+    border-radius: 40px;
+    border: 1px solid $border-light;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .offer-card-photo-wrapper {
+      width: 310px;
+      height: 310px;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+
+    .offer-card-photo {
+      width: 310px;
+      height: 310px;
+      border-radius: 40px;
+      transform: scale(1.1);
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      .offer-card-photo {
+        transform: scale(1);
+        transition: all 0.5s;
+      }
+    }
+
+    h3 {
+      @extend %heading-3;
+      color: $text-dark;
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    li:nth-child(3) {
+      @extend %medium;
+      color: $text-dark;
+      padding: 0 20px;
+    }
+
+    li:nth-child(4) {
+      margin-top: auto;
+    }
+  }
+}
+
+// adding-photos
+
+.item-1 {
+  background: $offer-section-coffee-1;
+  background-position: center;
+}
+
+.item-2 {
+  background: $offer-section-coffee-2;
+  background-position: center;
+}
+
+.item-3 {
+  background: $offer-section-coffee-3;
+  background-position: center;
+}
+
+.item-4 {
+  background: $offer-section-coffee-4;
+  background-position: center;
+}
+
+.item-5 {
+  background: $offer-section-coffee-5;
+  background-position: center;
+}
+
+.item-6 {
+  background: $offer-section-coffee-6;
+  background-position: center;
+}
+
+.item-7 {
+  background: $offer-section-coffee-7;
+  background-position: center;
+}
+
+.item-8 {
+  background: $offer-section-coffee-8;
+  background-position: center;
+}
+
 //footer
 
 footer {
