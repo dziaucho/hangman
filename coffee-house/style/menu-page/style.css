@@ -99,6 +99,12 @@ nav ul a::after {
   transform: translateX(-50%);
   transition: all 0.5s;
 }
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+
 .menu-wrapper {
   position: relative;
   display: flex;
@@ -118,6 +124,43 @@ nav ul a::after {
   width: 100%;
   background-color: #403F3D;
   margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .menu-wrapper {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .burger-button {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .burger-button {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid #403F3D;
+  }
+  .burger-button li:nth-child(1) {
+    width: 16px;
+    height: 1.5px;
+    background-color: #403F3D;
+  }
+  .burger-button li:nth-child(2) {
+    display: none;
+  }
+  .burger-button li:nth-child(3) {
+    width: 16px;
+    height: 1.5px;
+    background-color: #403F3D;
+  }
 }
 
 .offer-section {
@@ -270,15 +313,35 @@ footer {
   margin-top: 100px;
   background-color: #665F55;
   border-radius: 40px;
-  padding: 50px 100px 100px;
+  padding: 100px 100px;
   display: flex;
   gap: 130px;
 }
+@media (max-width: 1170px) {
+  footer {
+    padding: 60px 40px;
+    justify-content: space-between;
+    gap: 70px;
+  }
+}
+@media (max-width: 990px) {
+  footer {
+    padding: 100px 60px;
+    flex-direction: column;
+    gap: 100px;
+  }
+}
 footer h2 {
   color: #E1D4C9;
+  margin: 0;
 }
 footer h2 span {
   color: #B0907A;
+}
+footer .col-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 footer .social-links-list {
   display: flex;
@@ -311,10 +374,11 @@ footer .contacts-list {
   flex-direction: column;
   gap: 16px;
   justify-content: center;
-  margin-top: 20px;
+  margin: auto 0;
 }
 footer .contacts-list h3 {
   color: #E1D4C9;
+  margin: 0 0 24px;
 }
 footer .contacts-list span {
   color: #E1D4C9;

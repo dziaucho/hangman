@@ -64,6 +64,10 @@ nav {
       }
     }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .menu-wrapper {
@@ -88,6 +92,45 @@ nav {
   &:hover::after {
     @extend %underline-focus;
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.burger-button {
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid $text-dark;
+
+    li:nth-child(1) {
+      width: 16px;
+      height: 1.5px;
+      background-color: $text-dark;
+    }
+
+    li:nth-child(2) {
+      display: none;
+    }
+
+    li:nth-child(3) {
+      width: 16px;
+      height: 1.5px;
+      background-color: $text-dark;
+    }
+  }
 }
 
 // hero
@@ -97,6 +140,10 @@ nav {
   border-radius: 40px;
   padding: 100px;
   margin-top: 20px;
+
+  @media (max-width: 1000px) {
+    padding: 100px 60px;
+  }
 
   p {
     @extend %medium;
@@ -127,6 +174,18 @@ nav {
         transform: translateX(5px);
         opacity: 1;
         transition: all 0.5s;
+      }
+
+      @media (max-width: 768px) {
+        &::after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background: url(../../img/icons/coffee-cup.svg);
+          position: absolute;
+          opacity: 1;
+          left: 110px;
+        }
       }
     }
   }
@@ -247,7 +306,13 @@ h1 {
 
   .photos-wrapper {
     display: flex;
-    gap: 40px;
+    justify-content: space-between;
+
+    @media (max-width: 1250px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
   }
 
   .about-img-list {
@@ -260,6 +325,16 @@ h1 {
       height: 590px;
       border-radius: 20px;
       overflow: hidden;
+
+      @media (max-width: 1439px) {
+        width: 560px;
+        height: 490px;
+      }
+
+      @media (max-width: 1000px) {
+        width: 688px;
+        height: 590px;
+      }
     }
 
     .about-1 {
@@ -274,6 +349,16 @@ h1 {
         transform: scale(1);
         transition: all 0.5s;
       }
+
+      @media (max-width: 1439px) {
+        width: 560px;
+        height: 490px;
+      }
+
+      @media (max-width: 1000px) {
+        width: 688px;
+        height: 590px;
+      }
     }
 
     .about-list-item-2 {
@@ -281,6 +366,15 @@ h1 {
       height: 430px;
       border-radius: 20px;
       overflow: hidden;
+
+      @media (max-width: 1439px) {
+        width: 560px;
+        height: 330px;
+      }
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
 
       .about-2 {
         width: 660px;
@@ -294,6 +388,11 @@ h1 {
           transform: scale(1);
           transition: all 0.5s;
         }
+
+        @media (max-width: 1439px) {
+          width: 560px;
+          height: 330px;
+        }
       }
     }
 
@@ -302,6 +401,15 @@ h1 {
       height: 430px;
       border-radius: 20px;
       overflow: hidden;
+
+      @media (max-width: 1439px) {
+        width: 560px;
+        height: 330px;
+      }
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
 
       .about-3 {
         width: 660px;
@@ -315,6 +423,11 @@ h1 {
           transform: scale(1);
           transition: all 0.5s;
         }
+
+        @media (max-width: 1439px) {
+          width: 560px;
+          height: 330px;
+        }
       }
     }
 
@@ -323,6 +436,16 @@ h1 {
       height: 590px;
       border-radius: 20px;
       overflow: hidden;
+
+      @media (max-width: 1439px) {
+        width: 560px;
+        height: 490px;
+      }
+
+      @media (max-width: 1000px) {
+        width: 688px;
+        height: 590px;
+      }
 
       .about-4 {
         width: 660px;
@@ -337,6 +460,16 @@ h1 {
           transform: scale(1);
           transition: all 0.5s;
         }
+
+        @media (max-width: 1439px) {
+          width: 560px;
+          height: 490px;
+        }
+
+        @media (max-width: 1000px) {
+          width: 688px;
+          height: 590px;
+        }
       }
     }
   }
@@ -348,6 +481,17 @@ h1 {
   margin-top: 100px;
   display: flex;
   gap: 100px;
+  justify-content: center;
+
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 630px;
+      width: 630px;
+    }
+  }
 
   h2 {
     @extend %heading-2;
@@ -436,18 +580,37 @@ footer {
   margin-top: 100px;
   background-color: $background-container;
   border-radius: 40px;
-  padding: 50px 100px 100px;
+  padding: 100px 100px;
   display: flex;
   gap: 130px;
+
+  @media (max-width: 1170px) {
+    padding: 60px 40px;
+    justify-content: space-between;
+    gap: 70px;
+  }
+
+  @media (max-width: 990px) {
+    padding: 100px 60px;
+    flex-direction: column;
+    gap: 100px;
+  }
 
   h2 {
     @extend %heading-2;
     color: $text-light;
+    margin: 0;
 
     span {
       @extend %heading-2-accent;
       color: $text-accent;
     }
+  }
+
+  .col-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
   .social-links-list {
@@ -486,11 +649,12 @@ footer {
     flex-direction: column;
     gap: 16px;
     justify-content: center;
-    margin-top: 20px;
+    margin: auto 0;
 
     h3 {
       @extend %heading-3;
       color: $text-light;
+      margin: 0 0 24px;
     }
 
     span {
