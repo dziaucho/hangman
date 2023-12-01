@@ -164,6 +164,14 @@ h1 {
     @extend %heading-2-accent;
     color: $text-accent;
   }
+
+  @media (max-width: 740px) {
+    @include heading-2-mobile;
+
+    span {
+      @include heading-2-accent-mobile;
+    }
+  }
 }
 
 .offer-list {
@@ -286,25 +294,7 @@ h1 {
     }
   }
 
-  .offer-section-more-button {
-    display: flex;
-    width: 60px;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100px;
-    border: 1px solid $border-dark;
-
-    svg {
-      stroke: $border-dark;
-    }
-
-    @media (min-width: 769px) {
-      display: none;
-    }
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1089px) {
     ul:nth-child(5) {
       display: none;
     }
@@ -321,6 +311,28 @@ h1 {
       display: none;
     }
   }
+}
+
+.offer-section-more-button {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid $border-dark;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  svg {
+    stroke: $border-dark;
+  }
+
+  @media (min-width: 1090px) {
+    display: none;
+  }
+
+
 }
 
 // adding-photos
