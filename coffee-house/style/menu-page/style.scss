@@ -32,6 +32,10 @@ body {
   background-color: $background-body;
   margin: 0 auto;
   padding: 20px 40px 40px;
+
+  @media (max-width: 470px) {
+    padding: 20px 16px 40px;
+  }
 }
 
 //header
@@ -49,7 +53,6 @@ header {
       transform: scale(1.1);
       transition: all 0.5s;
     }
-
   }
 }
 
@@ -343,6 +346,11 @@ footer {
     gap: 100px;
   }
 
+  @media(max-width: 600px) {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+
   h2 {
     @extend %heading-2;
     color: $text-light;
@@ -351,6 +359,18 @@ footer {
     span {
       @extend %heading-2-accent;
       color: $text-accent;
+    }
+
+    @media (max-width: 740px) {
+      @include heading-2-mobile;
+
+      span {
+        @include heading-2-accent-mobile;
+      }
+
+      br {
+        display: none;
+      }
     }
   }
 

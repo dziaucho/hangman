@@ -20,7 +20,7 @@ footer h2, .mobile-app-section h2, .about-section h2, .favorite-section h2 {
   line-height: 125%;
 }
 
-footer h2 span, .mobile-app-section span, .about-section h2 span, .favorite-section h2 span {
+footer h2 span, .mobile-app-section h2 span, .about-section h2 span, .favorite-section h2 span {
   font-family: Inter;
   font-size: 60px;
   font-weight: 600;
@@ -35,21 +35,21 @@ footer .contacts-list h3, .coffee-card h3 {
   line-height: 125%;
 }
 
-.mobile-app-section .mobile-app-info-wrapper p, .coffee-card li:nth-child(3), .hero-section p {
+.mobile-app-info-wrapper p, .coffee-card li:nth-child(3), .hero-section p {
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
 }
 
-.mobile-app-section .mobile-app-info-wrapper .app-button p {
+.mobile-app-info-wrapper .app-button p {
   font-family: Inter;
   font-size: 10px;
   font-weight: 600;
   line-height: 140%;
 }
 
-footer .contacts-list span, .mobile-app-section .mobile-app-info-wrapper .app-button p span, .menu-wrapper a p, nav ul a, .hero-section a p {
+footer .contacts-list span, .mobile-app-info-wrapper .app-button p span, .menu-wrapper a p, nav ul a, .hero-section a p {
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
@@ -113,6 +113,11 @@ body {
   background-color: #E1D4C9;
   margin: 0 auto;
   padding: 20px 40px 40px;
+}
+@media (max-width: 470px) {
+  body {
+    padding: 20px 16px 40px;
+  }
 }
 
 header {
@@ -179,7 +184,7 @@ nav ul a::after {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .burger-button {
     display: none;
   }
@@ -220,6 +225,11 @@ nav ul a::after {
 @media (max-width: 1000px) {
   .hero-section {
     padding: 100px 60px;
+  }
+}
+@media (max-width: 700px) {
+  .hero-section {
+    padding: 60px 16px;
   }
 }
 .hero-section p {
@@ -266,6 +276,16 @@ nav ul a::after {
   flex-direction: column;
   gap: 40px;
 }
+@media (max-width: 660px) {
+  .hero-wrapper {
+    width: 450px;
+  }
+}
+@media (max-width: 570px) {
+  .hero-wrapper {
+    width: 316px;
+  }
+}
 
 h1 {
   color: #E1D4C9;
@@ -273,6 +293,21 @@ h1 {
 }
 h1 span {
   color: #B0907A;
+}
+@media (max-width: 740px) {
+  h1 {
+    font-family: Inter;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 115%;
+  }
+  h1 span {
+    font-family: Inter;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 115%;
+    font-style: italic;
+  }
 }
 
 .favorite-section {
@@ -286,11 +321,36 @@ h1 span {
 .favorite-section h2 span {
   color: #B0907A;
 }
+@media (max-width: 740px) {
+  .favorite-section h2 {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+  .favorite-section h2 span {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+    font-style: italic;
+  }
+}
+@media (max-width: 700px) {
+  .favorite-section button {
+    display: none;
+  }
+}
 
 .carousel-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 700px) {
+  .carousel-wrapper {
+    justify-content: center;
+  }
 }
 .coffee-card {
   display: flex;
@@ -303,6 +363,12 @@ h1 span {
 .coffee-card img {
   width: 480px;
   height: 480px;
+}
+@media (max-width: 600px) {
+  .coffee-card img {
+    width: 348px;
+    height: 348px;
+  }
 }
 .coffee-card h3 {
   color: #403F3D;
@@ -345,6 +411,21 @@ h1 span {
 .about-section h2 span {
   color: #B0907A;
 }
+@media (max-width: 740px) {
+  .about-section h2 {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+  .about-section h2 span {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+    font-style: italic;
+  }
+}
 .about-section .photos-wrapper {
   display: flex;
   justify-content: space-between;
@@ -379,6 +460,12 @@ h1 span {
     height: 590px;
   }
 }
+@media (max-width: 760px) {
+  .about-section .about-img-list .about-list-item-1 {
+    width: 348px;
+    height: 590px;
+  }
+}
 .about-section .about-img-list .about-1 {
   width: 660px;
   height: 590px;
@@ -400,6 +487,12 @@ h1 span {
 @media (max-width: 1000px) {
   .about-section .about-img-list .about-1 {
     width: 688px;
+    height: 590px;
+  }
+}
+@media (max-width: 760px) {
+  .about-section .about-img-list .about-1 {
+    width: 348px;
     height: 590px;
   }
 }
@@ -491,6 +584,12 @@ h1 span {
     height: 590px;
   }
 }
+@media (max-width: 760px) {
+  .about-section .about-img-list .about-list-item-4 {
+    width: 348px;
+    height: 590px;
+  }
+}
 .about-section .about-img-list .about-list-item-4 .about-4 {
   width: 660px;
   height: 590px;
@@ -516,6 +615,12 @@ h1 span {
     height: 590px;
   }
 }
+@media (max-width: 760px) {
+  .about-section .about-img-list .about-list-item-4 .about-4 {
+    width: 348px;
+    height: 590px;
+  }
+}
 
 .mobile-app-section {
   margin-top: 100px;
@@ -523,38 +628,70 @@ h1 span {
   gap: 100px;
   justify-content: center;
 }
+@media (max-width: 490px) {
+  .mobile-app-section {
+    gap: 40px;
+  }
+}
 @media (max-width: 1250px) {
   .mobile-app-section {
     flex-direction: column;
     align-items: center;
   }
+}
+.mobile-app-section img {
+  width: 630px;
+  width: 630px;
+}
+@media (max-width: 760px) {
   .mobile-app-section img {
-    width: 630px;
-    width: 630px;
+    width: 348px;
+    height: 348px;
+  }
+}
+.mobile-app-section ul {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 490px) {
+  .mobile-app-section ul {
+    flex-direction: column;
   }
 }
 .mobile-app-section h2 {
   color: #403F3D;
   margin: 0;
 }
-.mobile-app-section span {
+.mobile-app-section h2 span {
   color: #B0907A;
 }
-.mobile-app-section ul {
-  display: flex;
-  gap: 20px;
+@media (max-width: 740px) {
+  .mobile-app-section h2 {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+  .mobile-app-section h2 span {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+    font-style: italic;
+  }
 }
-.mobile-app-section .mobile-app-info-wrapper {
+
+.mobile-app-info-wrapper {
   display: flex;
   flex-direction: column;
   gap: 40px;
   justify-content: center;
 }
-.mobile-app-section .mobile-app-info-wrapper p {
+.mobile-app-info-wrapper p {
   color: #403F3D;
   margin: 0;
 }
-.mobile-app-section .mobile-app-info-wrapper .app-button {
+.mobile-app-info-wrapper .app-button {
   display: flex;
   gap: 8px;
   justify-content: flex-start;
@@ -565,33 +702,33 @@ h1 span {
   border: 1px solid #665F55;
   transition: all 0.5s;
 }
-.mobile-app-section .mobile-app-info-wrapper .app-button p {
+.mobile-app-info-wrapper .app-button p {
   color: #403F3D;
   transition: all 0.5s;
 }
-.mobile-app-section .mobile-app-info-wrapper .app-button p span {
+.mobile-app-info-wrapper .app-button p span {
   color: #403F3D;
   font-style: normal;
   transition: all 0.5s;
 }
-.mobile-app-section .mobile-app-info-wrapper .app-button svg {
+.mobile-app-info-wrapper .app-button svg {
   fill: #403F3D;
   transition: all 0.5s;
 }
-.mobile-app-section .mobile-app-info-wrapper .app-button:hover {
+.mobile-app-info-wrapper .app-button:hover {
   background-color: #665F55;
   border-color: #E1D4C9;
   transition: all 0.5s;
 }
-.mobile-app-section .mobile-app-info-wrapper .app-button:hover p {
+.mobile-app-info-wrapper .app-button:hover p {
   color: #E1D4C9;
   transition: all 0.5s;
 }
-.mobile-app-section .mobile-app-info-wrapper .app-button:hover p span {
+.mobile-app-info-wrapper .app-button:hover p span {
   color: #E1D4C9;
   transition: all 0.5s;
 }
-.mobile-app-section .mobile-app-info-wrapper .app-button:hover svg {
+.mobile-app-info-wrapper .app-button:hover svg {
   fill: #E1D4C9;
   transition: all 0.5s;
 }
@@ -618,12 +755,36 @@ footer {
     gap: 100px;
   }
 }
+@media (max-width: 600px) {
+  footer {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+}
 footer h2 {
   color: #E1D4C9;
   margin: 0;
 }
 footer h2 span {
   color: #B0907A;
+}
+@media (max-width: 740px) {
+  footer h2 {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+  footer h2 span {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+    font-style: italic;
+  }
+  footer h2 br {
+    display: none;
+  }
 }
 footer .col-1 {
   display: flex;
