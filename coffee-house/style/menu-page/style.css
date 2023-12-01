@@ -232,6 +232,7 @@ h1 span {
 .coffee-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
   margin-top: 40px;
 }
@@ -272,6 +273,42 @@ h1 span {
 }
 .coffee-section .offer-card-list li:nth-child(4) {
   margin-top: auto;
+}
+@media (max-width: 768px) {
+  .coffee-section .offer-card-list {
+    height: 506px;
+  }
+}
+.coffee-section .offer-section-more-button {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #665F55;
+}
+.coffee-section .offer-section-more-button svg {
+  stroke: #665F55;
+}
+@media (min-width: 769px) {
+  .coffee-section .offer-section-more-button {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .coffee-section ul:nth-child(5) {
+    display: none;
+  }
+  .coffee-section ul:nth-child(6) {
+    display: none;
+  }
+  .coffee-section ul:nth-child(7) {
+    display: none;
+  }
+  .coffee-section ul:nth-child(8) {
+    display: none;
+  }
 }
 
 .item-1 {

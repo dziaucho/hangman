@@ -229,6 +229,7 @@ h1 {
 .coffee-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
   margin-top: 40px;
 
@@ -278,6 +279,46 @@ h1 {
 
     li:nth-child(4) {
       margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      height: 506px;
+    }
+  }
+
+  .offer-section-more-button {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid $border-dark;
+
+    svg {
+      stroke: $border-dark;
+    }
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul:nth-child(5) {
+      display: none;
+    }
+
+    ul:nth-child(6) {
+      display: none;
+    }
+
+    ul:nth-child(7) {
+      display: none;
+    }
+
+    ul:nth-child(8) {
+      display: none;
     }
   }
 }
