@@ -13,7 +13,7 @@
   transition: all 0.5s;
 }
 
-%underline-focus {
+@mixin underline-focus {
   width: 100%;
   transition: all 0.5s;
 }
@@ -30,7 +30,7 @@
   color: $text-dark;
 }
 
-%button-icon-dark {
+@mixin button-icon-dark {
   width: 60px;
   height: 60px;
   border: 1px solid $border-dark;
@@ -43,13 +43,15 @@
     transition: all 0.5s;
   }
 
-  &:hover {
-    background-color: $background-container;
-    transition: all 0.5s;
-
-    svg {
-      stroke: $background-body;
+  @media (hover:hover) {
+    &:hover {
+      background-color: $background-container;
       transition: all 0.5s;
+
+      svg {
+        stroke: $background-body;
+        transition: all 0.5s;
+      }
     }
   }
 }
