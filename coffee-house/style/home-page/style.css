@@ -187,15 +187,7 @@ nav ul a::after {
     border-radius: 100px;
     border: 1px solid #403F3D;
   }
-  .burger-button li:nth-child(1) {
-    width: 16px;
-    height: 1.5px;
-    background-color: #403F3D;
-  }
-  .burger-button li:nth-child(2) {
-    display: none;
-  }
-  .burger-button li:nth-child(3) {
+  .burger-button li {
     width: 16px;
     height: 1.5px;
     background-color: #403F3D;
@@ -239,7 +231,7 @@ nav ul a::after {
   opacity: 0;
   transition: all 0.5s;
 }
-@media (hover: hover) {
+@media (hover: hover) and (min-width: 769px) {
   .hero-section a p:hover::after {
     transform: translateX(5px);
     opacity: 1;

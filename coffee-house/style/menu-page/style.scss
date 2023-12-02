@@ -132,17 +132,7 @@ nav {
     border-radius: 100px;
     border: 1px solid $text-dark;
 
-    li:nth-child(1) {
-      width: 16px;
-      height: 1.5px;
-      background-color: $text-dark;
-    }
-
-    li:nth-child(2) {
-      display: none;
-    }
-
-    li:nth-child(3) {
+    li {
       width: 16px;
       height: 1.5px;
       background-color: $text-dark;
@@ -150,7 +140,7 @@ nav {
   }
 }
 
-// offer-section
+//offer-section
 
 .offer-section {
   margin-top: 20px;
@@ -237,7 +227,7 @@ h1 {
   }
 }
 
-// coffee-section
+//coffee-section
 
 .coffee-section {
   display: flex;
@@ -338,11 +328,9 @@ h1 {
   @media (min-width: 1090px) {
     display: none;
   }
-
-
 }
 
-// adding-photos
+//adding-photos
 
 .item-1 {
   background: $offer-section-coffee-1;

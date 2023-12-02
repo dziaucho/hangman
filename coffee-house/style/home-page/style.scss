@@ -111,7 +111,6 @@ nav {
   }
 
   @media (max-width: 768px) {
-
     width: 44px;
     height: 44px;
     display: flex;
@@ -122,17 +121,7 @@ nav {
     border-radius: 100px;
     border: 1px solid $text-dark;
 
-    li:nth-child(1) {
-      width: 16px;
-      height: 1.5px;
-      background-color: $text-dark;
-    }
-
-    li:nth-child(2) {
-      display: none;
-    }
-
-    li:nth-child(3) {
+    li {
       width: 16px;
       height: 1.5px;
       background-color: $text-dark;
@@ -140,7 +129,7 @@ nav {
   }
 }
 
-// hero
+//hero
 
 .hero-section {
   background: $hero;
@@ -182,10 +171,12 @@ nav {
       }
 
       @media(hover:hover) {
-        &:hover::after {
-          transform: translateX(5px);
-          opacity: 1;
-          transition: all 0.5s;
+        @media(min-width: 769px) {
+          &:hover::after {
+            transform: translateX(5px);
+            opacity: 1;
+            transition: all 0.5s;
+          }
         }
       }
 
@@ -238,7 +229,7 @@ h1 {
   }
 }
 
-// favorite
+//favorite
 
 .favorite-section {
   margin-top: 100px;
@@ -340,7 +331,7 @@ h1 {
   }
 }
 
-// about-section
+//about-section
 
 .about-section {
   margin-top: 100px;
@@ -563,7 +554,7 @@ h1 {
   }
 }
 
-// mobile app section
+//mobile app section
 
 .mobile-app-section {
   margin-top: 100px;
@@ -687,7 +678,7 @@ h1 {
 }
 
 
-// footer
+//footer
 
 footer {
   margin-top: 100px;
