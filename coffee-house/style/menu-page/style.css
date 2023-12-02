@@ -34,11 +34,6 @@ footer .contacts-list span, .offer-list .offer-list-item h2, .offer-list .offer-
   line-height: 150%;
 }
 
-footer .contacts-list a:hover::after, nav ul a:hover::after {
-  width: 100%;
-  transition: all 0.5s;
-}
-
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -77,9 +72,11 @@ header img {
   transform: scale(1);
   transition: all 0.5s;
 }
-header img:hover {
-  transform: scale(1.1);
-  transition: all 0.5s;
+@media (hover: hover) {
+  header img:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+  }
 }
 
 nav ul {
@@ -103,6 +100,12 @@ nav ul a::after {
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.5s;
+}
+@media (hover: hover) {
+  nav ul a:hover::after {
+    width: 100%;
+    transition: all 0.5s;
+  }
 }
 @media (max-width: 768px) {
   nav {
@@ -234,14 +237,16 @@ h1 span {
   background-color: #C1B6AD;
   transition: all 0.5s;
 }
-.offer-list .unactive:hover {
-  background-color: #665F55;
-  color: #E1D4C9;
-  transition: all 0.5s;
-}
-.offer-list .unactive:hover span {
-  background-color: #E1D4C9;
-  transition: all 0.5s;
+@media (hover: hover) {
+  .offer-list .unactive:hover {
+    background-color: #665F55;
+    color: #E1D4C9;
+    transition: all 0.5s;
+  }
+  .offer-list .unactive:hover span {
+    background-color: #E1D4C9;
+    transition: all 0.5s;
+  }
 }
 
 .coffee-section {
@@ -273,9 +278,11 @@ h1 span {
   transform: scale(1.1);
   transition: all 0.5s;
 }
-.coffee-section .offer-card-list:hover .offer-card-photo {
-  transform: scale(1);
-  transition: all 0.5s;
+@media (hover: hover) {
+  .coffee-section .offer-card-list:hover .offer-card-photo {
+    transform: scale(1);
+    transition: all 0.5s;
+  }
 }
 .coffee-section .offer-card-list h3 {
   color: #403F3D;
@@ -445,13 +452,15 @@ footer .social-links-list li svg {
   stroke: #E1D4C9;
   transition: all 0.5s;
 }
-footer .social-links-list li:hover {
-  background-color: #E1D4C9;
-  transition: all 0.5s;
-}
-footer .social-links-list li:hover svg {
-  stroke: #403F3D;
-  transition: all 0.5s;
+@media (hover: hover) {
+  footer .social-links-list li:hover {
+    background-color: #E1D4C9;
+    transition: all 0.5s;
+  }
+  footer .social-links-list li:hover svg {
+    stroke: #403F3D;
+    transition: all 0.5s;
+  }
 }
 footer .contacts-list {
   display: flex;
@@ -482,6 +491,12 @@ footer .contacts-list a::after {
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.5s;
+}
+@media (hover: hover) {
+  footer .contacts-list a:hover::after {
+    width: 100%;
+    transition: all 0.5s;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

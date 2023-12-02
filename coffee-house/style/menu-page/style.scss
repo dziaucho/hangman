@@ -49,9 +49,11 @@ header {
     transform: scale(1);
     transition: all 0.5s;
 
-    &:hover {
-      transform: scale(1.1);
-      transition: all 0.5s;
+    @media (hover:hover) {
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.5s;
+      }
     }
   }
 }
@@ -72,9 +74,10 @@ nav {
         @include underline-unfocus($text-dark, 5px);
       }
 
-      &:hover::after {
-        @extend %underline-focus;
-        ;
+      @media (hover:hover) {
+        &:hover::after {
+          @include underline-focus;
+        }
       }
     }
   }
@@ -219,14 +222,16 @@ h1 {
       transition: all 0.5s;
     }
 
-    &:hover {
-      background-color: $background-container;
-      color: $text-light;
-      transition: all 0.5s;
-
-      span {
-        background-color: $text-light;
+    @media(hover:hover) {
+      &:hover {
+        background-color: $background-container;
+        color: $text-light;
         transition: all 0.5s;
+
+        span {
+          background-color: $text-light;
+          transition: all 0.5s;
+        }
       }
     }
   }
@@ -265,10 +270,12 @@ h1 {
       transition: all 0.5s;
     }
 
-    &:hover {
-      .offer-card-photo {
-        transform: scale(1);
-        transition: all 0.5s;
+    @media (hover:hover) {
+      &:hover {
+        .offer-card-photo {
+          transform: scale(1);
+          transition: all 0.5s;
+        }
       }
     }
 
@@ -452,13 +459,15 @@ footer {
         transition: all 0.5s;
       }
 
-      &:hover {
-        background-color: $background-body;
-        transition: all 0.5s;
-
-        svg {
-          stroke: $text-dark;
+      @media (hover:hover) {
+        &:hover {
+          background-color: $background-body;
           transition: all 0.5s;
+
+          svg {
+            stroke: $text-dark;
+            transition: all 0.5s;
+          }
         }
       }
     }
@@ -490,8 +499,10 @@ footer {
         @include underline-unfocus($text-light, 5px);
       }
 
-      &:hover::after {
-        @extend %underline-focus;
+      @media (hover:hover) {
+        &:hover::after {
+          @include underline-focus;
+        }
       }
     }
   }
