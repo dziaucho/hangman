@@ -1,0 +1,497 @@
+//imports
+
+@import "../colors/colors";
+@import "../typography/desktop";
+@import "../typography/mobile";
+@import "../paths-to-images/paths";
+@import "../links-and-buttons/links-and-buttons";
+
+//normalize
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.max-size-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: $background-body;
+  margin: 0 auto;
+  padding: 20px 40px 40px;
+
+  @media (max-width: 470px) {
+    padding: 20px 16px 40px;
+  }
+}
+
+//header
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    transform: scale(1);
+    transition: all 0.5s;
+
+    @media (hover:hover) {
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+nav {
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+
+    a {
+      @extend %link-button;
+      color: $text-dark;
+      position: relative;
+
+      &::after {
+        @include underline-unfocus($text-dark, 5px);
+      }
+
+      @media (hover:hover) {
+        &:hover::after {
+          @include underline-focus;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.menu-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+
+  p {
+    @extend %link-button;
+    color: $text-dark;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: $text-dark;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.burger-button {
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid $text-dark;
+
+    li {
+      width: 16px;
+      height: 1.5px;
+      background-color: $text-dark;
+    }
+  }
+}
+
+//offer-section
+
+.offer-section {
+  margin-top: 20px;
+}
+
+h1 {
+  @extend %heading-2;
+  color: $text-dark;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto 40px;
+
+  span {
+    @extend %heading-2-accent;
+    color: $text-accent;
+  }
+
+  @media (max-width: 740px) {
+    @include heading-2-mobile;
+
+    span {
+      @include heading-2-accent-mobile;
+    }
+  }
+}
+
+.offer-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  .offer-list-item {
+    display: flex;
+    padding: 8px 16px 8px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    @extend %link-button;
+
+    h2 {
+      @extend %link-button;
+      margin: 0;
+    }
+
+    span {
+      padding: 3px 7px;
+      border-radius: 100px;
+    }
+  }
+
+  .active {
+    background-color: $background-container;
+    color: $text-light;
+
+    span {
+      background-color: $text-light;
+    }
+  }
+
+  .unactive {
+    border: 1px solid $border-light;
+    color: $text-dark;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    span {
+      background-color: $border-light;
+      transition: all 0.5s;
+    }
+
+    @media(hover:hover) {
+      &:hover {
+        background-color: $background-container;
+        color: $text-light;
+        transition: all 0.5s;
+
+        span {
+          background-color: $text-light;
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+}
+
+//coffee-section
+
+.coffee-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+
+  .offer-card-list {
+    width: 310px;
+    padding-bottom: 20px;
+    border-radius: 40px;
+    border: 1px solid $border-light;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .offer-card-photo-wrapper {
+      width: 310px;
+      height: 310px;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+
+    .offer-card-photo {
+      width: 310px;
+      height: 310px;
+      border-radius: 40px;
+      transform: scale(1.1);
+      transition: all 0.5s;
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        .offer-card-photo {
+          transform: scale(1);
+          transition: all 0.5s;
+        }
+      }
+    }
+
+    h3 {
+      @extend %heading-3;
+      color: $text-dark;
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    li:nth-child(3) {
+      @extend %medium;
+      color: $text-dark;
+      padding: 0 20px;
+    }
+
+    li:nth-child(4) {
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      height: 506px;
+    }
+  }
+
+  @media (max-width: 1089px) {
+    ul:nth-child(5) {
+      display: none;
+    }
+
+    ul:nth-child(6) {
+      display: none;
+    }
+
+    ul:nth-child(7) {
+      display: none;
+    }
+
+    ul:nth-child(8) {
+      display: none;
+    }
+  }
+}
+
+.offer-section-more-button {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid $border-dark;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  svg {
+    stroke: $border-dark;
+  }
+
+  @media (min-width: 1090px) {
+    display: none;
+  }
+}
+
+//adding-photos
+
+.item-1 {
+  background: $offer-section-coffee-1;
+  background-position: center;
+}
+
+.item-2 {
+  background: $offer-section-coffee-2;
+  background-position: center;
+}
+
+.item-3 {
+  background: $offer-section-coffee-3;
+  background-position: center;
+}
+
+.item-4 {
+  background: $offer-section-coffee-4;
+  background-position: center;
+}
+
+.item-5 {
+  background: $offer-section-coffee-5;
+  background-position: center;
+}
+
+.item-6 {
+  background: $offer-section-coffee-6;
+  background-position: center;
+}
+
+.item-7 {
+  background: $offer-section-coffee-7;
+  background-position: center;
+}
+
+.item-8 {
+  background: $offer-section-coffee-8;
+  background-position: center;
+}
+
+//footer
+
+footer {
+  margin-top: 100px;
+  background-color: $background-container;
+  border-radius: 40px;
+  padding: 100px 100px;
+  display: flex;
+  gap: 130px;
+
+  @media (max-width: 1170px) {
+    padding: 60px 40px;
+    justify-content: space-between;
+    gap: 70px;
+  }
+
+  @media (max-width: 990px) {
+    padding: 100px 60px;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  @media(max-width: 600px) {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+
+  h2 {
+    @extend %heading-2;
+    color: $text-light;
+    margin: 0;
+
+    span {
+      @extend %heading-2-accent;
+      color: $text-accent;
+    }
+
+    @media (max-width: 740px) {
+      @include heading-2-mobile;
+
+      span {
+        @include heading-2-accent-mobile;
+      }
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .col-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .social-links-list {
+    display: flex;
+    gap: 12px;
+
+    li {
+      width: 60px;
+      height: 60px;
+      border: 1px solid $text-light;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s;
+
+      svg {
+        stroke: $text-light;
+        transition: all 0.5s;
+      }
+
+      @media (hover:hover) {
+        &:hover {
+          background-color: $background-body;
+          transition: all 0.5s;
+
+          svg {
+            stroke: $text-dark;
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+  }
+
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    margin: auto 0;
+
+    h3 {
+      @extend %heading-3;
+      color: $text-light;
+      margin: 0 0 24px;
+    }
+
+    span {
+      @extend %link-button;
+      color: $text-light;
+      margin-left: 8px;
+    }
+
+    a {
+      position: relative;
+
+      &::after {
+        @include underline-unfocus($text-light, 5px);
+      }
+
+      @media (hover:hover) {
+        &:hover::after {
+          @include underline-focus;
+        }
+      }
+    }
+  }
+}
