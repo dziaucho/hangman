@@ -32,7 +32,6 @@ body {
   background-color: $background-body;
   margin: 0 auto;
   padding: 20px 40px 40px;
-  overflow-x: hidden;
 
   @media (max-width: 470px) {
     padding: 20px 16px 40px;
@@ -46,6 +45,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  overflow-x: hidden;
 }
 
 nav {
@@ -164,13 +164,22 @@ nav {
 }
 
 .burger-menu-links {
-  position: absolute;
-  top: 60px;
-  width: 100%;
+  position: fixed;
+  top: 80px;
+  width: 90%;
   min-height: 100vh;
-  padding: 80px 40px 60px;
+  padding: 60px 40px;
   background-color: $background-body;
   transition: all 1s;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+
+  @media (max-width: 470px) {
+    width: 95%;
+    padding: 60px 16px;
+  }
 
   ul {
     display: flex;
@@ -342,8 +351,28 @@ h1 {
     justify-content: center;
   }
 
+  @media (max-width: 600px) {
+    width: 348px;
+    margin: 0 auto;
+  }
+
   button {
     @include button-icon-dark;
+  }
+
+  .carousel {
+    max-width: 480px;
+    overflow: hidden;
+
+    @media (max-width: 600px) {
+      max-width: 348px;
+    }
+
+    .carousel-line {
+      position: relative;
+      display: flex;
+      transition: all 0.7s;
+    }
   }
 }
 
@@ -376,10 +405,6 @@ h1 {
     color: $text-dark;
     text-align: center;
   }
-}
-
-.hide {
-  display: none;
 }
 
 .control-list {

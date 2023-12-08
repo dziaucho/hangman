@@ -63,7 +63,6 @@ body {
   background-color: #E1D4C9;
   margin: 0 auto;
   padding: 20px 40px 40px;
-  overflow-x: hidden;
 }
 @media (max-width: 470px) {
   body {
@@ -76,6 +75,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  overflow-x: hidden;
 }
 header img {
   transform: scale(1);
@@ -198,14 +198,25 @@ nav ul a::after {
 }
 
 .burger-menu-links {
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  top: 60px;
-  width: 100%;
+  top: 80px;
+  width: 90%;
   min-height: 100vh;
-  padding: 80px 40px 60px;
+  padding: 60px 40px;
   background-color: #E1D4C9;
   transition: all 1s;
+}
+@media (min-width: 769px) {
+  .burger-menu-links {
+    display: none;
+  }
+}
+@media (max-width: 470px) {
+  .burger-menu-links {
+    width: 95%;
+    padding: 60px 16px;
+  }
 }
 .burger-menu-links ul {
   display: flex;
@@ -278,6 +289,11 @@ h1 span {
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+@media (max-width: 470px) {
+  .offer-list {
+    gap: 8px;
+  }
 }
 .offer-list .offer-list-item {
   display: flex;

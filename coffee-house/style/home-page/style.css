@@ -94,7 +94,6 @@ body {
   background-color: #E1D4C9;
   margin: 0 auto;
   padding: 20px 40px 40px;
-  overflow-x: hidden;
 }
 @media (max-width: 470px) {
   body {
@@ -107,6 +106,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  overflow-x: hidden;
 }
 
 nav ul {
@@ -229,13 +229,24 @@ nav ul a::after {
 }
 
 .burger-menu-links {
-  position: absolute;
-  top: 60px;
-  width: 100%;
+  position: fixed;
+  top: 80px;
+  width: 90%;
   min-height: 100vh;
-  padding: 80px 40px 60px;
+  padding: 60px 40px;
   background-color: #E1D4C9;
   transition: all 1s;
+}
+@media (min-width: 769px) {
+  .burger-menu-links {
+    display: none;
+  }
+}
+@media (max-width: 470px) {
+  .burger-menu-links {
+    width: 95%;
+    padding: 60px 16px;
+  }
 }
 .burger-menu-links ul {
   display: flex;
@@ -396,6 +407,12 @@ h1 span {
     justify-content: center;
   }
 }
+@media (max-width: 600px) {
+  .carousel-wrapper {
+    width: 348px;
+    margin: 0 auto;
+  }
+}
 .carousel-wrapper button {
   width: 60px;
   height: 60px;
@@ -417,6 +434,20 @@ h1 span {
     stroke: #E1D4C9;
     transition: all 0.5s;
   }
+}
+.carousel-wrapper .carousel {
+  max-width: 480px;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .carousel-wrapper .carousel {
+    max-width: 348px;
+  }
+}
+.carousel-wrapper .carousel .carousel-line {
+  position: relative;
+  display: flex;
+  transition: all 0.7s;
 }
 
 .coffee-card {
@@ -444,10 +475,6 @@ h1 span {
 .coffee-card li:nth-child(3) {
   color: #403F3D;
   text-align: center;
-}
-
-.hide {
-  display: none;
 }
 
 .control-list {

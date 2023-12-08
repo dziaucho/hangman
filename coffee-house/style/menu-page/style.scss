@@ -32,7 +32,6 @@ body {
   background-color: $background-body;
   margin: 0 auto;
   padding: 20px 40px 40px;
-  overflow-x: hidden;
 
   @media (max-width: 470px) {
     padding: 20px 16px 40px;
@@ -46,6 +45,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  overflow-x: hidden;
 
   img {
     transform: scale(1);
@@ -174,14 +174,23 @@ nav {
 }
 
 .burger-menu-links {
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  top: 60px;
-  width: 100%;
+  top: 80px;
+  width: 90%;
   min-height: 100vh;
-  padding: 80px 40px 60px;
+  padding: 60px 40px;
   background-color: $background-body;
   transition: all 1s;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+
+  @media (max-width: 470px) {
+    width: 95%;
+    padding: 60px 16px;
+  }
 
   ul {
     display: flex;
@@ -261,6 +270,10 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 16px;
+
+  @media (max-width: 470px) {
+    gap: 8px;
+  }
 
   .offer-list-item {
     display: flex;
