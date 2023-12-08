@@ -32,6 +32,7 @@ body {
   background-color: $background-body;
   margin: 0 auto;
   padding: 20px 40px 40px;
+  overflow-x: hidden;
 
   @media (max-width: 470px) {
     padding: 20px 16px 40px;
@@ -44,6 +45,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   img {
     transform: scale(1);
@@ -115,27 +117,115 @@ nav {
   }
 }
 
-.burger-button {
-  @media (min-width: 768px) {
+.burger-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  border: 1px solid $text-dark;
+  background-color: $background-body;
+
+  @media (min-width: 769px) {
     display: none;
   }
 
   @media (max-width: 768px) {
-
-    width: 44px;
-    height: 44px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    align-items: center;
-    border-radius: 100px;
-    border: 1px solid $text-dark;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
 
     li {
       width: 16px;
       height: 1.5px;
       background-color: $text-dark;
+    }
+
+    li:first-child {
+      transform: rotate(45deg) translateX(3.5px) translateY(3.5px);
+      transition: all 1s;
+    }
+
+    li:last-child {
+      transform: rotate(-45deg) translateX(3.5px) translateY(-3.5px);
+      transition: all 1s;
+    }
+  }
+}
+
+.burger-toggle.unactive {
+
+  li:first-child {
+    transform: rotate(0deg);
+    transition: all 1s;
+  }
+
+  li:last-child {
+    transform: rotate(0deg);
+    transition: all 1s;
+  }
+}
+
+.burger-menu-links.unactive {
+  transform: translateX(1000px);
+  transition: all 1s;
+}
+
+.burger-menu-links {
+  position: absolute;
+  z-index: 1;
+  top: 60px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 40px 60px;
+  background-color: $background-body;
+  transition: all 1s;
+
+  ul {
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+
+    li:last-child {
+      margin-top: 40px;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p {
+        display: inline;
+        margin: 0;
+        margin-right: 16px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 3px;
+          width: 138px;
+          background-color: $text-dark;
+          margin-top: 10px;
+        }
+      }
+
+      img {
+        width: 38.5px;
+        height: 38.5px;
+      }
+    }
+  }
+
+  li {
+    text-align: center;
+
+    a {
+      color: $text-dark;
+      @extend %burger-link;
     }
   }
 }
