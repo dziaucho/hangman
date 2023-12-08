@@ -230,6 +230,7 @@ nav ul a::after {
 
 .burger-menu-links {
   position: fixed;
+  z-index: 1;
   top: 80px;
   width: 90%;
   min-height: 100vh;
@@ -299,8 +300,6 @@ nav ul a::after {
 }
 .hero-section a {
   width: 200px;
-}
-.hero-section a:hover {
   position: relative;
 }
 @media (hover: hover) and (min-width: 769px) {
@@ -461,6 +460,7 @@ h1 span {
 .coffee-card img {
   width: 480px;
   height: 480px;
+  pointer-events: none;
 }
 @media (max-width: 600px) {
   .coffee-card img {
@@ -477,22 +477,40 @@ h1 span {
   text-align: center;
 }
 
-.control-list {
+@keyframes control-items {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 40px;
+  }
+}
+.control-wrapper {
   margin-top: 40px;
   display: flex;
   justify-content: center;
   gap: 12px;
 }
-.control-list .control-list-item {
+.control-wrapper .control-item-list {
+  position: relative;
+}
+.control-wrapper .active {
+  background-color: #665F55;
+  border-radius: 100px;
+  height: 4px;
+  position: absolute;
+}
+.control-wrapper .active.ongoing {
+  animation-name: control-items;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+.control-wrapper .unactive {
   width: 40px;
   height: 4px;
-  border-radius: 100px;
-}
-.control-list .active {
-  background-color: #665F55;
-}
-.control-list .unactive {
   background-color: #C1B6AD;
+  border-radius: 100px;
 }
 
 .about-section {
@@ -803,6 +821,7 @@ h1 span {
   padding: 12px 20px;
   border: 1px solid #665F55;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .mobile-app-info-wrapper .app-button p {
   color: #403F3D;
@@ -908,6 +927,7 @@ footer .social-links-list li {
   justify-content: center;
   align-items: center;
   transition: all 0.5s;
+  cursor: pointer;
 }
 footer .social-links-list li svg {
   stroke: #E1D4C9;

@@ -33,6 +33,7 @@ let carouselLine = document.querySelector('.carousel-line');
 let coffeeCards = document.querySelectorAll('.coffee-card');
 let preveousButton = document.querySelector('.preveous');
 let nextButton = document.querySelector('.next');
+let controlItmes = document.querySelectorAll('.active');
 
 let counter = 0;
 let widthCarousel;
@@ -44,17 +45,43 @@ function resizeCarousel() {
     coffeeCards[i].style.width = widthCarousel + 'px';
     coffeeCards[i].style.heigth = 'auto';
   }
+  moveRight();
+}
+
+function moveRightWithCounter() {
+  counter++;
+  if (counter >= coffeeCards.length) {
+    counter = 0
+  };
+  removeOngoingControl();
+  controlItmes[counter].classList.add('ongoing');
+  carouselLine.style.transform = 'translate(-' + counter * widthCarousel + 'px)';
 }
 
 function moveRight() {
-  counter++;
-  if (counter > 2) {
-    counter = 0
+  carouselLine.style.transform = 'translate(-' + counter * widthCarousel + 'px)';
+}
+
+function moveLeft() {
+  counter--;
+  if (counter < 0) {
+    counter = coffeeCards.length - 1;
   };
   carouselLine.style.transform = 'translate(-' + counter * widthCarousel + 'px)';
+}
+
+function removeOngoingControl() {
+  for (let i = 0; i < controlItmes.length; i++) {
+    if (controlItmes[i].classList.contains('ongoing')) {
+      controlItmes[i].classList.remove('ongoing')
+    }
+  }
 }
 
 window.addEventListener('resize', resizeCarousel);
 resizeCarousel();
 
-nextButton.addEventListener('click', moveRight);
+nextButton.addEventListener('click', moveRightWithCounter);
+preveousButton.addEventListener('click', moveLeft);
+
+setInterval(moveRightWithCounter, 5000);

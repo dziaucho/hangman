@@ -165,6 +165,7 @@ nav {
 
 .burger-menu-links {
   position: fixed;
+  z-index: 1;
   top: 80px;
   width: 90%;
   min-height: 100vh;
@@ -242,10 +243,7 @@ nav {
 
   a {
     width: 200px;
-
-    &:hover {
-      position: relative;
-    }
+    position: relative;
 
     @media(hover:hover) {
       @media(min-width: 769px) {
@@ -387,6 +385,7 @@ h1 {
   img {
     width: 480px;
     height: 480px;
+    pointer-events: none;
 
     @media (max-width: 600px) {
       width: 348px;
@@ -407,24 +406,45 @@ h1 {
   }
 }
 
-.control-list {
+@keyframes control-items {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 40px;
+  }
+}
+
+.control-wrapper {
   margin-top: 40px;
   display: flex;
   justify-content: center;
   gap: 12px;
 
-  .control-list-item {
-    width: 40px;
-    height: 4px;
-    border-radius: 100px;
+  .control-item-list {
+    position: relative;
   }
 
   .active {
     background-color: $border-dark;
+    border-radius: 100px;
+    height: 4px;
+    position: absolute;
+
+    &.ongoing {
+      animation-name: control-items;
+      animation-timing-function: linear;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
   }
 
   .unactive {
+    width: 40px;
+    height: 4px;
     background-color: $border-light;
+    border-radius: 100px;
   }
 }
 
@@ -730,6 +750,7 @@ h1 {
     padding: 12px 20px;
     border: 1px solid $border-dark;
     transition: all 0.5s;
+    cursor: pointer;
 
     p {
       @extend %caption;
@@ -844,6 +865,7 @@ footer {
       justify-content: center;
       align-items: center;
       transition: all 0.5s;
+      cursor: pointer;
 
       svg {
         stroke: $text-light;
