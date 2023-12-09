@@ -430,6 +430,7 @@ h1 span {
   border-radius: 100px;
   background-color: #E1D4C9;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .carousel-wrapper button svg {
   stroke: #403F3D;
