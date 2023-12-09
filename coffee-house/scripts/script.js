@@ -39,12 +39,13 @@ let counter = 0;
 
 let widthCarousel;
 let intervalTimeAnimation;
-let ongoingControl;
+let ongoingControl = document.querySelector('.ongoing');
 
-let checkTimeout = 0;
-let checkInterval;
-let counterTime = 0;
-let paused = 0;
+let checkWidthInterval;
+
+let xTouch = 0;
+let xMove = 0;
+let direction = 0;
 
 function resizeCarousel() {
   widthCarousel = carousel.offsetWidth;
@@ -54,14 +55,6 @@ function resizeCarousel() {
     coffeeCards[i].style.heigth = 'auto';
   }
   moveRight();
-}
-
-function Test() {
-  checkTimeout++;
-  if (checkTimeout > 5) {
-    checkTimeout = 1;
-  }
-  console.log('regular', checkTimeout)
 }
 
 function moveRightWithCounter() {
@@ -81,6 +74,7 @@ function moveRight() {
 }
 
 function moveLeft() {
+  console.log('in')
   counter--;
   if (counter < 0) {
     counter = coffeeCards.length - 1;
@@ -103,24 +97,49 @@ function removeOngoingControl() {
 function touchOnCarousel() {
   ongoingControl = document.querySelector('.ongoing');
   ongoingControl.style.animationPlayState = 'paused';
-  checkInterval = setInterval(checkTouchInterval, 1000);
+  clearInterval(intervalTimeAnimation);
 }
 
 function touchOnCarouselEnd() {
   ongoingControl = document.querySelector('.ongoing');
   ongoingControl.style.animationPlayState = 'running';
-  paused = (5 - Math.abs(counterTime - checkTimeout));
-  console.log('result', paused)
-  setTimeout(moveRightWithCounter, paused)
+  checkWidthInterval = setInterval(isOngoingEnd, 50)
 }
 
-function checkTouchInterval() {
-  counterTime += 1;
-  if (counterTime > 5) {
-    counterTime = 1;
+function isOngoingEnd() {
+  if (ongoingControl.offsetWidth == 40) {
+    moveRightWithCounter();
+    clearInterval(checkWidthInterval);
   }
-  console.log(counterTime)
 }
+/*
+function swipeTouchStart(event) {
+  xTouch = event.touches[0].clientX;
+}
+
+
+function swipeTouchMove(event) {
+  clearInterval(intervalTimeAnimation);
+  xMove = event.touches[0].clientX;
+  console.log('tiuch', xTouch, ' move', xMove)
+  direction = xMove - xTouch;
+  console.log(direction);
+
+  if (direction > 150) {
+    moveLeft();
+    direction = 0;
+    return
+  } else if (direction < -100) {
+    direction = 0;
+    return
+  }
+}
+
+  for (let i = 0; i < coffeeCards.length; i++) {
+    coffeeCards[i].addEventListener('touchstart', swipeTouchStart);
+    coffeeCards[i].addEventListener('touchmove', swipeTouchMove);
+  }
+*/
 
 window.addEventListener('resize', resizeCarousel);
 
@@ -134,5 +153,3 @@ for (let i = 0; i < coffeeCards.length; i++) {
 
 resizeCarousel();
 intervalTimeAnimation = setInterval(moveRightWithCounter, 5000);
-
-setInterval(Test, 1000)

@@ -386,6 +386,7 @@ h1 {
     width: 480px;
     height: 480px;
     pointer-events: none;
+    user-select: none;
 
     @media (max-width: 600px) {
       width: 348px;
@@ -397,12 +398,14 @@ h1 {
     @extend %heading-3;
     color: $text-dark;
     margin: 0;
+    user-select: none;
   }
 
   li:nth-child(3) {
     @extend %medium;
     color: $text-dark;
     text-align: center;
+    user-select: none;
   }
 }
 

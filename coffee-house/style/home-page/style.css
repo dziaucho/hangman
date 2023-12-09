@@ -461,6 +461,7 @@ h1 span {
   width: 480px;
   height: 480px;
   pointer-events: none;
+  user-select: none;
 }
 @media (max-width: 600px) {
   .coffee-card img {
@@ -471,10 +472,12 @@ h1 span {
 .coffee-card h3 {
   color: #403F3D;
   margin: 0;
+  user-select: none;
 }
 .coffee-card li:nth-child(3) {
   color: #403F3D;
   text-align: center;
+  user-select: none;
 }
 
 @keyframes control-items {
