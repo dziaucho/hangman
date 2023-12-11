@@ -95,7 +95,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  position: relative;
+  cursor: pointer;
 
   p {
     @extend %link-button;
@@ -297,6 +297,7 @@ h1 {
 
   .active {
     background-color: $background-container;
+    border: 1px solid $background-container;
     color: $text-light;
 
     span {
@@ -332,7 +333,7 @@ h1 {
 
 //coffee-section
 
-.coffee-section {
+.offer-section-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -347,6 +348,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    cursor: pointer;
 
     .offer-card-photo-wrapper {
       width: 310px;
@@ -411,6 +413,10 @@ h1 {
       display: none;
     }
   }
+
+  &.hide {
+    display: none;
+  }
 }
 
 .offer-section-more-button {
@@ -423,6 +429,7 @@ h1 {
   border: 1px solid $border-dark;
   margin: 0 auto;
   margin-top: 40px;
+  cursor: pointer;
 
   svg {
     stroke: $border-dark;
@@ -434,44 +441,109 @@ h1 {
 }
 
 //adding-photos
+//coffee
 
-.item-1 {
+.item-1.coffee {
   background: $offer-section-coffee-1;
   background-position: center;
 }
 
-.item-2 {
+.item-2.coffee {
   background: $offer-section-coffee-2;
   background-position: center;
 }
 
-.item-3 {
+.item-3.coffee {
   background: $offer-section-coffee-3;
   background-position: center;
 }
 
-.item-4 {
+.item-4.coffee {
   background: $offer-section-coffee-4;
   background-position: center;
 }
 
-.item-5 {
+.item-5.coffee {
   background: $offer-section-coffee-5;
   background-position: center;
 }
 
-.item-6 {
+.item-6.coffee {
   background: $offer-section-coffee-6;
   background-position: center;
 }
 
-.item-7 {
+.item-7.coffee {
   background: $offer-section-coffee-7;
   background-position: center;
 }
 
-.item-8 {
+.item-8.coffee {
   background: $offer-section-coffee-8;
+  background-position: center;
+}
+
+//tea
+
+.item-1.tea {
+  background: $offer-section-tea-1;
+  background-position: center;
+}
+
+.item-2.tea {
+  background: $offer-section-tea-2;
+  background-position: center;
+}
+
+.item-3.tea {
+  background: $offer-section-tea-3;
+  background-position: center;
+}
+
+.item-4.tea {
+  background: $offer-section-tea-4;
+  background-position: center;
+}
+
+//desserts
+
+.item-1.dessert {
+  background: $offer-section-dessert-1;
+  background-position: center;
+}
+
+.item-2.dessert {
+  background: $offer-section-dessert-2;
+  background-position: center;
+}
+
+.item-3.dessert {
+  background: $offer-section-dessert-3;
+  background-position: center;
+}
+
+.item-4.dessert {
+  background: $offer-section-dessert-4;
+  background-position: center;
+}
+
+.item-5.dessert {
+  background: $offer-section-dessert-5;
+  background-position: center;
+}
+
+.item-6.dessert {
+  background: $offer-section-dessert-6;
+  background-position: center;
+}
+
+.item-7.dessert {
+  background: $offer-section-dessert-7;
+  background-position: center;
+}
+
+.item-8.dessert {
+  background: $offer-section-dessert-8;
   background-position: center;
 }
 
@@ -544,6 +616,7 @@ footer {
       justify-content: center;
       align-items: center;
       transition: all 0.5s;
+      cursor: pointer;
 
       svg {
         stroke: $text-light;
