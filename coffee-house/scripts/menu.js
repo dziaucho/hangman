@@ -110,3 +110,55 @@ function isNeedMoreButton() {
 }
 
 window.addEventListener('resize', isNeedMoreButton);
+
+
+// modal
+
+import products from "./products.json" assert { type: "json" };
+console.log(products[0]["sizes"])
+
+
+let overlayModal = document.querySelector('.overlay')
+let cardsItem = document.querySelectorAll('.offer-card-list');
+let buttinClose = overlayModal.querySelector('button');
+let modalWrapper = document.querySelector('.modal-wrapper');
+
+function showModal(item) {
+  return function () {
+    let cardItemName = modalWrapper.querySelector('h2');
+    let modalPhoto = modalWrapper.querySelector('.modal-photo');
+    let discription = modalWrapper.querySelector('.modal-wrapper-item-name p');
+    let sizesOfItemsName = modalWrapper.querySelectorAll('.size-list span');
+    let sizesOfItemsValue = modalWrapper.querySelectorAll('.size-list h4');
+
+    let keysOfSizes = [];
+    for (let key in products[item]["sizes"]) {
+      keysOfSizes.push(key)
+    }
+
+    modalPhoto.style.background = products[item]["img"];
+    cardItemName.innerHTML = products[item]["name"];
+    discription.innerHTML = products[item]["description"];
+
+    for (let j = 0; j < sizesOfItemsName.length; j++) {
+      sizesOfItemsName[j].innerHTML = keysOfSizes[j];
+      sizesOfItemsName[j].style.textTransform = "uppercase";
+    }
+
+    for (let j = 0; j < sizesOfItemsValue.length; j++) {
+      sizesOfItemsValue[j].innerHTML = products[item][keysOfSizes[j]["size"]];
+    }
+
+    overlayModal.classList.remove('hidden');
+  }
+}
+
+function hideModal() {
+  overlayModal.classList.add('hidden');
+}
+
+for (let i = 0; i < cardsItem.length; i++) {
+  cardsItem[i].addEventListener('click', showModal(i))
+}
+
+buttinClose.addEventListener('click', hideModal);

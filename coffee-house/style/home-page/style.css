@@ -182,6 +182,10 @@ nav ul a::after {
 .burger-toggle {
   width: 44px;
   height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
   border: 1px solid #403F3D;
   background-color: #E1D4C9;
@@ -192,33 +196,33 @@ nav ul a::after {
   }
 }
 @media (max-width: 768px) {
-  .burger-toggle ul {
+  .burger-toggle div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
   }
-  .burger-toggle li {
+  .burger-toggle span {
     width: 16px;
     height: 1.5px;
     background-color: #403F3D;
   }
-  .burger-toggle li:first-child {
+  .burger-toggle span:first-child {
     transform: rotate(45deg) translateX(3.5px) translateY(3.5px);
     transition: all 1s;
   }
-  .burger-toggle li:last-child {
+  .burger-toggle span:last-child {
     transform: rotate(-45deg) translateX(3.5px) translateY(-3.5px);
     transition: all 1s;
   }
 }
 
-.burger-toggle.unactive li:first-child {
+.burger-toggle.unactive span:first-child {
   transform: rotate(0deg);
   transition: all 1s;
 }
-.burger-toggle.unactive li:last-child {
+.burger-toggle.unactive span:last-child {
   transform: rotate(0deg);
   transition: all 1s;
 }
