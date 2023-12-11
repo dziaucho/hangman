@@ -403,6 +403,9 @@ h1 span {
   flex-direction: column;
   gap: 20px;
 }
+.modal-wrapper-info .additives-list-item.unactive .round-wrapper {
+  background-color: #C1B6AD;
+}
 .modal-wrapper-info .modal-item-name {
   color: #403F3D;
   margin: 0;
@@ -435,10 +438,17 @@ h1 span {
   border-radius: 100px;
   cursor: pointer;
 }
+.modal-wrapper-info .size-list li h4 {
+  color: #403F3D;
+  transition: all 0.5s;
+}
 .modal-wrapper-info .size-list li.active {
   background-color: #665F55;
   border: 1px solid #665F55;
   cursor: auto;
+}
+.modal-wrapper-info .size-list li.active .round-wrapper {
+  background-color: #E1D4C9;
 }
 .modal-wrapper-info .size-list li.active h4 {
   color: #E1D4C9;
@@ -466,9 +476,6 @@ h1 span {
     color: #403F3D;
   }
 }
-.modal-wrapper-info .size-list li.unactive h4 {
-  color: #403F3D;
-}
 .modal-wrapper-info .additives-list {
   display: flex;
   gap: 8px;
@@ -482,10 +489,13 @@ h1 span {
   border-radius: 100px;
   cursor: pointer;
 }
+.modal-wrapper-info .additives-list li h4 {
+  color: #403F3D;
+  transition: all 0.5s;
+}
 .modal-wrapper-info .additives-list li.active {
   background-color: #665F55;
   border: 1px solid #665F55;
-  cursor: auto;
 }
 .modal-wrapper-info .additives-list li.active h4 {
   color: #E1D4C9;
@@ -493,9 +503,6 @@ h1 span {
 .modal-wrapper-info .additives-list li.unactive {
   border: 1px solid #C1B6AD;
   transition: all 0.5s;
-}
-.modal-wrapper-info .additives-list li.unactive h4 {
-  color: #403F3D;
 }
 @media (hover: hover) {
   .modal-wrapper-info .additives-list li.unactive:hover {
@@ -515,6 +522,12 @@ h1 span {
   .modal-wrapper-info .additives-list li.unactive:hover .round-wrapper span {
     color: #403F3D;
   }
+}
+.modal-wrapper-info .size-list-item.unactive .round-wrapper {
+  background-color: #C1B6AD;
+}
+.modal-wrapper-info .additives-list-item.active .round-wrapper {
+  background-color: #E1D4C9;
 }
 .modal-wrapper-info h4 {
   margin: 0;
