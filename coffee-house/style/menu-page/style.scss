@@ -370,6 +370,22 @@ h1 {
   gap: 20px;
   z-index: 3;
 
+  @media (max-width: 900px) {
+    width: 688px;
+  }
+
+  @media (max-width: 730px) {
+    width: 500px;
+
+    .modal-photo-wrapper {
+      display: none;
+    }
+  }
+
+  @media (max-width: 540px) {
+    width: 342px;
+  }
+
   .modal-photo-wrapper {
     min-width: 310px;
     min-height: 310px;
@@ -428,6 +444,7 @@ h1 {
   .size-list {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 
     li {
       display: flex;
@@ -491,6 +508,7 @@ h1 {
   .additives-list {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 
     li {
       display: flex;

@@ -383,6 +383,24 @@ h1 span {
   gap: 20px;
   z-index: 3;
 }
+@media (max-width: 900px) {
+  .modal-wrapper {
+    width: 688px;
+  }
+}
+@media (max-width: 730px) {
+  .modal-wrapper {
+    width: 500px;
+  }
+  .modal-wrapper .modal-photo-wrapper {
+    display: none;
+  }
+}
+@media (max-width: 540px) {
+  .modal-wrapper {
+    width: 342px;
+  }
+}
 .modal-wrapper .modal-photo-wrapper {
   min-width: 310px;
   min-height: 310px;
@@ -428,6 +446,7 @@ h1 span {
 .modal-wrapper-info .size-list {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 .modal-wrapper-info .size-list li {
   display: flex;
@@ -479,6 +498,7 @@ h1 span {
 .modal-wrapper-info .additives-list {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 .modal-wrapper-info .additives-list li {
   display: flex;
