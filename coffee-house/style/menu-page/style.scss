@@ -1,5 +1,7 @@
 //imports
 
+//changes for test
+
 @import "../colors/colors";
 @import "../typography/desktop";
 @import "../typography/mobile";
@@ -120,6 +122,10 @@ nav {
 .burger-toggle {
   width: 44px;
   height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
   border: 1px solid $text-dark;
   background-color: $background-body;
@@ -129,7 +135,7 @@ nav {
   }
 
   @media (max-width: 768px) {
-    ul {
+    div {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -137,18 +143,18 @@ nav {
       gap: 8px;
     }
 
-    li {
+    span {
       width: 16px;
       height: 1.5px;
       background-color: $text-dark;
     }
 
-    li:first-child {
+    span:first-child {
       transform: rotate(45deg) translateX(3.5px) translateY(3.5px);
       transition: all 1s;
     }
 
-    li:last-child {
+    span:last-child {
       transform: rotate(-45deg) translateX(3.5px) translateY(-3.5px);
       transition: all 1s;
     }
@@ -157,12 +163,12 @@ nav {
 
 .burger-toggle.unactive {
 
-  li:first-child {
+  span:first-child {
     transform: rotate(0deg);
     transition: all 1s;
   }
 
-  li:last-child {
+  span:last-child {
     transform: rotate(0deg);
     transition: all 1s;
   }
@@ -326,6 +332,334 @@ h1 {
           background-color: $text-light;
           transition: all 0.5s;
         }
+      }
+    }
+  }
+}
+
+//modal
+
+.overlay {
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: $background-backgrop;
+  transition: all 1s;
+
+  &.hidden {
+    transform: translateY(-1000px);
+    transition: all 1s;
+  }
+}
+
+.modal-outer-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-wrapper {
+  background-color: $background-body;
+  border-radius: 40px;
+  width: 800px;
+  padding: 16px;
+  display: flex;
+  gap: 20px;
+  z-index: 3;
+
+  @media (max-width: 900px) {
+    width: 688px;
+  }
+
+  @media (max-width: 730px) {
+    width: 500px;
+
+    .modal-photo-wrapper {
+      display: none;
+    }
+  }
+
+  @media (max-width: 540px) {
+    width: 342px;
+  }
+
+  .modal-photo-wrapper {
+    min-width: 310px;
+    min-height: 310px;
+    border-radius: 40px;
+    overflow: hidden;
+
+    .modal-photo {
+      min-width: 310px;
+      min-height: 310px;
+      border-radius: 40px;
+      transition: all 0.5s;
+      background: $offer-section-coffee-1;
+      background-position: center;
+    }
+  }
+}
+
+.modal-wrapper-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .additives-list-item.unactive {
+    .round-wrapper {
+      background-color: $border-light;
+    }
+  }
+
+  .modal-item-name {
+    color: $text-dark;
+    @extend %heading-3;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: $text-dark;
+    @extend %medium;
+    margin: 0;
+  }
+
+  .modal-size-heading {
+    color: $text-dark;
+    @extend %medium;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .modal-additives-heading {
+    color: $text-dark;
+    @extend %medium;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .size-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 16px 8px 8px;
+      border-radius: 100px;
+      cursor: pointer;
+
+      h4 {
+        color: $text-dark;
+        transition: all 0.5s;
+      }
+
+      &.active {
+        background-color: $background-container;
+        border: 1px solid $background-container;
+        cursor: auto;
+
+        .round-wrapper {
+          background-color: $background-body;
+        }
+
+        h4 {
+          color: $text-light;
+        }
+      }
+
+      &.unactive {
+        border: 1px solid $border-light;
+        transition: all 0.5s;
+
+        @media (hover:hover) {
+
+          &:hover {
+            background-color: $background-container;
+            color: $text-light;
+            transition: all 0.5s;
+
+            h4 {
+              color: $text-light;
+              transition: all 0.5s;
+            }
+
+            .round-wrapper {
+              background-color: $background-body;
+              border: 1px solid $background-body;
+              transition: all 0.5s;
+
+              span {
+                color: $text-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .additives-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 16px 8px 8px;
+      border-radius: 100px;
+      cursor: pointer;
+
+      h4 {
+        color: $text-dark;
+        transition: all 0.5s;
+      }
+
+      &.active {
+        background-color: $background-container;
+        border: 1px solid $background-container;
+
+        h4 {
+          color: $text-light;
+        }
+      }
+
+      &.unactive {
+        border: 1px solid $border-light;
+        transition: all 0.5s;
+
+        @media (hover:hover) {
+
+          &:hover {
+            background-color: $background-container;
+            color: $text-light;
+            transition: all 0.5s;
+
+            h4 {
+              color: $text-light;
+              transition: all 0.5s;
+            }
+
+            .round-wrapper {
+              background-color: $background-body;
+              border: 1px solid $background-body;
+              transition: all 0.5s;
+
+              span {
+                color: $text-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .size-list-item.unactive {
+    .round-wrapper {
+      background-color: $border-light;
+    }
+  }
+
+  .additives-list-item.active {
+    .round-wrapper {
+      background-color: $background-body;
+    }
+  }
+
+  h4 {
+    margin: 0;
+    display: inline;
+    @extend %link-button;
+  }
+
+  .round-wrapper {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+
+    &.active {
+      background-color: $background-body;
+      border: 1px solid $background-body;
+
+      span {
+        color: $text-dark;
+        @extend %link-button;
+      }
+    }
+
+    &.unactive {
+      border: 1px solid $border-light;
+      background-color: $border-light;
+
+      span {
+        @extend %link-button;
+        color: $text-dark;
+      }
+    }
+  }
+
+  .total-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      color: $text-dark;
+      @extend %heading-3;
+      margin: 0;
+    }
+
+    p {
+      color: $text-dark;
+      @extend %heading-3;
+      margin: 0;
+    }
+
+  }
+
+  .warning-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 0;
+    border-top: 1px solid $border-light;
+  }
+
+  li {
+    @extend %caption;
+  }
+
+  button {
+    border-radius: 100px;
+    border: 1px solid $border-dark;
+    padding: 10px 78px;
+    color: $text-dark;
+    @extend %link-button;
+    background-color: $background-body;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    @media (hover:hover) {
+
+      &:hover {
+        background-color: $background-container;
+        color: $text-light;
+        transition: all 0.5s;
       }
     }
   }

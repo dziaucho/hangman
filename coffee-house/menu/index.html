@@ -41,12 +41,12 @@
           <img src="../img/icons/coffee-cup.svg" alt="coffee cup">
         </div>
 
-        <button class="burger-toggle unactive">
-          <ul class="burger-button-lines">
-            <li></li>
-            <li></li>
-          </ul>
-        </button>
+        <div class="burger-toggle unactive">
+          <div class="burger-button-lines">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
 
         <div class="burger-menu-links unactive">
           <ul>
@@ -89,6 +89,100 @@
             </li>
           </ul>
         </section>
+
+        <div class="overlay hidden">
+          <div class="modal-outer-wrapper">
+            <div class="modal-wrapper">
+              <div class="modal-photo-wrapper">
+                <div class="modal-photo"></div>
+              </div>
+
+              <div class="modal-wrapper-info">
+                <div class="modal-wrapper-item-name">
+                  <h2 class="modal-item-name">Irish coffee</h2>
+                  <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+                </div>
+
+                <div class="modal-wrapper-size">
+                  <h3 class="modal-size-heading">Size</h3>
+                  <ul class="size-list">
+                    <li class="size-list-item active">
+                      <div class="round-wrapper active">
+                        <span>S</span>
+                      </div>
+                      <h4>200 ml</h4>
+                    </li>
+                    <li class="size-list-item unactive">
+                      <div class="round-wrapper unactive">
+                        <span>M</span>
+                      </div>
+                      <h4>300 ml</h4>
+                    </li>
+                    <li class="size-list-item unactive">
+                      <div class="round-wrapper unactive">
+                        <span>L</span>
+                      </div>
+                      <h4>400 ml</h4>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="modal-wrapper-additives">
+                  <h3 class="modal-additives-heading">Additives</h3>
+                  <ul class="additives-list">
+                    <li class="additives-list-item unactive">
+                      <div class="round-wrapper unactive">
+                        <span>1</span>
+                      </div>
+                      <h4>Sugar</h4>
+                    </li>
+                    <li class="additives-list-item unactive">
+                      <div class="round-wrapper unactive">
+                        <span>2</span>
+                      </div>
+                      <h4>Cinnamon</h4>
+                    </li>
+                    <li class="additives-list-item unactive">
+                      <div class="round-wrapper unactive">
+                        <span>3</span>
+                      </div>
+                      <h4>Syrup</h4>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="total-wrapper">
+                  <h2 class="modal-total">Total:</h2>
+                  <p>$7.00</p>
+                </div>
+
+                <ul class="warning-list">
+                  <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <g clip-path="url(#clip0_268_9737)">
+                        <path d="M8 7.66663V11" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 5.00667L8.00667 4.99926" stroke="#403F3D" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M8.00016 14.6667C11.6821 14.6667 14.6668 11.6819 14.6668 8.00004C14.6668 4.31814 11.6821 1.33337 8.00016 1.33337C4.31826 1.33337 1.3335 4.31814 1.3335 8.00004C1.3335 11.6819 4.31826 14.6667 8.00016 14.6667Z"
+                          stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_268_9737">
+                          <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </li>
+                  <li>The cost is not final. Download our mobile app to see the final price and place your order. Earn
+                    loyalty points and
+                    enjoy your favorite coffee with up to 20% discount.</li>
+                </ul>
+                <button>Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="coffee-section offer-section-cards current">
           <ul class="offer-card-list">
@@ -467,7 +561,7 @@
       </footer>
     </div>
 
-    <script src="../scripts/menu.js"></script>
+    <script src="../scripts/menu.js" type="module"></script>
   </body>
 
 </html>
