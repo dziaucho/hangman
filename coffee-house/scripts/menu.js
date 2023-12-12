@@ -94,7 +94,7 @@ function changeMenu(i) {
 }
 
 function isNeedMoreButton() {
-  screenWidth = window.screen.width;
+  screenWidth = window.innerWidth;
   amountElements = document.querySelectorAll('.current .offer-card-list');
   if (amountElements.length <= 4 || screenWidth >= 1090) {
     offerMoreButton.style.display = "none";
