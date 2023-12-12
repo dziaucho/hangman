@@ -110,6 +110,10 @@ nav {
 .burger-toggle {
   width: 44px;
   height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
   border: 1px solid $text-dark;
   background-color: $background-body;
@@ -119,7 +123,7 @@ nav {
   }
 
   @media (max-width: 768px) {
-    ul {
+    div {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -127,18 +131,18 @@ nav {
       gap: 8px;
     }
 
-    li {
+    span {
       width: 16px;
       height: 1.5px;
       background-color: $text-dark;
     }
 
-    li:first-child {
+    span:first-child {
       transform: rotate(45deg) translateX(3.5px) translateY(3.5px);
       transition: all 1s;
     }
 
-    li:last-child {
+    span:last-child {
       transform: rotate(-45deg) translateX(3.5px) translateY(-3.5px);
       transition: all 1s;
     }
@@ -147,12 +151,12 @@ nav {
 
 .burger-toggle.unactive {
 
-  li:first-child {
+  span:first-child {
     transform: rotate(0deg);
     transition: all 1s;
   }
 
-  li:last-child {
+  span:last-child {
     transform: rotate(0deg);
     transition: all 1s;
   }
