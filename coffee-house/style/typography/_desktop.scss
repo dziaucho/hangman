@@ -1,0 +1,70 @@
+// heading
+
+%heading-1 {
+  font-family: Inter;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 105%;
+}
+
+%heading-1-accent {
+  font-family: Inter;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 105%;
+  font-style: italic;
+}
+
+%heading-2 {
+  font-family: Inter;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+%heading-2-accent {
+  font-family: Inter;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+  font-style: italic
+}
+
+%heading-3 {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+// body
+
+%medium {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+%caption {
+  font-family: Inter;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+// action
+
+%link-button {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+%burger-link {
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 125%;
+}
