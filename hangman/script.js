@@ -9,8 +9,8 @@ function createApplication() {
   const hangman = document.createElement("div");
   const keyboard = document.createElement("div");
   app.className = "app";
-  hangman.className = "hangman";
-  keyboard.className = "keyboard";
+  hangman.className = "hangman-wrapper";
+  keyboard.className = "keyboard-wrapper";
 
   // create image
   // gallows

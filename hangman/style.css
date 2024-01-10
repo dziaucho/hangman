@@ -1,0 +1,71 @@
+body {
+  background-color: #e6e6e6;
+}
+
+.hangman-wrapper {
+  position: relative;
+  max-width: 350px;
+}
+
+.gallows {
+  max-width: 330px;
+}
+
+.head {
+  position: absolute;
+  top: 8.5rem;
+  left: 14.8rem;
+  width: 80px;
+  height: 80px;
+  border: 8px solid #5d6e77;
+  border-radius: 50%;
+}
+
+.body-man {
+  position: absolute;
+  top: 14.5rem;
+  left: 17.6rem;
+  width: 8px;
+  height: 131px;
+  background-color: #5d6e77;
+}
+
+.left-hand {
+  position: absolute;
+  top: 16rem;
+  left: 15.7rem;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 90px;
+  background-color: #5d6e77;
+}
+
+.right-hand {
+  position: absolute;
+  top: 16rem;
+  left: 19.4rem;
+  transform: rotate(135deg);
+  width: 8px;
+  height: 90px;
+  background-color: #5d6e77;
+}
+
+.left-leg {
+  position: absolute;
+  top: 22.5rem;
+  left: 16.7rem;
+  transform: rotate(20deg);
+  width: 8px;
+  height: 90px;
+  background-color: #5d6e77;
+}
+
+.right-leg {
+  position: absolute;
+  top: 22.5rem;
+  left: 18.6rem;
+  transform: rotate(-20deg);
+  width: 8px;
+  height: 90px;
+  background-color: #5d6e77;
+}
