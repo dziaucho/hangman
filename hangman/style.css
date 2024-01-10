@@ -1,5 +1,16 @@
-body {
+.page {
   background-color: #e6e6e6;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
 }
 
 .hangman-wrapper {
@@ -68,4 +79,71 @@ body {
   width: 8px;
   height: 90px;
   background-color: #5d6e77;
+}
+
+/* right column app */
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+/* question section */
+
+.question-wrapper {
+  text-align: center;
+}
+
+.attempts-row {
+  display: flex;
+  gap: 2px;
+  margin-top: 100px;
+}
+
+.underline {
+  width: 100px;
+  height: 2px;
+  background-color: #3d3d3c;
+}
+
+/* keyboard */
+
+.keyboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 50px;
+  background-color: #595856;
+  cursor: pointer;
+}
+
+.key:hover {
+  background-color: #3d3d3c;
+}
+
+.key.disable {
+  background-color: #909090;
+  cursor: not-allowed;
+}
+
+.key-letter {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 20px;
 }
