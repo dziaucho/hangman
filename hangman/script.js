@@ -6,6 +6,7 @@ function createApplication() {
   body.className = "page";
 
   // create app-section and wrappers
+  const soundBar = document.createElement("div");
   const app = document.createElement("section");
   const leftColumn = document.createElement("div");
   const rightColumn = document.createElement("div");
@@ -13,6 +14,7 @@ function createApplication() {
   const questionWrapper = document.createElement("div");
   const keyboard = document.createElement("div");
 
+  soundBar.className = "sound-bar";
   app.className = "app";
   rightColumn.className = "right-column";
   hangman.className = "hangman-wrapper";
@@ -21,11 +23,26 @@ function createApplication() {
 
   // append elements
   body.appendChild(app);
+  body.append(soundBar);
   app.appendChild(leftColumn);
   app.appendChild(rightColumn);
   leftColumn.appendChild(hangman);
   rightColumn.appendChild(questionWrapper);
   rightColumn.appendChild(keyboard);
+
+  // sound bar section
+  const soundButton = document.createElement("div");
+  const soundImg = document.createElement("img");
+  const soundLose = document.createElement("audio");
+  const soundWin = document.createElement("audio");
+  const soundRight = document.createElement("audio");
+  const soundWrong = document.createElement("audio");
+
+  soundButton.className = "sound-button";
+  soundImg.classList = "sound-img";
+
+  soundImg.src = "./img/sound.png";
+  soundImg.alt = "sound button";
 
   // create hangman's images
   // gallows
@@ -61,23 +78,23 @@ function createApplication() {
   // quesion section
   // questions
   questions = {
-    1: {
+    0: {
       "hint": "similar to loot box, but japanese",
       "answer": "gacha"
     },
-    2: {
+    1: {
       "hint": "human head, lion body, eagle wings",
       "answer": "sphinx",
     },
-    3: {
+    2: {
       "hint": "nice shape of sound",
       "answer": "asmr",
     },
-    4: {
+    3: {
       "hint": "her majesty",
       "answer": "queen"
     },
-    5: {
+    4: {
       "hint": "bam-boom alcohol!",
       "answer": "krambambula"
     }
@@ -88,7 +105,7 @@ function createApplication() {
   const attemptsWarning = document.createElement("p");
   const attemptsRow = document.createElement("div");
   let attempts = 0;
-  let currentQuestion = 1;
+  let currentQuestion = 0;
 
   hint.className = "hint";
   attemptsWarning.className = "attempts-warning";
