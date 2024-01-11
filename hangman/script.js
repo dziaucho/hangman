@@ -6,16 +6,13 @@ function createApplication() {
   body.className = "page";
 
   // create app-section and wrappers
-  const soundBar = document.createElement("div");
   const app = document.createElement("section");
   const leftColumn = document.createElement("div");
   const rightColumn = document.createElement("div");
-  const soundButton = document.createElement("div");
   const hangman = document.createElement("div");
   const questionWrapper = document.createElement("div");
   const keyboard = document.createElement("div");
 
-  soundBar.className = "sound-bar";
   app.className = "app";
   rightColumn.className = "right-column";
   hangman.className = "hangman-wrapper";
@@ -24,45 +21,12 @@ function createApplication() {
 
   // append elements
   body.appendChild(app);
-  body.append(soundBar);
   app.appendChild(leftColumn);
   app.appendChild(rightColumn);
-  leftColumn.appendChild(soundButton);
   leftColumn.appendChild(hangman);
   rightColumn.appendChild(questionWrapper);
   rightColumn.appendChild(keyboard);
 
-  // sound bar section
-
-  const soundImg = document.createElement("img");
-  const soundLose = document.createElement("audio");
-  const soundWin = document.createElement("audio");
-  const soundRight = document.createElement("audio");
-  const soundWrong = document.createElement("audio");
-  const soundLoseSrc = document.createElement("source");
-  const soundWinSrc = document.createElement("source");
-  const soundRightSrc = document.createElement("source");
-  const soundWrongSrc = document.createElement("source");
-
-  soundButton.className = "sound-button";
-  soundImg.classList = "sound-img";
-
-  soundImg.src = "./img/sound.png";
-  soundImg.alt = "sound button";
-
-  // add sounds
-  soundLoseSrc.src = "./sounds/lose.mp3";
-  soundWinSrc.src = "./sounds/win.mp3";
-  soundRightSrc.src = "./sounds/right.wav";
-  soundWrongSrc.src = "./sounds/wrong.mp3";
-
-  soundLose.appendChild(soundLoseSrc);
-  soundWin.appendChild(soundWinSrc);
-  soundRight.appendChild(soundRightSrc);
-  soundWrong.appendChild(soundWrongSrc);
-
-  // create button
-  soundButton.appendChild(soundImg);
 
   // create hangman's images
   // gallows
