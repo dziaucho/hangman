@@ -5,6 +5,14 @@ function createApplication() {
   const body = document.querySelector("body");
   body.className = "page";
 
+  // some variables
+  let currentQuestion;
+  let currentQuestionNum;
+  let currentAnswer;
+  let attempts = 0;
+  let inputWordRight = "";
+  let inputWordWrong = "";
+
   // create app-section and wrappers
   const app = document.createElement("section");
   const leftColumn = document.createElement("div");
@@ -13,7 +21,6 @@ function createApplication() {
   const questionWrapper = document.createElement("div");
   const keyboard = document.createElement("div");
   const modalWrapper = document.createElement("div");
-
 
   app.className = "app";
   rightColumn.className = "right-column";
@@ -46,8 +53,6 @@ function createApplication() {
   modalButton.className = "modal-button";
   modalButtonText.className = "modal-button-text";
 
-  modalHeading.innerHTML = "you win!";
-  modalMessage.innerHTML = "right word is...";
   modalButtonText.innerHTML = "play again";
 
   modal.appendChild(modalHeading);
@@ -78,12 +83,6 @@ function createApplication() {
   leftLeg.className = "left-leg";
   rightLeg.className = "right-leg";
 
-  // hide by default
-
-  for (let i = 0; i < bodyParts.length; i += 1) {
-    bodyParts[i].classList.add("hide");
-  }
-
   // append elements
   hangman.appendChild(gallows);
   hangman.appendChild(head);
@@ -94,13 +93,8 @@ function createApplication() {
   hangman.appendChild(rightLeg);
 
   // quesion section
-  // randomize question number
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
   // questions
-  questions =
+  let questions =
     [
       {
         "hint": "similar to loot box, but japanese",
@@ -122,8 +116,9 @@ function createApplication() {
         "hint": "bam-boom alcohol!",
         "answer": "krambambula"
       }
-    ]
+    ];
 
+  let questionsMirror = Array.from(questions);
 
   // create elements
   const hint = document.createElement("h1");
@@ -131,41 +126,17 @@ function createApplication() {
   const attemptsRow = document.createElement("div");
   const attemptLetters = [];
   const underlines = [];
-  let attempts = 0;
-  let currentQuestionNum = getRandomInt(questions.length);
-  let currentQuestion = questions[currentQuestionNum]["hint"];
-  let currentAnswer = questions[currentQuestionNum]["answer"];
 
   hint.className = "hint";
   attemptsWarning.className = "attempts-warning";
   attemptsRow.className = "attempts-row";
 
-  // add text
-  attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
-  hint.innerHTML = currentQuestion;
-
-  // create row underlines
-  for (let i = 0; i < currentAnswer.length; i += 1) {
-    let pad = document.createElement("div");
-    let attemptLetter = document.createElement("p");
-    let underline = document.createElement("div");
-
-    pad.className = "pad";
-    attemptLetter.className = "attempt-letter";
-    underline.className = "underline";
-
-    attemptLetters.push(attemptLetter);
-    underlines.push(underline);
-
-    pad.appendChild(attemptLetter);
-    pad.appendChild(underline);
-    attemptsRow.appendChild(pad);
-  }
-
   // add to section
   questionWrapper.appendChild(hint);
   questionWrapper.appendChild(attemptsWarning);
   questionWrapper.appendChild(attemptsRow);
+
+  refreshQuestion();
 
   // create keyboard
   // letters
@@ -211,9 +182,6 @@ function createApplication() {
   keyboard.appendChild(keyThirdRow);
 
   // typing event
-  let inputWordRight = "";
-  let inputWordWrong = "";
-
   // by click
 
   for (let i = 0; i < keys.length; i += 1) {
@@ -300,6 +268,13 @@ function createApplication() {
 
   function playAgain() {
     modalWrapper.classList.add("hide");
+    questions.splice(currentQuestionNum, 1);
+
+    for (let i = 0; i < keys.length; i += 1) {
+      keys[i].classList.remove("disable");
+    }
+
+    refreshQuestion();
   }
 
   // win or lose
@@ -308,5 +283,68 @@ function createApplication() {
     modalHeading.innerHTML = result;
     modalMessage.innerHTML = `the right word is ${currentAnswer}`;
     modalWrapper.classList.remove("hide");
+  }
+
+  // refresh question
+
+  function refreshQuestion() {
+    if (questions.length === 0) {
+      questions = Array.from(questionsMirror);
+    }
+
+    // delete old elements
+    let oldPad = document.querySelectorAll(".pad");
+    let oldAttemtLetter = document.querySelectorAll(".attempt-letter");
+    let oldUnderline = document.querySelectorAll(".underline");
+
+    for (let i = 0; i < oldPad.length; i += 1) {
+      oldPad[i].remove();
+      oldAttemtLetter[i].remove();
+      oldUnderline[i].remove();
+    }
+
+    // hide body parts of poor man
+    for (let i = 0; i < bodyParts.length; i += 1) {
+      bodyParts[i].classList.add("hide");
+    }
+
+    // refresh question
+    attempts = 0;
+    currentQuestionNum = getRandomInt(questions.length);
+    currentQuestion = questions[currentQuestionNum]["hint"];
+    currentAnswer = questions[currentQuestionNum]["answer"];
+
+    inputWordRight = "";
+    inputWordWrong = "";
+
+    underlines.length = 0;
+    attemptLetters.length = 0;
+
+    // add text
+    attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
+    hint.innerHTML = currentQuestion;
+
+    // create row underlines
+    for (let i = 0; i < currentAnswer.length; i += 1) {
+      let pad = document.createElement("div");
+      let attemptLetter = document.createElement("p");
+      let underline = document.createElement("div");
+
+      pad.className = "pad";
+      attemptLetter.className = "attempt-letter";
+      underline.className = "underline";
+
+      attemptLetters.push(attemptLetter);
+      underlines.push(underline);
+
+      pad.appendChild(attemptLetter);
+      pad.appendChild(underline);
+      attemptsRow.appendChild(pad);
+    }
+  }
+
+  // randomize question number
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
   }
 }
