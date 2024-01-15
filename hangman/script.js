@@ -17,14 +17,13 @@ function createApplication() {
   const app = document.createElement("section");
   const leftColumn = document.createElement("div");
   const rightColumn = document.createElement("div");
-  const hangman = document.createElement("div");
   const questionWrapper = document.createElement("div");
   const keyboard = document.createElement("div");
   const modalWrapper = document.createElement("div");
 
   app.className = "app";
+  leftColumn.className = "left-column";
   rightColumn.className = "right-column";
-  hangman.className = "hangman-wrapper";
   questionWrapper.className = "question-wrapper";
   keyboard.className = "keyboard-wrapper";
   modalWrapper.className = "modal-wrapper hide";
@@ -34,7 +33,6 @@ function createApplication() {
   body.appendChild(app);
   app.appendChild(leftColumn);
   app.appendChild(rightColumn);
-  leftColumn.appendChild(hangman);
   rightColumn.appendChild(questionWrapper);
   rightColumn.appendChild(keyboard);
 
@@ -67,30 +65,52 @@ function createApplication() {
   gallows.src = "./img/gallows.png";
   gallows.alt = "gallows";
 
-  // poor man
-  const head = document.createElement("div");
-  const bodyMan = document.createElement("div");
-  const leftHand = document.createElement("div");
-  const rightHand = document.createElement("div");
-  const leftLeg = document.createElement("div");
-  const rightLeg = document.createElement("div");
+  // head
+  const head = document.createElement("img");
+  head.className = "head";
+  head.src = "./img/head.png";
+  head.alt = "head";
+
+  // body
+  const bodyMan = document.createElement("img");
+  bodyMan.className = "body-man";
+  bodyMan.src = "./img/body.png";
+  bodyMan.alt = "body";
+
+  //leftHand
+  const leftHand = document.createElement("img");
+  leftHand.className = "left-hand";
+  leftHand.src = "./img/left-hand.png";
+  leftHand.alt = "left hand";
+
+  //right hand
+  const rightHand = document.createElement("img");
+  rightHand.className = "right-hand";
+  rightHand.src = "./img/right-hand.png";
+  rightHand.alt = "right hand";
+
+  // left leg
+  const leftLeg = document.createElement("img");
+  leftLeg.className = "left-leg";
+  leftLeg.src = "./img/left-leg.png";
+  leftLeg.alt = "left leg";
+
+  // right leg
+  const rightLeg = document.createElement("img");
+  rightLeg.className = "right-leg";
+  rightLeg.src = "./img/right-leg.png";
+  rightLeg.alt = "right leg";
+
   const bodyParts = [head, bodyMan, leftHand, rightHand, leftLeg, rightLeg];
 
-  head.className = "head";
-  bodyMan.className = "body-man";
-  leftHand.className = "left-hand";
-  rightHand.className = "right-hand";
-  leftLeg.className = "left-leg";
-  rightLeg.className = "right-leg";
-
   // append elements
-  hangman.appendChild(gallows);
-  hangman.appendChild(head);
-  hangman.appendChild(bodyMan);
-  hangman.appendChild(leftHand);
-  hangman.appendChild(rightHand);
-  hangman.appendChild(leftLeg);
-  hangman.appendChild(rightLeg);
+  leftColumn.appendChild(gallows);
+  leftColumn.appendChild(head);
+  leftColumn.appendChild(bodyMan);
+  leftColumn.appendChild(leftHand);
+  leftColumn.appendChild(rightHand);
+  leftColumn.appendChild(leftLeg);
+  leftColumn.appendChild(rightLeg);
 
   // quesion section
   // questions
@@ -115,6 +135,26 @@ function createApplication() {
       {
         "hint": "bam-boom alcohol!",
         "answer": "krambambula"
+      },
+      {
+        "hint": "best time to submit the work",
+        "answer": "deadline"
+      },
+      {
+        "hint": "hmmm, smells like teenage spirit",
+        "answer": "nirvana",
+      },
+      {
+        "hint": "orange head with candles",
+        "answer": "pumpkin",
+      },
+      {
+        "hint": "they believe that cringe is dead (singular)",
+        "answer": "zoomer"
+      },
+      {
+        "hint": "does this truth live in africa?",
+        "answer": "penguin"
       }
     ];
 
@@ -207,7 +247,15 @@ function createApplication() {
     if (currentAnswer.toUpperCase().indexOf(pressedKey, 0) === -1) {
       if (inputWordWrong.indexOf(pressedKey, 0) === -1) {
         attempts += 1;
-        bodyParts[attempts - 1].classList.remove("hide");
+        if (attempts >= 2 && attempts < 6) {
+          bodyParts[attempts - 2].classList.add("hide");
+        } else {
+          gallows.classList.add("hide");
+          bodyParts[0].classList.add("hide");
+        }
+        if (attempts < 6) {
+          bodyParts[attempts - 1].classList.remove("hide");
+        }
         attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
         inputWordWrong += pressedKey;
       }
@@ -246,7 +294,15 @@ function createApplication() {
       if (currentAnswer.toUpperCase().indexOf(pressedLetter, 0) === -1) {
         if (inputWordWrong.indexOf(pressedLetter, 0) === -1) {
           attempts += 1;
-          bodyParts[attempts - 1].classList.remove("hide");
+          if (attempts >= 2 && attempts < 6) {
+            bodyParts[attempts - 2].classList.add("hide");
+          } else {
+            gallows.classList.add("hide");
+            bodyParts[0].classList.add("hide");
+          }
+          if (attempts < 6) {
+            bodyParts[attempts - 1].classList.remove("hide");
+          }
           attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
           inputWordWrong += pressedLetter;
         }
@@ -292,6 +348,8 @@ function createApplication() {
       questions = Array.from(questionsMirror);
     }
 
+    gallows.classList.remove("hide");
+
     // delete old elements
     let oldPad = document.querySelectorAll(".pad");
     let oldAttemtLetter = document.querySelectorAll(".attempt-letter");
@@ -313,6 +371,8 @@ function createApplication() {
     currentQuestionNum = getRandomInt(questions.length);
     currentQuestion = questions[currentQuestionNum]["hint"];
     currentAnswer = questions[currentQuestionNum]["answer"];
+
+    console.log(currentAnswer);
 
     inputWordRight = "";
     inputWordWrong = "";

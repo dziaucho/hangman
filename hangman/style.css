@@ -24,8 +24,8 @@
 }
 
 .modal {
-  width: 70%;
-  height: 70%;
+  width: 90%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -45,7 +45,7 @@
 }
 
 .modal-button {
-  width: 20%;
+  width: 40%;
   height: 10%;
   display: flex;
   align-items: center;
@@ -70,83 +70,23 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  gap: 100px;
   align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 /* hangman */
 
-.hangman-wrapper {
-  position: relative;
-  max-width: 350px;
+.left-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hangman-wrapper>div.hide {
+.left-column>img.hide {
   display: none;
 }
 
-.gallows {
-  max-width: 330px;
-}
-
-.head {
-  position: absolute;
-  top: 8.5rem;
-  left: 14.8rem;
-  width: 80px;
-  height: 80px;
-  border: 8px solid #5d6e77;
-  border-radius: 50%;
-}
-
-.body-man {
-  position: absolute;
-  top: 14.5rem;
-  left: 17.6rem;
-  width: 8px;
-  height: 131px;
-  background-color: #5d6e77;
-}
-
-.left-hand {
-  position: absolute;
-  top: 16rem;
-  left: 15.7rem;
-  transform: rotate(45deg);
-  width: 8px;
-  height: 90px;
-  background-color: #5d6e77;
-}
-
-.right-hand {
-  position: absolute;
-  top: 16rem;
-  left: 19.4rem;
-  transform: rotate(135deg);
-  width: 8px;
-  height: 90px;
-  background-color: #5d6e77;
-}
-
-.left-leg {
-  position: absolute;
-  top: 22.5rem;
-  left: 16.7rem;
-  transform: rotate(20deg);
-  width: 8px;
-  height: 90px;
-  background-color: #5d6e77;
-}
-
-.right-leg {
-  position: absolute;
-  top: 22.5rem;
-  left: 18.6rem;
-  transform: rotate(-20deg);
-  width: 8px;
-  height: 90px;
-  background-color: #5d6e77;
-}
 
 /* right column app */
 
@@ -161,6 +101,7 @@
 
 .question-wrapper {
   text-align: center;
+  margin: 20px;
 }
 
 .attempts-row {
@@ -233,4 +174,65 @@
   color: #ffffff;
   font-weight: 400;
   font-size: 20px;
+}
+
+@media (max-width: 900px) {
+  .key {
+    width: 70px;
+    height: 40px;
+  }
+
+  .key-letter {
+    font-size: 16px;
+  }
+
+  .left-column>img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 700px) {
+  .key {
+    width: 50px;
+    height: 30px;
+  }
+
+  .key-letter {
+    font-size: 14px;
+  }
+
+  .attempt-letter {
+    font-size: 20px;
+  }
+
+  .attempts-row {
+    min-width: 400px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 550px) {
+  .key {
+    width: 40px;
+    height: 25px;
+  }
+
+  .key-letter {
+    font-size: 14px;
+  }
+
+  .attempts-row {
+    min-width: 300px;
+  }
+
+  .modal-message {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .key {
+    width: 35px;
+    height: 30px;
+  }
 }
