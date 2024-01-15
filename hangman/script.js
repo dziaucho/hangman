@@ -13,7 +13,7 @@ function createApplication() {
   const questionWrapper = document.createElement("div");
   const keyboard = document.createElement("div");
   const modalWrapper = document.createElement("div");
-  const modal = document.createElement("div");
+
 
   app.className = "app";
   rightColumn.className = "right-column";
@@ -21,17 +21,39 @@ function createApplication() {
   questionWrapper.className = "question-wrapper";
   keyboard.className = "keyboard-wrapper";
   modalWrapper.className = "modal-wrapper hide";
-  modal.className = "modal";
 
   // append elements
   body.appendChild(modalWrapper);
-  modalWrapper.appendChild(modal);
   body.appendChild(app);
   app.appendChild(leftColumn);
   app.appendChild(rightColumn);
   leftColumn.appendChild(hangman);
   rightColumn.appendChild(questionWrapper);
   rightColumn.appendChild(keyboard);
+
+  // modal
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modalWrapper.appendChild(modal);
+
+  modalHeading = document.createElement("h2");
+  modalMessage = document.createElement("p");
+  modalButton = document.createElement("div");
+  modalButtonText = document.createElement("p");
+
+  modalHeading.className = "modal-heading";
+  modalMessage.className = "modal-message";
+  modalButton.className = "modal-button";
+  modalButtonText.className = "modal-button-text";
+
+  modalHeading.innerHTML = "you win!";
+  modalMessage.innerHTML = "right word is...";
+  modalButtonText.innerHTML = "play again";
+
+  modal.appendChild(modalHeading);
+  modal.appendChild(modalMessage);
+  modal.appendChild(modalButton);
+  modalButton.appendChild(modalButtonText);
 
   // create hangman's images
   // gallows
@@ -78,28 +100,30 @@ function createApplication() {
   }
 
   // questions
-  questions = {
-    0: {
-      "hint": "similar to loot box, but japanese",
-      "answer": "gacha"
-    },
-    1: {
-      "hint": "human head, lion body, eagle wings",
-      "answer": "sphinx",
-    },
-    2: {
-      "hint": "nice shape of sound",
-      "answer": "asmr",
-    },
-    3: {
-      "hint": "her majesty",
-      "answer": "queen"
-    },
-    4: {
-      "hint": "bam-boom alcohol!",
-      "answer": "krambambula"
-    }
-  }
+  questions =
+    [
+      {
+        "hint": "similar to loot box, but japanese",
+        "answer": "gacha"
+      },
+      {
+        "hint": "human head, lion body, eagle wings",
+        "answer": "sphinx",
+      },
+      {
+        "hint": "nice shape of sound",
+        "answer": "asmr",
+      },
+      {
+        "hint": "her majesty",
+        "answer": "queen"
+      },
+      {
+        "hint": "bam-boom alcohol!",
+        "answer": "krambambula"
+      }
+    ]
+
 
   // create elements
   const hint = document.createElement("h1");
@@ -108,7 +132,7 @@ function createApplication() {
   const attemptLetters = [];
   const underlines = [];
   let attempts = 0;
-  let currentQuestionNum = getRandomInt(5);
+  let currentQuestionNum = getRandomInt(questions.length);
   let currentQuestion = questions[currentQuestionNum]["hint"];
   let currentAnswer = questions[currentQuestionNum]["answer"];
 
@@ -187,6 +211,9 @@ function createApplication() {
   keyboard.appendChild(keyThirdRow);
 
   // typing event
+  let inputWordRight = "";
+  let inputWordWrong = "";
+
   // by click
 
   for (let i = 0; i < keys.length; i += 1) {
@@ -197,24 +224,39 @@ function createApplication() {
 
   document.addEventListener('keydown', function (event) {
     const pressedKey = event.key.toUpperCase();
+    if (inputWordRight.indexOf(pressedKey, 0) === -1) {
 
-    for (let i = 0; i < currentAnswer.length; i += 1) {
-      if (pressedKey === currentAnswer[i].toUpperCase()) {
-        attemptLetters[i].innerHTML = pressedKey;
-        underlines[i].classList.add("hide");
+      for (let i = 0; i < currentAnswer.length; i += 1) {
+        if (pressedKey === currentAnswer[i].toUpperCase()) {
+          attemptLetters[i].innerHTML = pressedKey;
+          underlines[i].classList.add("hide");
+          inputWordRight += pressedKey;
+        }
       }
+
     }
 
     if (currentAnswer.toUpperCase().indexOf(pressedKey, 0) === -1) {
-      attempts += 1;
-      bodyParts[attempts - 1].classList.remove("hide");
-      attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
+      if (inputWordWrong.indexOf(pressedKey, 0) === -1) {
+        attempts += 1;
+        bodyParts[attempts - 1].classList.remove("hide");
+        attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
+        inputWordWrong += pressedKey;
+      }
     }
 
     for (let i = 0; i < letters.length; i += 1) {
       if (letters[i] === pressedKey) {
         keys[i].classList.add("disable");
       }
+    }
+
+    if (inputWordRight.length === currentAnswer.length) {
+      showModal("you win!");
+    }
+
+    if (attempts === 6) {
+      showModal("you lose :(");
     }
   });
 
@@ -223,18 +265,48 @@ function createApplication() {
       keys[item].classList.add("disable");
       const pressedLetter = keys[item].querySelector("p").innerHTML;
 
-      for (let i = 0; i < currentAnswer.length; i += 1) {
-        if (pressedLetter === currentAnswer[i].toUpperCase()) {
-          attemptLetters[i].innerHTML = pressedLetter;
-          underlines[i].classList.add("hide");
+      if (inputWordRight.indexOf(pressedLetter, 0) === -1) {
+        for (let i = 0; i < currentAnswer.length; i += 1) {
+          if (pressedLetter === currentAnswer[i].toUpperCase()) {
+            attemptLetters[i].innerHTML = pressedLetter;
+            underlines[i].classList.add("hide");
+            inputWordRight += pressedLetter;
+          }
         }
       }
 
       if (currentAnswer.toUpperCase().indexOf(pressedLetter, 0) === -1) {
-        attempts += 1;
-        bodyParts[attempts - 1].classList.remove("hide");
-        attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
+        if (inputWordWrong.indexOf(pressedLetter, 0) === -1) {
+          attempts += 1;
+          bodyParts[attempts - 1].classList.remove("hide");
+          attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
+          inputWordWrong += pressedLetter;
+        }
+      }
+
+      if (inputWordRight.length === currentAnswer.length) {
+        showModal("you win!");
+      }
+
+      if (attempts === 6) {
+        showModal("you lose :(");
       }
     };
+  }
+
+  // play again
+
+  modalButton.addEventListener("click", playAgain);
+
+  function playAgain() {
+    modalWrapper.classList.add("hide");
+  }
+
+  // win or lose
+
+  function showModal(result) {
+    modalHeading.innerHTML = result;
+    modalMessage.innerHTML = `the right word is ${currentAnswer}`;
+    modalWrapper.classList.remove("hide");
   }
 }
