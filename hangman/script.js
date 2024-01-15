@@ -41,6 +41,7 @@ function createApplication() {
   const rightHand = document.createElement("div");
   const leftLeg = document.createElement("div");
   const rightLeg = document.createElement("div");
+  const bodyParts = [head, bodyMan, leftHand, rightHand, leftLeg, rightLeg];
 
   head.className = "head";
   bodyMan.className = "body-man";
@@ -48,6 +49,12 @@ function createApplication() {
   rightHand.className = "right-hand";
   leftLeg.className = "left-leg";
   rightLeg.className = "right-leg";
+
+  // hide by default
+
+  for (let i = 0; i < bodyParts.length; i += 1) {
+    bodyParts[i].classList.add("hide");
+  }
 
   // append elements
   hangman.appendChild(gallows);
@@ -59,6 +66,11 @@ function createApplication() {
   hangman.appendChild(rightLeg);
 
   // quesion section
+  // randomize question number
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
   // questions
   questions = {
     0: {
@@ -90,7 +102,7 @@ function createApplication() {
   const attemptLetters = [];
   const underlines = [];
   let attempts = 0;
-  let currentQuestionNum = 0;
+  let currentQuestionNum = getRandomInt(5);
   let currentQuestion = questions[currentQuestionNum]["hint"];
   let currentAnswer = questions[currentQuestionNum]["answer"];
 
@@ -179,13 +191,18 @@ function createApplication() {
 
   document.addEventListener('keydown', function (event) {
     const pressedKey = event.key.toUpperCase();
-    console.log(pressedKey);
 
     for (let i = 0; i < currentAnswer.length; i += 1) {
       if (pressedKey === currentAnswer[i].toUpperCase()) {
         attemptLetters[i].innerHTML = pressedKey;
         underlines[i].classList.add("hide");
       }
+    }
+
+    if (currentAnswer.toUpperCase().indexOf(pressedKey, 0) === -1) {
+      attempts += 1;
+      bodyParts[attempts - 1].classList.remove("hide");
+      attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
     }
 
     for (let i = 0; i < letters.length; i += 1) {
@@ -205,6 +222,12 @@ function createApplication() {
           attemptLetters[i].innerHTML = pressedLetter;
           underlines[i].classList.add("hide");
         }
+      }
+
+      if (currentAnswer.toUpperCase().indexOf(pressedLetter, 0) === -1) {
+        attempts += 1;
+        bodyParts[attempts - 1].classList.remove("hide");
+        attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
       }
     };
   }
