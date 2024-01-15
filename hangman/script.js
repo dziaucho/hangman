@@ -169,21 +169,41 @@ function createApplication() {
   keyboard.appendChild(keyThirdRow);
 
   // typing event
+  // by click
 
   for (let i = 0; i < keys.length; i += 1) {
-    keys[i].addEventListener("click", typing(i))
+    keys[i].addEventListener("click", typingByClick(i))
   }
 
-  function typing(item) {
+  // by keyboard
+
+  document.addEventListener('keydown', function (event) {
+    const pressedKey = event.key.toUpperCase();
+    console.log(pressedKey);
+
+    for (let i = 0; i < currentAnswer.length; i += 1) {
+      if (pressedKey === currentAnswer[i].toUpperCase()) {
+        attemptLetters[i].innerHTML = pressedKey;
+        underlines[i].classList.add("hide");
+      }
+    }
+
+    for (let i = 0; i < letters.length; i += 1) {
+      if (letters[i] === pressedKey) {
+        keys[i].classList.add("disable");
+      }
+    }
+  });
+
+  function typingByClick(item) {
     return function () {
       keys[item].classList.add("disable");
       const pressedLetter = keys[item].querySelector("p").innerHTML;
-      const currentUnderline = keys[item].querySelector("div");
 
       for (let i = 0; i < currentAnswer.length; i += 1) {
         if (pressedLetter === currentAnswer[i].toUpperCase()) {
           attemptLetters[i].innerHTML = pressedLetter;
-          underlines[i].style.display = "none";
+          underlines[i].classList.add("hide");
         }
       }
     };
