@@ -27,7 +27,6 @@ function createApplication() {
   rightColumn.appendChild(questionWrapper);
   rightColumn.appendChild(keyboard);
 
-
   // create hangman's images
   // gallows
   const gallows = document.createElement("img");
@@ -88,8 +87,12 @@ function createApplication() {
   const hint = document.createElement("h1");
   const attemptsWarning = document.createElement("p");
   const attemptsRow = document.createElement("div");
+  const attemptLetters = [];
+  const underlines = [];
   let attempts = 0;
-  let currentQuestion = 0;
+  let currentQuestionNum = 0;
+  let currentQuestion = questions[currentQuestionNum]["hint"];
+  let currentAnswer = questions[currentQuestionNum]["answer"];
 
   hint.className = "hint";
   attemptsWarning.className = "attempts-warning";
@@ -97,13 +100,24 @@ function createApplication() {
 
   // add text
   attemptsWarning.innerHTML = `incorrect guesses: ${attempts} / 6`;
-  hint.innerHTML = questions[currentQuestion]["hint"];
+  hint.innerHTML = currentQuestion;
 
   // create row underlines
-  for (let i = 0; i < questions[currentQuestion]["answer"].length; i += 1) {
+  for (let i = 0; i < currentAnswer.length; i += 1) {
+    let pad = document.createElement("div");
+    let attemptLetter = document.createElement("p");
     let underline = document.createElement("div");
+
+    pad.className = "pad";
+    attemptLetter.className = "attempt-letter";
     underline.className = "underline";
-    attemptsRow.appendChild(underline);
+
+    attemptLetters.push(attemptLetter);
+    underlines.push(underline);
+
+    pad.appendChild(attemptLetter);
+    pad.appendChild(underline);
+    attemptsRow.appendChild(pad);
   }
 
   // add to section
@@ -153,4 +167,25 @@ function createApplication() {
   keyboard.appendChild(keyFirstRow);
   keyboard.appendChild(keySecondRow);
   keyboard.appendChild(keyThirdRow);
+
+  // typing event
+
+  for (let i = 0; i < keys.length; i += 1) {
+    keys[i].addEventListener("click", typing(i))
+  }
+
+  function typing(item) {
+    return function () {
+      keys[item].classList.add("disable");
+      const pressedLetter = keys[item].querySelector("p").innerHTML;
+      const currentUnderline = keys[item].querySelector("div");
+
+      for (let i = 0; i < currentAnswer.length; i += 1) {
+        if (pressedLetter === currentAnswer[i].toUpperCase()) {
+          attemptLetters[i].innerHTML = pressedLetter;
+          underlines[i].style.display = "none";
+        }
+      }
+    };
+  }
 }
