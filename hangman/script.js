@@ -12,14 +12,20 @@ function createApplication() {
   const hangman = document.createElement("div");
   const questionWrapper = document.createElement("div");
   const keyboard = document.createElement("div");
+  const modalWrapper = document.createElement("div");
+  const modal = document.createElement("div");
 
   app.className = "app";
   rightColumn.className = "right-column";
   hangman.className = "hangman-wrapper";
   questionWrapper.className = "question-wrapper";
   keyboard.className = "keyboard-wrapper";
+  modalWrapper.className = "modal-wrapper hide";
+  modal.className = "modal";
 
   // append elements
+  body.appendChild(modalWrapper);
+  modalWrapper.appendChild(modal);
   body.appendChild(app);
   app.appendChild(leftColumn);
   app.appendChild(rightColumn);

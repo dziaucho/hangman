@@ -7,6 +7,29 @@
   font-family: 'Raleway', sans-serif;
 }
 
+/* modal */
+
+.modal-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-wrapper.hide {
+  display: none;
+}
+
+.modal {
+  width: 70%;
+  height: 70%;
+  background-color: #909090;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
 /* app-section */
 
 .app {
