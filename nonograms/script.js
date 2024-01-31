@@ -24,6 +24,62 @@ function makeTable() {
   return table;
 }
 
+function tipsCols(task) {
+  let tips = [];
+  let rows = task.length;
+  let cols = task[0].length;
+
+  for (let i = 0; i < cols; i += 1) {
+    let amount = 0;
+    let trips = [];
+
+    for (let j = 0; j < rows; j += 1) {
+      if (task[j][i] === 1) {
+        amount += 1;
+      } else {
+        trips.push(amount);
+        amount = 0;
+      }
+    }
+    trips.push(amount);
+    tips.push(trips.filter((trip) => trip !== 0));
+  }
+  return tips;
+}
+
+function tipsRows(task) {
+  let tips = [];
+  let rows = task.length;
+  let cols = task[0].length;
+
+  for (let i = 0; i < cols; i += 1) {
+    let amount = 0;
+    let trips = [];
+
+    for (let j = 0; j < rows; j += 1) {
+      if (task[i][j] === 1) {
+        amount += 1;
+      } else {
+        trips.push(amount);
+        amount = 0;
+      }
+    }
+    trips.push(amount);
+    tips.push(trips.filter((trip) => trip !== 0));
+  }
+  return tips;
+}
+
+/* task */
+
+let task = [
+  [0, 0, 1, 1, 0],
+  [0, 1, 0, 0, 1],
+  [1, 1, 1, 0, 0],
+  [1, 0, 1, 0, 0],
+  [1, 1, 1, 0, 0]
+]
+
 /* game zone */
 
 let gameZoneWrapper = makeElement("div", "game-zone-wrapper");
