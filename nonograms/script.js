@@ -31,18 +31,18 @@ function tipsCols(task) {
 
   for (let i = 0; i < cols; i += 1) {
     let amount = 0;
-    let trips = [];
+    let triks = [];
 
     for (let j = 0; j < rows; j += 1) {
       if (task[j][i] === 1) {
         amount += 1;
       } else {
-        trips.push(amount);
+        triks.push(amount);
         amount = 0;
       }
     }
-    trips.push(amount);
-    tips.push(trips.filter((trip) => trip !== 0));
+    triks.push(amount);
+    tips.push(triks.filter((trik) => trik !== 0));
   }
   return tips;
 }
@@ -54,18 +54,18 @@ function tipsRows(task) {
 
   for (let i = 0; i < cols; i += 1) {
     let amount = 0;
-    let trips = [];
+    let triks = [];
 
     for (let j = 0; j < rows; j += 1) {
       if (task[i][j] === 1) {
         amount += 1;
       } else {
-        trips.push(amount);
+        triks.push(amount);
         amount = 0;
       }
     }
-    trips.push(amount);
-    tips.push(trips.filter((trip) => trip !== 0));
+    triks.push(amount);
+    tips.push(triks.filter((trik) => trik !== 0));
   }
   return tips;
 }
