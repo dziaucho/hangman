@@ -8,6 +8,9 @@ body {
 .game-zone-wrapper {
   width: fit-content;
   padding: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   border: 5px solid gray;
 }
 
@@ -18,12 +21,13 @@ table {
   border-collapse: collapse;
 }
 
+tr {
+  border: 2px solid black;
+}
+
 td {
   border: 2px solid black;
   width: 20px;
   height: 20px;
-}
-
-tr {
-  border: 2px solid black;
+  text-align: center;
 }

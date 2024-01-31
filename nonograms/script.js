@@ -1,76 +1,12 @@
+/* import */
+
+import { makeElement, makeTable, makeTipsTable, getTipsCols, getTipsRows, getLongestColTip, getLongestRowTip, pushColsTips } from "./functions.js";
+
 /* DOM */
 
 let body = document.querySelector("body");
 
-/* functions */
-
-function makeElement(tag, selector) {
-  let resultElement = document.createElement(`${tag}`);
-  resultElement.className = `${selector}`;
-  return resultElement;
-}
-
-function makeTable() {
-  let table = document.createElement("table");
-  table.className = "game-table";
-  for (let i = 0; i < 5; i += 1) {
-    let row = document.createElement("tr");
-    for (let i = 0; i < 5; i += 1) {
-      let ceil = document.createElement("td");
-      row.appendChild(ceil);
-    }
-    table.appendChild(row);
-  }
-  return table;
-}
-
-function tipsCols(task) {
-  let tips = [];
-  let rows = task.length;
-  let cols = task[0].length;
-
-  for (let i = 0; i < cols; i += 1) {
-    let amount = 0;
-    let triks = [];
-
-    for (let j = 0; j < rows; j += 1) {
-      if (task[j][i] === 1) {
-        amount += 1;
-      } else {
-        triks.push(amount);
-        amount = 0;
-      }
-    }
-    triks.push(amount);
-    tips.push(triks.filter((trik) => trik !== 0));
-  }
-  return tips;
-}
-
-function tipsRows(task) {
-  let tips = [];
-  let rows = task.length;
-  let cols = task[0].length;
-
-  for (let i = 0; i < cols; i += 1) {
-    let amount = 0;
-    let triks = [];
-
-    for (let j = 0; j < rows; j += 1) {
-      if (task[i][j] === 1) {
-        amount += 1;
-      } else {
-        triks.push(amount);
-        amount = 0;
-      }
-    }
-    triks.push(amount);
-    tips.push(triks.filter((trik) => trik !== 0));
-  }
-  return tips;
-}
-
-/* task */
+/* test task */
 
 let task = [
   [0, 0, 1, 1, 0],
@@ -83,6 +19,34 @@ let task = [
 /* game zone */
 
 let gameZoneWrapper = makeElement("div", "game-zone-wrapper");
-let table = makeTable();
+let table = makeTable(task.length);
+
+let gameZoneCol1 = makeElement("div", "game-zone-column");
+let gameZoneCol2 = makeElement("div", "game-zone-column");
+
+let tipsCols = getTipsCols(task);
+let tipsRows = getTipsRows(task);
+let lengthCols = getLongestColTip(tipsCols);
+let lengthRows = getLongestRowTip(tipsRows);
+
+console.log(tipsCols);
+console.log(tipsRows);
+
+let tableTipsCols = makeTipsTable(lengthCols, task.length);
+let tableTipsRows = makeTipsTable(task.length, lengthRows);
+
+/* append */
 body.appendChild(gameZoneWrapper);
-gameZoneWrapper.appendChild(table);
+gameZoneWrapper.appendChild(gameZoneCol1);
+gameZoneWrapper.appendChild(gameZoneCol2);
+
+gameZoneCol1.appendChild(tableTipsRows);
+gameZoneCol2.appendChild(tableTipsCols);
+gameZoneCol2.appendChild(table);
+
+console.log(tableTipsCols);
+
+let row = tableTipsCols.querySelectorAll("tr");
+let ceils = row[0].querySelectorAll("td");
+
+pushColsTips(ceils, tipsCols, 1)
