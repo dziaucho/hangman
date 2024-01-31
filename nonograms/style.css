@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+/* game zone */
+
+.game-zone-wrapper {
+  width: fit-content;
+  padding: 40px;
+  border: 5px solid gray;
+}
+
+/* table style */
+
+table {
+  border: 4px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  border: 2px solid black;
+  width: 20px;
+  height: 20px;
+}
+
+tr {
+  border: 2px solid black;
+}
