@@ -100,12 +100,26 @@ function getLongestRowTip(tips) {
   return longest;
 }
 
-function pushColsTips(ceils, tips, index) {
+function pushColsTips(rows, tips, index) {
+
+  for (let i = 0; i < rows.length; i += 1) {
+    let ceils = rows[i].querySelectorAll("td");
+    for (let i = 0; i < ceils.length; i += 1) {
+      if (tips[i][index]) {
+        ceils[i].innerHTML = tips[i][index];
+      }
+    }
+
+    index -= 1;
+  }
+}
+
+function pushRowsTips(ceils, tips) {
   for (let i = 0; i < ceils.length; i += 1) {
-    if (tips[i][index]) {
-      ceils[i].innerHTML = tips[i][index];
+    if (tips[i]) {
+      ceils[i].innerHTML = tips[i];
     }
   }
 }
 
-export { makeElement, makeTable, makeTipsTable, getTipsCols, getTipsRows, getLongestColTip, getLongestRowTip, pushColsTips };
+export { makeElement, makeTable, makeTipsTable, getTipsCols, getTipsRows, getLongestColTip, getLongestRowTip, pushColsTips, pushRowsTips };

@@ -1,6 +1,6 @@
 /* import */
 
-import { makeElement, makeTable, makeTipsTable, getTipsCols, getTipsRows, getLongestColTip, getLongestRowTip, pushColsTips } from "./functions.js";
+import { makeElement, makeTable, makeTipsTable, getTipsCols, getTipsRows, getLongestColTip, getLongestRowTip, pushColsTips, pushRowsTips } from "./functions.js";
 
 /* DOM */
 
@@ -29,9 +29,6 @@ let tipsRows = getTipsRows(task);
 let lengthCols = getLongestColTip(tipsCols);
 let lengthRows = getLongestRowTip(tipsRows);
 
-console.log(tipsCols);
-console.log(tipsRows);
-
 let tableTipsCols = makeTipsTable(lengthCols, task.length);
 let tableTipsRows = makeTipsTable(task.length, lengthRows);
 
@@ -44,9 +41,15 @@ gameZoneCol1.appendChild(tableTipsRows);
 gameZoneCol2.appendChild(tableTipsCols);
 gameZoneCol2.appendChild(table);
 
-console.log(tableTipsCols);
+let rows = tableTipsCols.querySelectorAll("tr");
+let start = rows.length - 1;
 
-let row = tableTipsCols.querySelectorAll("tr");
-let ceils = row[0].querySelectorAll("td");
+pushColsTips(rows, tipsCols, start)
 
-pushColsTips(ceils, tipsCols, 1)
+
+let columns = tableTipsRows.querySelectorAll("tr");
+for (let i = 0; i < columns.length; i += 1) {
+  let ceils = Array.from(columns[i].querySelectorAll("td"));
+  ceils.reverse();
+  pushRowsTips(ceils, tipsRows[i]);
+}
