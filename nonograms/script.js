@@ -18,6 +18,8 @@ let task = [
 
 /* game zone */
 
+let gameSection = makeElement("section", "game-section");
+
 let gameZoneWrapper = makeElement("div", "game-zone-wrapper");
 let table = makeTable(task.length);
 
@@ -33,7 +35,8 @@ let tableTipsCols = makeTipsTable(lengthCols, task.length);
 let tableTipsRows = makeTipsTable(task.length, lengthRows);
 
 /* append */
-body.appendChild(gameZoneWrapper);
+body.appendChild(gameSection);
+gameSection.appendChild(gameZoneWrapper);
 gameZoneWrapper.appendChild(gameZoneCol1);
 gameZoneWrapper.appendChild(gameZoneCol2);
 
