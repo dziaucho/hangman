@@ -49,10 +49,35 @@ let start = rows.length - 1;
 
 pushColsTips(rows, tipsCols, start)
 
-
 let columns = tableTipsRows.querySelectorAll("tr");
 for (let i = 0; i < columns.length; i += 1) {
   let ceils = Array.from(columns[i].querySelectorAll("td"));
   ceils.reverse();
   pushRowsTips(ceils, tipsRows[i]);
+}
+
+let ceilsClick = table.querySelectorAll("td");
+
+for (let i = 0; i < ceilsClick.length; i += 1) {
+  ceilsClick[i].addEventListener("click", checkChosen(i));
+  ceilsClick[i].addEventListener("contextmenu", checkOffcast(i));
+}
+
+function checkChosen(item) {
+  return function () {
+    if (ceilsClick[item].classList.contains("offcast")) {
+      ceilsClick[item].classList.remove("offcast");
+    }
+    ceilsClick[item].classList.toggle("chosen");
+  }
+}
+
+function checkOffcast(item) {
+  return function (event) {
+    event.preventDefault();
+    if (ceilsClick[item].classList.contains("chosen")) {
+      ceilsClick[item].classList.remove("chosen");
+    }
+    ceilsClick[item].classList.toggle("offcast");
+  }
 }

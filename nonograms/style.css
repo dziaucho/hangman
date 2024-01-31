@@ -1,8 +1,9 @@
 :root {
-  --main-bg-color: #dfe9e2;
-  --chosen-ceil: #54428e;
-  --table-border-color: #696c6a;
-  --table-game-zone: #b2b2b281;
+  --main-bg-color: #bcc4db;
+  --chosen-ceil: #7880b5;
+  --table-border-color: #4f5a71;
+  --font-color: #4f5a71;
+  --table-game-zone: #c5d7ff;
 }
 
 body {
@@ -10,6 +11,8 @@ body {
   height: 100vh;
   background-color: var(--main-bg-color);
   font-family: 'Fredoka', sans-serif;
+  color: var(--font-color);
+  font-weight: 900;
 }
 
 .game-section {
@@ -50,4 +53,13 @@ td {
   width: 20px;
   height: 20px;
   text-align: center;
+}
+
+td.chosen {
+  background-color: var(--chosen-ceil);
+}
+
+td.offcast {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512" style="fill: %237e1946;"><path d="M12.649,12L21.886,.818c.176-.213,.146-.528-.067-.704-.211-.176-.526-.147-.704,.067L12,11.215,2.886,.182c-.178-.215-.493-.243-.704-.067-.213,.176-.243,.491-.067,.704L11.351,12,2.114,23.182c-.176,.213-.146,.528,.067,.704,.212,.175,.527,.147,.704-.067L12,12.785l9.114,11.033c.177,.214,.493,.242,.704,.067,.213-.176,.243-.491,.067-.704L12.649,12Z"/></svg>') no-repeat center center;
+  background-size: contain;
 }
