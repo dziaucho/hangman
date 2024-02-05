@@ -17,25 +17,18 @@ let tasks = [
     [1, 1, 1, 0, 0]
   ],
   [
-    [1, 1, 1, 0, 0],
-    [1, 1, 0, 1, 0],
-    [1, 0, 0, 0, 1],
-    [0, 0, 0, 1, 1],
-    [0, 0, 1, 1, 1]
+    [0, 1, 1, 1, 1],
+    [1, 0, 1, 0, 0],
+    [1, 0, 0, 1, 0],
+    [1, 1, 0, 1, 1],
+    [0, 1, 0, 1, 1]
   ],
   [
-    [1, 1, 0, 0, 0],
+    [1, 1, 1, 1, 1],
     [1, 1, 1, 0, 1],
-    [1, 0, 0, 1, 1],
-    [1, 0, 1, 0, 1],
-    [0, 0, 1, 0, 0]
-  ],
-  [
-    [1, 1, 1, 1, 0],
-    [1, 1, 0, 0, 0],
-    [0, 0, 1, 0, 1],
-    [0, 0, 0, 0, 1],
-    [1, 0, 1, 1, 1]
+    [1, 1, 1, 0, 0],
+    [0, 0, 1, 1, 1],
+    [1, 1, 1, 0, 0]
   ],
   [
     [0, 1, 1, 1, 1],
@@ -204,7 +197,7 @@ function checkCorrect() {
 
 // restart game
 
-buttonRestart.addEventListener("click", restartGame)
+buttonRestart.addEventListener("click", restartGame);
 
 function restartGame() {
   for (let i = 0; i < ceilsClick.length; i += 1) {
@@ -214,4 +207,66 @@ function restartGame() {
     timerCounter = 0;
     checkCorrect();
   }
+}
+
+// random game
+
+buttonRandom.addEventListener("click", randomGame);
+
+function randomGame() {
+  ceilsMatrix = [
+    [],
+    [],
+    [],
+    [],
+    []
+  ];
+  gameZoneCol1.removeChild(tableTipsRows);
+  gameZoneCol2.removeChild(tableTipsCols);
+  gameZoneCol2.removeChild(table);
+
+  currentGame = tasks[getRandomInt(tasks.length)];
+
+  table = makeTable(currentGame.length);
+
+  tipsCols = getTipsCols(currentGame);
+  tipsRows = getTipsRows(currentGame);
+
+  tableTipsCols = makeTipsTable(lengthCols, currentGame.length);
+  tableTipsRows = makeTipsTable(currentGame.length, lengthRows);
+
+  gameZoneCol1.appendChild(tableTipsRows);
+  gameZoneCol2.appendChild(tableTipsCols);
+  gameZoneCol2.appendChild(table);
+
+  rows = tableTipsCols.querySelectorAll("tr");
+  start = rows.length - 1;
+
+  pushColsTips(rows, tipsCols, start)
+
+  columns = tableTipsRows.querySelectorAll("tr");
+  for (let i = 0; i < columns.length; i += 1) {
+    let ceils = Array.from(columns[i].querySelectorAll("td"));
+    ceils.reverse();
+    pushRowsTips(ceils, tipsRows[i]);
+  }
+
+  ceilsClick = table.querySelectorAll("td");
+
+  counter = 0;
+
+  for (let i = 0; i < ceilsClick.length; i += 5) {
+    for (let j = i; j < i + 5; j += 1) {
+      ceilsMatrix[counter].push(ceilsClick[j]);
+    }
+    counter += 1;
+  }
+
+  for (let i = 0; i < ceilsClick.length; i += 1) {
+    ceilsClick[i].addEventListener("click", checkChosen(i));
+    ceilsClick[i].addEventListener("contextmenu", checkOffcast(i));
+    ceilsClick[i].addEventListener("click", checkCorrect);
+  }
+  console.log(ceilsMatrix)
+
 }
