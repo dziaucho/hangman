@@ -413,3 +413,36 @@ function switchMusic() {
   }
   buttonAudio.classList.toggle("off-sound");
 }
+
+// switch theme
+
+let buttons = document.querySelectorAll("button");
+let allTd = document.querySelectorAll("td");
+let allTable = document.querySelectorAll(".game-table");
+
+buttonSwitchTheme.addEventListener("click", swithcTheme);
+
+function swithcTheme() {
+  body.classList.toggle("dark");
+  gameZoneWrapper.classList.toggle("dark");
+
+  for (let i = 0; i < rows.length; i += 1) {
+    rows[i].classList.toggle("dark");
+  }
+
+  for (let i = 0; i < buttons.length; i += 1) {
+    buttons[i].classList.toggle("dark");
+  }
+
+  for (let i = 0; i < columns.length; i += 1) {
+    columns[i].classList.toggle("dark");
+  }
+
+  for (let i = 0; i < allTd.length; i += 1) {
+    allTd[i].classList.toggle("dark");
+  }
+
+  for (let i = 0; i < allTable.length; i += 1) {
+    allTable[i].classList.toggle("dark");
+  }
+}
