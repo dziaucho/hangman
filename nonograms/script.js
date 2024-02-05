@@ -6,43 +6,177 @@ import { makeElement, makeTable, makeTipsTable, getTipsCols, getTipsRows, getLon
 
 let body = document.querySelector("body");
 
-/* test task */
+/* tasks */
 
-let task = [
-  [0, 0, 1, 1, 0],
-  [0, 1, 0, 0, 1],
-  [1, 1, 1, 0, 0],
-  [1, 0, 1, 0, 0],
-  [1, 1, 1, 0, 0]
+let tasks = [
+  [
+    [0, 0, 1, 1, 0],
+    [0, 1, 0, 0, 1],
+    [1, 1, 1, 0, 0],
+    [1, 0, 1, 0, 0],
+    [1, 1, 1, 0, 0]
+  ],
+  [
+    [0, 1, 1, 1, 1],
+    [1, 0, 1, 0, 0],
+    [1, 0, 0, 1, 0],
+    [1, 1, 0, 1, 1],
+    [0, 1, 0, 1, 1]
+  ],
+  [
+    [1, 1, 1, 1, 1],
+    [1, 1, 1, 0, 1],
+    [1, 1, 1, 0, 0],
+    [0, 0, 1, 1, 1],
+    [1, 1, 1, 0, 0]
+  ],
+  [
+    [0, 1, 1, 1, 1],
+    [0, 0, 1, 1, 1],
+    [0, 0, 1, 0, 0],
+    [0, 1, 0, 1, 0],
+    [1, 1, 0, 1, 0]
+  ],
+  [
+    [0, 0, 0, 1, 1],
+    [0, 1, 0, 0, 1],
+    [1, 0, 0, 1, 1],
+    [1, 1, 1, 1, 0],
+    [1, 1, 1, 1, 1]
+  ]
 ]
+
+let emptyNonogram = [
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0]
+]
+
+let ceilsMatrix = [
+  [],
+  [],
+  [],
+  [],
+  []
+];
+
+let currentGame = tasks[getRandomInt(tasks.length)];
 
 /* game zone */
 
 let gameSection = makeElement("section", "game-section");
 
+let winnerHeading = makeElement("h1", "winner-heading");
+
 let gameZoneWrapper = makeElement("div", "game-zone-wrapper");
-let table = makeTable(task.length);
+let table = makeTable(currentGame.length);
 
 let gameZoneCol1 = makeElement("div", "game-zone-column");
 let gameZoneCol2 = makeElement("div", "game-zone-column");
 
-let tipsCols = getTipsCols(task);
-let tipsRows = getTipsRows(task);
+let buttonsWrapper = makeElement("div", "buttons-wrapper");
+let buttonRestart = makeElement("button", "button-restart");
+let buttonRandom = makeElement("button", "button-random");
+let buttonSwitchTheme = makeElement("button", "button-switch-theme");
+let buttonAudio = makeElement("button", "button-audio");
+
+let soundClick = makeElement("audio", "audio-click");
+let soundBg = makeElement("audio", "sound-bg");
+
+let soundSrcClick = makeElement("source", "sound-src-click");
+let soundSrcBg = makeElement("source", "sound-src-bg");
+
+let chooseGameWrapper = makeElement("div", "choose-game-wrapper");
+let game1 = makeElement("p", "game-1 game-paragraph");
+let game2 = makeElement("p", "game-2 game-paragraph");
+let game3 = makeElement("p", "game-3 game-paragraph");
+let game4 = makeElement("p", "game-4 game-paragraph");
+let game5 = makeElement("p", "game-5 game-paragraph");
+
+let tipsCols = getTipsCols(currentGame);
+let tipsRows = getTipsRows(currentGame);
 let lengthCols = getLongestColTip(tipsCols);
 let lengthRows = getLongestRowTip(tipsRows);
 
-let tableTipsCols = makeTipsTable(lengthCols, task.length);
-let tableTipsRows = makeTipsTable(task.length, lengthRows);
+let tableTipsCols = makeTipsTable(lengthCols, currentGame.length);
+let tableTipsRows = makeTipsTable(currentGame.length, lengthRows);
+
+// time counter
+let timerCounter = 0;
+let timeMinutes = 0;
 
 /* append */
 body.appendChild(gameSection);
+
+gameSection.appendChild(winnerHeading);
+
+winnerHeading.innerHTML = `${timeMinutes} : ${timerCounter}`;
+
 gameSection.appendChild(gameZoneWrapper);
+
 gameZoneWrapper.appendChild(gameZoneCol1);
 gameZoneWrapper.appendChild(gameZoneCol2);
 
 gameZoneCol1.appendChild(tableTipsRows);
 gameZoneCol2.appendChild(tableTipsCols);
 gameZoneCol2.appendChild(table);
+
+gameSection.appendChild(buttonsWrapper);
+buttonsWrapper.appendChild(buttonRestart);
+buttonsWrapper.appendChild(buttonRandom);
+buttonsWrapper.appendChild(buttonSwitchTheme);
+buttonsWrapper.appendChild(buttonAudio);
+buttonsWrapper.appendChild(soundClick);
+buttonsWrapper.appendChild(soundBg);
+
+soundClick.appendChild(soundSrcClick);
+soundBg.appendChild(soundSrcBg);
+
+gameSection.appendChild(chooseGameWrapper);
+chooseGameWrapper.appendChild(game1);
+chooseGameWrapper.appendChild(game2);
+chooseGameWrapper.appendChild(game3);
+chooseGameWrapper.appendChild(game4);
+chooseGameWrapper.appendChild(game5);
+
+buttonRestart.innerHTML = "restart";
+buttonRandom.innerHTML = "random";
+buttonSwitchTheme.innerHTML = "switch theme";
+buttonAudio.innerHTML = "sounds";
+
+game1.innerHTML = "1 game";
+game2.innerHTML = "2 game";
+game3.innerHTML = "3 game";
+game4.innerHTML = "4 game";
+game5.innerHTML = "5 game";
+
+soundSrcClick.src = "./sounds/click.mp3";
+soundSrcBg.src = "./sounds/bg.wav";
+
+soundBg.loop = true;
+soundBg.currentTime = 0;
+soundBg.play()
+soundBg.volume = 0.1;
+
+// timer
+
+let timerInterval = setInterval(timerChange, 1000);
+function timerChange() {
+  if (timerCounter === 59) {
+    timeMinutes += 1;
+    timerCounter = 0;
+  }
+  timerCounter += 1;
+  winnerHeading.innerHTML = `${timeMinutes} : ${timerCounter}`;
+}
+
+// randomizer
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 
 let rows = tableTipsCols.querySelectorAll("tr");
 let start = rows.length - 1;
@@ -58,13 +192,27 @@ for (let i = 0; i < columns.length; i += 1) {
 
 let ceilsClick = table.querySelectorAll("td");
 
+let counter = 0;
+
+for (let i = 0; i < ceilsClick.length; i += 5) {
+  for (let j = i; j < i + 5; j += 1) {
+    ceilsMatrix[counter].push(ceilsClick[j]);
+  }
+  counter += 1;
+}
+
 for (let i = 0; i < ceilsClick.length; i += 1) {
   ceilsClick[i].addEventListener("click", checkChosen(i));
   ceilsClick[i].addEventListener("contextmenu", checkOffcast(i));
+  ceilsClick[i].addEventListener("click", checkCorrect);
 }
 
 function checkChosen(item) {
   return function () {
+    if (soundBg.loop) {
+      soundClick.play();
+    }
+
     if (ceilsClick[item].classList.contains("offcast")) {
       ceilsClick[item].classList.remove("offcast");
     }
@@ -75,9 +223,226 @@ function checkChosen(item) {
 function checkOffcast(item) {
   return function (event) {
     event.preventDefault();
+    if (soundBg.loop) {
+      soundClick.play();
+    }
     if (ceilsClick[item].classList.contains("chosen")) {
       ceilsClick[item].classList.remove("chosen");
     }
     ceilsClick[item].classList.toggle("offcast");
+  }
+}
+
+function checkCorrect() {
+  for (let i = 0; i < 5; i += 1) {
+    for (let j = 0; j < 5; j += 1) {
+      if (ceilsMatrix[i][j].classList.contains("chosen")) {
+        emptyNonogram[i][j] = 1;
+      } else {
+        emptyNonogram[i][j] = 0;
+      }
+    }
+  }
+
+  if (emptyNonogram.toString() === currentGame.toString()) {
+    clearInterval(timerInterval);
+    winnerHeading.innerHTML = `Congrats! Your result: ${timeMinutes} : ${timerCounter}`
+  }
+}
+
+// restart game
+
+buttonRestart.addEventListener("click", restartGame);
+
+function restartGame() {
+  for (let i = 0; i < ceilsClick.length; i += 1) {
+    ceilsClick[i].classList.remove("chosen");
+    ceilsClick[i].classList.remove("offcast");
+    timeMinutes = 0;
+    timerCounter = -1;
+    checkCorrect();
+  }
+}
+
+// random game
+
+buttonRandom.addEventListener("click", randomGame);
+
+function randomGame() {
+  timeMinutes = 0;
+  timerCounter = -1;
+  checkCorrect();
+
+  ceilsMatrix = [
+    [],
+    [],
+    [],
+    [],
+    []
+  ];
+  gameZoneCol1.removeChild(tableTipsRows);
+  gameZoneCol2.removeChild(tableTipsCols);
+  gameZoneCol2.removeChild(table);
+
+  currentGame = tasks[getRandomInt(tasks.length)];
+
+  table = makeTable(currentGame.length);
+
+  tipsCols = getTipsCols(currentGame);
+  tipsRows = getTipsRows(currentGame);
+
+  tableTipsCols = makeTipsTable(lengthCols, currentGame.length);
+  tableTipsRows = makeTipsTable(currentGame.length, lengthRows);
+
+  gameZoneCol1.appendChild(tableTipsRows);
+  gameZoneCol2.appendChild(tableTipsCols);
+  gameZoneCol2.appendChild(table);
+
+  rows = tableTipsCols.querySelectorAll("tr");
+  start = rows.length - 1;
+
+  pushColsTips(rows, tipsCols, start)
+
+  columns = tableTipsRows.querySelectorAll("tr");
+  for (let i = 0; i < columns.length; i += 1) {
+    let ceils = Array.from(columns[i].querySelectorAll("td"));
+    ceils.reverse();
+    pushRowsTips(ceils, tipsRows[i]);
+  }
+
+  ceilsClick = table.querySelectorAll("td");
+
+  counter = 0;
+
+  for (let i = 0; i < ceilsClick.length; i += 5) {
+    for (let j = i; j < i + 5; j += 1) {
+      ceilsMatrix[counter].push(ceilsClick[j]);
+    }
+    counter += 1;
+  }
+
+  for (let i = 0; i < ceilsClick.length; i += 1) {
+    ceilsClick[i].addEventListener("click", checkChosen(i));
+    ceilsClick[i].addEventListener("contextmenu", checkOffcast(i));
+    ceilsClick[i].addEventListener("click", checkCorrect);
+  }
+}
+
+// choose game
+
+let gameOptions = document.querySelectorAll("p");
+
+for (let i = 0; i < gameOptions.length; i += 1) {
+  gameOptions[i].addEventListener("click", chooseGame(i));
+}
+
+function chooseGame(item) {
+  return function () {
+    timeMinutes = 0;
+    timerCounter = -1;
+    checkCorrect();
+
+    ceilsMatrix = [
+      [],
+      [],
+      [],
+      [],
+      []
+    ];
+    gameZoneCol1.removeChild(tableTipsRows);
+    gameZoneCol2.removeChild(tableTipsCols);
+    gameZoneCol2.removeChild(table);
+
+    currentGame = tasks[item];
+
+    table = makeTable(currentGame.length);
+
+    tipsCols = getTipsCols(currentGame);
+    tipsRows = getTipsRows(currentGame);
+
+    tableTipsCols = makeTipsTable(lengthCols, currentGame.length);
+    tableTipsRows = makeTipsTable(currentGame.length, lengthRows);
+
+    gameZoneCol1.appendChild(tableTipsRows);
+    gameZoneCol2.appendChild(tableTipsCols);
+    gameZoneCol2.appendChild(table);
+
+    rows = tableTipsCols.querySelectorAll("tr");
+    start = rows.length - 1;
+
+    pushColsTips(rows, tipsCols, start)
+
+    columns = tableTipsRows.querySelectorAll("tr");
+    for (let i = 0; i < columns.length; i += 1) {
+      let ceils = Array.from(columns[i].querySelectorAll("td"));
+      ceils.reverse();
+      pushRowsTips(ceils, tipsRows[i]);
+    }
+
+    ceilsClick = table.querySelectorAll("td");
+
+    counter = 0;
+
+    for (let i = 0; i < ceilsClick.length; i += 5) {
+      for (let j = i; j < i + 5; j += 1) {
+        ceilsMatrix[counter].push(ceilsClick[j]);
+      }
+      counter += 1;
+    }
+
+    for (let i = 0; i < ceilsClick.length; i += 1) {
+      ceilsClick[i].addEventListener("click", checkChosen(i));
+      ceilsClick[i].addEventListener("contextmenu", checkOffcast(i));
+      ceilsClick[i].addEventListener("click", checkCorrect);
+    }
+  }
+}
+
+// on / off music
+
+buttonAudio.addEventListener("click", switchMusic);
+
+function switchMusic() {
+  if (soundBg.loop) {
+    soundBg.loop = false;
+    soundBg.pause();
+  } else {
+    soundBg.loop = true;
+    soundBg.currentTime = 0;
+    soundBg.play()
+  }
+  buttonAudio.classList.toggle("off-sound");
+}
+
+// switch theme
+
+let buttons = document.querySelectorAll("button");
+let allTd = document.querySelectorAll("td");
+let allTable = document.querySelectorAll(".game-table");
+
+buttonSwitchTheme.addEventListener("click", swithcTheme);
+
+function swithcTheme() {
+  body.classList.toggle("dark");
+  gameZoneWrapper.classList.toggle("dark");
+
+  for (let i = 0; i < rows.length; i += 1) {
+    rows[i].classList.toggle("dark");
+  }
+
+  for (let i = 0; i < buttons.length; i += 1) {
+    buttons[i].classList.toggle("dark");
+  }
+
+  for (let i = 0; i < columns.length; i += 1) {
+    columns[i].classList.toggle("dark");
+  }
+
+  for (let i = 0; i < allTd.length; i += 1) {
+    allTd[i].classList.toggle("dark");
+  }
+
+  for (let i = 0; i < allTable.length; i += 1) {
+    allTable[i].classList.toggle("dark");
   }
 }
