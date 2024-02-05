@@ -21,9 +21,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 30px;
   background: url(bg-image.png);
   background-repeat: no-repeat;
   background-size: 30%;
+}
+
+/* winner heading + timer text */
+
+.winner-heading {
+  margin: 0;
 }
 
 /* game zone */
@@ -62,4 +70,20 @@ td.chosen {
 td.offcast {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512" style="fill: %237e1946;"><path d="M12.649,12L21.886,.818c.176-.213,.146-.528-.067-.704-.211-.176-.526-.147-.704,.067L12,11.215,2.886,.182c-.178-.215-.493-.243-.704-.067-.213,.176-.243,.491-.067,.704L11.351,12,2.114,23.182c-.176,.213-.146,.528,.067,.704,.212,.175,.527,.147,.704-.067L12,12.785l9.114,11.033c.177,.214,.493,.242,.704,.067,.213-.176,.243-.491,.067-.704L12.649,12Z"/></svg>') no-repeat center center;
   background-size: contain;
+}
+
+/* buttons */
+
+.buttons-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  background-color: var(--main-bg-color);
+  border: 2px solid var(--table-border-color);
+  font-family: 'Fredoka', sans-serif;
+  color: var(--font-color);
+  padding: 3px;
+  border-radius: 5px;
 }
