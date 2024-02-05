@@ -93,6 +93,11 @@ button:hover {
   cursor: pointer;
 }
 
+button.off-sound {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 /* choose game */
 
 .choose-game-wrapper {

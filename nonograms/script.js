@@ -80,6 +80,13 @@ let buttonsWrapper = makeElement("div", "buttons-wrapper");
 let buttonRestart = makeElement("button", "button-restart");
 let buttonRandom = makeElement("button", "button-random");
 let buttonSwitchTheme = makeElement("button", "button-switch-theme");
+let buttonAudio = makeElement("button", "button-audio");
+
+let soundClick = makeElement("audio", "audio-click");
+let soundBg = makeElement("audio", "sound-bg");
+
+let soundSrcClick = makeElement("source", "sound-src-click");
+let soundSrcBg = makeElement("source", "sound-src-bg");
 
 let chooseGameWrapper = makeElement("div", "choose-game-wrapper");
 let game1 = makeElement("p", "game-1 game-paragraph");
@@ -120,6 +127,12 @@ gameSection.appendChild(buttonsWrapper);
 buttonsWrapper.appendChild(buttonRestart);
 buttonsWrapper.appendChild(buttonRandom);
 buttonsWrapper.appendChild(buttonSwitchTheme);
+buttonsWrapper.appendChild(buttonAudio);
+buttonsWrapper.appendChild(soundClick);
+buttonsWrapper.appendChild(soundBg);
+
+soundClick.appendChild(soundSrcClick);
+soundBg.appendChild(soundSrcBg);
 
 gameSection.appendChild(chooseGameWrapper);
 chooseGameWrapper.appendChild(game1);
@@ -128,15 +141,24 @@ chooseGameWrapper.appendChild(game3);
 chooseGameWrapper.appendChild(game4);
 chooseGameWrapper.appendChild(game5);
 
+buttonRestart.innerHTML = "restart";
+buttonRandom.innerHTML = "random";
+buttonSwitchTheme.innerHTML = "switch theme";
+buttonAudio.innerHTML = "sounds";
+
 game1.innerHTML = "1 game";
 game2.innerHTML = "2 game";
 game3.innerHTML = "3 game";
 game4.innerHTML = "4 game";
 game5.innerHTML = "5 game";
 
-buttonRestart.innerHTML = "restart";
-buttonRandom.innerHTML = "random";
-buttonSwitchTheme.innerHTML = "switch theme";
+soundSrcClick.src = "./sounds/click.mp3";
+soundSrcBg.src = "./sounds/bg.wav";
+
+soundBg.loop = true;
+soundBg.currentTime = 0;
+soundBg.play()
+soundBg.volume = 0.1;
 
 // timer
 
@@ -187,6 +209,10 @@ for (let i = 0; i < ceilsClick.length; i += 1) {
 
 function checkChosen(item) {
   return function () {
+    if (soundBg.loop) {
+      soundClick.play();
+    }
+
     if (ceilsClick[item].classList.contains("offcast")) {
       ceilsClick[item].classList.remove("offcast");
     }
@@ -197,6 +223,9 @@ function checkChosen(item) {
 function checkOffcast(item) {
   return function (event) {
     event.preventDefault();
+    if (soundBg.loop) {
+      soundClick.play();
+    }
     if (ceilsClick[item].classList.contains("chosen")) {
       ceilsClick[item].classList.remove("chosen");
     }
@@ -367,4 +396,20 @@ function chooseGame(item) {
       ceilsClick[i].addEventListener("click", checkCorrect);
     }
   }
+}
+
+// on / off music
+
+buttonAudio.addEventListener("click", switchMusic);
+
+function switchMusic() {
+  if (soundBg.loop) {
+    soundBg.loop = false;
+    soundBg.pause();
+  } else {
+    soundBg.loop = true;
+    soundBg.currentTime = 0;
+    soundBg.play()
+  }
+  buttonAudio.classList.toggle("off-sound");
 }
