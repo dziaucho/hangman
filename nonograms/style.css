@@ -81,9 +81,31 @@ td.offcast {
 
 button {
   background-color: var(--main-bg-color);
-  border: 2px solid var(--table-border-color);
+  border: 1.5px solid var(--table-border-color);
   font-family: 'Fredoka', sans-serif;
   color: var(--font-color);
   padding: 3px;
   border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* choose game */
+
+.choose-game-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+p {
+  margin: 0;
+  padding: 10px;
+}
+
+p:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
