@@ -6,46 +6,45 @@ import { makeElement, makeTable, makeTipsTable, getTipsCols, getTipsRows, getLon
 
 let body = document.querySelector("body");
 
-/* test task */
+/* tasks */
 
-let task = [
-  [0, 0, 1, 1, 0],
-  [0, 1, 0, 0, 1],
-  [1, 1, 1, 0, 0],
-  [1, 0, 1, 0, 0],
-  [1, 1, 1, 0, 0]
-]
+let tasks = [
+  [
+    [0, 0, 1, 1, 0],
+    [0, 1, 0, 0, 1],
+    [1, 1, 1, 0, 0],
+    [1, 0, 1, 0, 0],
+    [1, 1, 1, 0, 0]
+  ],
+  [
+    [1, 1, 1, 0, 0],
+    [1, 1, 0, 1, 0],
+    [1, 0, 0, 0, 1],
+    [0, 0, 0, 1, 1],
+    [0, 0, 1, 1, 1]
+  ],
+  [
+    [1, 1, 0, 0, 0],
+    [1, 1, 1, 0, 1],
+    [1, 0, 0, 1, 1],
+    [1, 0, 1, 0, 1],
+    [0, 0, 1, 0, 0]
+  ],
+  [
+    [1, 1, 1, 1, 0],
+    [1, 1, 0, 0, 0],
+    [0, 0, 1, 0, 1],
+    [0, 0, 0, 0, 1],
+    [1, 0, 1, 1, 1]
+  ],
+  [
+    [0, 1, 1, 1, 1],
+    [0, 0, 1, 1, 1],
+    [0, 0, 1, 0, 0],
+    [0, 1, 0, 1, 0],
+    [1, 1, 0, 1, 0]
+  ]
 
-let task2 = [
-  [1, 1, 1, 0, 0],
-  [1, 1, 0, 1, 0],
-  [1, 0, 0, 0, 1],
-  [0, 0, 0, 1, 1],
-  [0, 0, 1, 1, 1]
-]
-
-let task1 = [
-  [1, 1, 0, 0, 0],
-  [1, 1, 1, 0, 1],
-  [1, 0, 0, 1, 1],
-  [1, 0, 1, 0, 1],
-  [0, 0, 1, 0, 0]
-]
-
-let task3 = [
-  [1, 1, 1, 1, 0],
-  [1, 1, 0, 0, 0],
-  [0, 0, 1, 0, 1],
-  [0, 0, 0, 0, 1],
-  [1, 0, 1, 1, 1]
-]
-
-let task4 = [
-  [0, 1, 1, 1, 1],
-  [0, 0, 1, 1, 1],
-  [0, 0, 1, 0, 0],
-  [0, 1, 0, 1, 0],
-  [1, 1, 0, 1, 0],
 ]
 
 let emptyNonogram = [
@@ -56,6 +55,16 @@ let emptyNonogram = [
   [0, 0, 0, 0, 0]
 ]
 
+let ceilsMatrix = [
+  [],
+  [],
+  [],
+  [],
+  []
+];
+
+let currentGame = tasks[getRandomInt(tasks.length)];
+
 /* game zone */
 
 let gameSection = makeElement("section", "game-section");
@@ -63,7 +72,7 @@ let gameSection = makeElement("section", "game-section");
 let winnerHeading = makeElement("h1", "winner-heading");
 
 let gameZoneWrapper = makeElement("div", "game-zone-wrapper");
-let table = makeTable(task2.length);
+let table = makeTable(currentGame.length);
 
 let gameZoneCol1 = makeElement("div", "game-zone-column");
 let gameZoneCol2 = makeElement("div", "game-zone-column");
@@ -73,13 +82,13 @@ let buttonRestart = makeElement("button", "button-restart");
 let buttonRandom = makeElement("button", "button-random");
 let buttonSwitchTheme = makeElement("button", "button-switch-theme");
 
-let tipsCols = getTipsCols(task2);
-let tipsRows = getTipsRows(task2);
+let tipsCols = getTipsCols(currentGame);
+let tipsRows = getTipsRows(currentGame);
 let lengthCols = getLongestColTip(tipsCols);
 let lengthRows = getLongestRowTip(tipsRows);
 
-let tableTipsCols = makeTipsTable(lengthCols, task2.length);
-let tableTipsRows = makeTipsTable(task2.length, lengthRows);
+let tableTipsCols = makeTipsTable(lengthCols, currentGame.length);
+let tableTipsRows = makeTipsTable(currentGame.length, lengthRows);
 
 // time counter
 let timerCounter = 0;
@@ -122,6 +131,12 @@ function timerChange() {
   winnerHeading.innerHTML = `${timeMinutes} : ${timerCounter}`;
 }
 
+// randomizer
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 let rows = tableTipsCols.querySelectorAll("tr");
 let start = rows.length - 1;
 
@@ -135,13 +150,6 @@ for (let i = 0; i < columns.length; i += 1) {
 }
 
 let ceilsClick = table.querySelectorAll("td");
-let ceilsMatrix = [
-  [],
-  [],
-  [],
-  [],
-  []
-];
 
 let counter = 0;
 
@@ -151,7 +159,6 @@ for (let i = 0; i < ceilsClick.length; i += 5) {
   }
   counter += 1;
 }
-
 
 for (let i = 0; i < ceilsClick.length; i += 1) {
   ceilsClick[i].addEventListener("click", checkChosen(i));
@@ -189,10 +196,22 @@ function checkCorrect() {
     }
   }
 
-  console.log(emptyNonogram);
-
-  if (emptyNonogram.toString() === task2.toString()) {
+  if (emptyNonogram.toString() === currentGame.toString()) {
     clearInterval(timerInterval);
     winnerHeading.innerHTML = `Congrats! Your result: ${timeMinutes} : ${timerCounter}`
+  }
+}
+
+// restart game
+
+buttonRestart.addEventListener("click", restartGame)
+
+function restartGame() {
+  for (let i = 0; i < ceilsClick.length; i += 1) {
+    ceilsClick[i].classList.remove("chosen");
+    ceilsClick[i].classList.remove("offcast");
+    timeMinutes = 0;
+    timerCounter = 0;
+    checkCorrect();
   }
 }
