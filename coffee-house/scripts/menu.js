@@ -278,7 +278,7 @@ for (let i = 0; i < sizeButtons.length; i++) {
 }
 
 for (let i = 0; i < additivesButtons.length; i++) {
-  additivesButtons[i].addEventListener('click', changeAdditive(i))
+  additivesButtons[i].addEventListener('click', changeAdditive(i));
 }
 
 buttinClose.addEventListener('click', hideModal);
