@@ -1,4 +1,4 @@
-[video](https://drive.google.com/file/d/1GuT-DZ1PzJuoXTacjuhoyehhqU5oNZwa/view?usp=sharing)
+[video](https://youtu.be/U_wjeSfIzCo)
 
 #transcription
 
