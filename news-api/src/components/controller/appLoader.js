@@ -3,7 +3,7 @@ import Loader from './loader';
 class AppLoader extends Loader {
     constructor() {
         super(process.env.API_URL, {
-            apiKey: process.env.API_KEY,
+            apiKey: "a2efc605291a4e1694009969c70e20c5",
         });
     }
 }
