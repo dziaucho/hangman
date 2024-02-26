@@ -1,4 +1,4 @@
-interface NewsSource {
+export interface NewsSource {
   id: string;
   name: string;
   description: string;
@@ -8,11 +8,9 @@ interface NewsSource {
   country: string;
 }
 
-interface NewsAPIResponse {
+export interface NewsAPIResponse {
   status: 'ok' | 'error';
   sources?: NewsSource[];
   code?: string;
   message?: string;
 }
-
-export interface NewsSource, interface NewsAPIResponse;
