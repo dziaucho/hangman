@@ -8,9 +8,9 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 
 2. **Declare variable types in TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/9N56KJNU?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-declare-variable-types.svg" alt="Declare variable types in TypeScript">
 
-3. **Implement interfaces in TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/UFLCDRV3?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-implement-interfaces.svg" alt="Get started with TypeScript">
+3. **Implement interfaces in TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/UFLCDRV3?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-implement-interfaces.svg" alt="Implement interfaces in TypeScript">
 
-4. **Develop Typed Functions in TypeScript**: [Badge](badge-link)
+4. **Develop typed functions by using TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/24Y78H5V?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-develop-typed-functions.svg" alt="Develop typed functions by using TypeScript">
 
 5. **Declare and Instantiate Classes in TypeScript**: [Badge](badge-link)
 
