@@ -14,7 +14,7 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 
 5. **Declare and instantiate classes in TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/X2HN6X8Y?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-declare-instantiate-classes.svg" alt="Declare and instantiate classes in TypeScript">
 
-6. **Generics in TypeScript**: [Badge](badge-link)
+6. **Define generics in TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/X2HN6X8Y?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-generics.svg" alt="Define generics in TypeScript">
 
 7. **Work with External Libraries in TypeScript**: [Badge](badge-link)
 
@@ -22,4 +22,4 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 
 ## Reflections
 
-[my brain is in agony]
+[still alive 🐨]
