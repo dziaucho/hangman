@@ -6,9 +6,9 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 
 1. **Get started with TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/J6PE777T?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/en-us/training/achievements/typescript/typescript-get-started.svg" alt="Get started with TypeScript">
 
-2. **Declare variable types in TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/9N56KJNU?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-declare-variable-types.svg" alt="Get started with TypeScript">
+2. **Declare variable types in TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/9N56KJNU?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-declare-variable-types.svg" alt="Declare variable types in TypeScript">
 
-3. **Implement Interfaces in TypeScript**: [Badge](badge-link)
+3. **Implement interfaces in TypeScript**: [check](https://learn.microsoft.com/api/achievements/share/en-us/dziauco-4651/UFLCDRV3?sharingId=F225B19194CBB851) <img src="https://learn.microsoft.com/ru-ru/training/achievements/typescript/typescript-implement-interfaces.svg" alt="Get started with TypeScript">
 
 4. **Develop Typed Functions in TypeScript**: [Badge](badge-link)
 
