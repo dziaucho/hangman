@@ -12,13 +12,24 @@ interface Base {
 
 export class BaseTag<T extends HTMLElement = HTMLElement> implements Base {
   tagName: string;
+
   tagClass: string;
+
   tagId?: string;
+
   tagSrc?: string;
+
   tagAlt?: string;
+
   elem: T;
 
-  constructor(tagName: string, tagClass: string, tagId?: string, tagSrc?: string, tagAlt?: string) {
+  constructor(
+    tagName: string,
+    tagClass: string,
+    tagId?: string,
+    tagSrc?: string,
+    tagAlt?: string,
+  ) {
     this.tagName = tagName;
     this.tagClass = tagClass;
     this.tagId = tagId;
@@ -28,13 +39,15 @@ export class BaseTag<T extends HTMLElement = HTMLElement> implements Base {
     this.elem = document.createElement(this.tagName) as T;
     this.elem.className = this.tagClass;
     if (this.tagId) this.elem.id = this.tagId;
-    if (this.tagSrc) this.elem.setAttribute('src', this.tagSrc);
-    if (this.tagAlt) this.elem.setAttribute('alt', this.tagAlt);
+    if (this.tagSrc) this.elem.setAttribute("src", this.tagSrc);
+    if (this.tagAlt) this.elem.setAttribute("alt", this.tagAlt);
   }
 
   addElemToDoc(parentElement: HTMLElement | BaseTag): void {
-    if (parentElement instanceof HTMLElement) parentElement.appendChild(this.elem);
-    if (parentElement instanceof BaseTag) parentElement.elem.appendChild(this.elem);
+    if (parentElement instanceof HTMLElement)
+      parentElement.appendChild(this.elem);
+    if (parentElement instanceof BaseTag)
+      parentElement.elem.appendChild(this.elem);
   }
 
   addClass(newClass: string): void {

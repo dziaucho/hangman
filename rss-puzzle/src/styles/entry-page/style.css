@@ -13,10 +13,13 @@
   margin-bottom: auto;
 }
 
-.inputs-wrapper-div {
+.entry-form {
   display: flex;
   justify-content: center;
-  gap: 100px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 600px;
+  gap: 30px 100px;
 }
 
 .name-input,
