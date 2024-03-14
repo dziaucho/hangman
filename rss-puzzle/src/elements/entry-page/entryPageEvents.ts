@@ -1,6 +1,8 @@
-/* import { entryForm } from "./entryPage";
+import { entryForm, nameInput, surnameInput } from "./entryPage";
+import { createUser, showUser } from "../../users/userfunction";
 
-function validInput(elements: HTMLInputElement[]) {
+
+/* function validInput(elements: HTMLInputElement[]) {
   return;
 }
 
@@ -16,11 +18,10 @@ function showElements(formNode: HTMLFormElement) {
   });
 
   validInput(elementsText);
-}
+} */
 
 export function check(event: Event) {
   event.preventDefault();
-  console.log("check");
-  showElements(entryForm.elem);
+  createUser();
+  showUser();
 }
-*/
