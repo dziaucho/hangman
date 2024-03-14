@@ -1,7 +1,7 @@
 import { BaseTag } from "../base/base";
-import { check } from "./entryPageEvents";
+import { signIn } from "./entry-page-events";
 
-const entrySection: BaseTag = new BaseTag("section", "entry-section");
+export const entrySection: BaseTag<HTMLElement> = new BaseTag<HTMLElement>("section", "entry-section");
 const welcomeHeading: BaseTag<HTMLHeadingElement> =
   new BaseTag<HTMLHeadingElement>("h1", "welcome-heading");
 export const entryForm: BaseTag<HTMLFormElement> = new BaseTag<HTMLFormElement>(
@@ -46,4 +46,4 @@ nameInput.addElemToDoc(entryForm);
 surnameInput.addElemToDoc(entryForm);
 loginButton.addElemToDoc(entryForm);
 
-entryForm.elem.addEventListener("submit", check);
+entryForm.elem.addEventListener("submit", signIn);

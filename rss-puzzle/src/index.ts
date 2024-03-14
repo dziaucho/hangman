@@ -1,2 +1,2 @@
 import "./style.css";
-import "./elements/entry-page/entryPage";
+import "./elements/entry-page/entry-page";
