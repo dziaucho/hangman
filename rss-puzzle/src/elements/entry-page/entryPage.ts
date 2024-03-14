@@ -1,5 +1,5 @@
 import { BaseTag } from "../base/base";
-/* import { check } from "./entryPageEvents"; */
+import { check } from "./entryPageEvents";
 
 const entrySection: BaseTag = new BaseTag("section", "entry-section");
 const welcomeHeading: BaseTag<HTMLHeadingElement> =
@@ -9,12 +9,12 @@ export const entryForm: BaseTag<HTMLFormElement> = new BaseTag<HTMLFormElement>(
   "entry-form",
   "entry-form",
 );
-const nameInput: BaseTag<HTMLInputElement> = new BaseTag<HTMLInputElement>(
+export const nameInput: BaseTag<HTMLInputElement> = new BaseTag<HTMLInputElement>(
   "input",
   "name-input",
   "name-input",
 );
-const surnameInput: BaseTag<HTMLInputElement> = new BaseTag<HTMLInputElement>(
+export const surnameInput: BaseTag<HTMLInputElement> = new BaseTag<HTMLInputElement>(
   "input",
   "surname-input",
   "surname-input",
@@ -46,4 +46,4 @@ nameInput.addElemToDoc(entryForm);
 surnameInput.addElemToDoc(entryForm);
 loginButton.addElemToDoc(entryForm);
 
-/* entryForm.elem.addEventListener("submit", check); */
+entryForm.elem.addEventListener("submit", check);
