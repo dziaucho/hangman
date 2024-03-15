@@ -47,6 +47,20 @@ export function removeUser(): void {
   const keys = Object.keys(localStorage);
   for (const key of keys) {
     const storedUser = JSON.parse(localStorage.getItem(key) || "{}");
-    if (storedUser.isLogged) localStorage.removeItem(key);
+    if (storedUser.user && storedUser.user.isLogged) {
+      localStorage.removeItem(key);
+    }
   }
+}
+
+
+export function getLastUser(): string | null {
+  const keys = Object.keys(localStorage);
+  for (const key of keys) {
+    const storedUser = JSON.parse(localStorage.getItem(key) || "{}");
+    if (storedUser.user && storedUser.user.isLogged) {
+      return `${storedUser.user.name} ${storedUser.user.surname}`;
+    }
+  }
+  return null;
 }
