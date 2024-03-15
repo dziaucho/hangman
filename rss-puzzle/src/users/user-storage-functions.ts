@@ -14,24 +14,39 @@ function updateUsersLogged(newUserName: string, newUserSurname: string): void {
   }
 }
 
+function isUserExsist(userName: string, userSurname: string): boolean {
+  const keys = Object.keys(localStorage);
+  for (const key of keys) {
+    const storedUser = JSON.parse(localStorage.getItem(key) || "{}");
+    if (storedUser.name === userName && storedUser.surname === userSurname) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export function createUser(): void {
-  const user = {
-    isLogged: true,
-    name: nameInput.elem.value,
-    surname: surnameInput.elem.value,
-  };
-  localStorage.setItem(
-    `${user.name}_${user.surname}`,
-    JSON.stringify({ user }),
-  );
-  console.log(localStorage.getItem(`${user.name}_${user.surname}`));
-  updateUsersLogged(user.name, user.surname);
+  const userName = nameInput.elem.value;
+  const userSurname = surnameInput.elem.value;
+
+  if (!isUserExsist(userName, userSurname)) {
+    const user = {
+      isLogged: true,
+      name: userName,
+      surname: userSurname,
+    };
+    localStorage.setItem(
+      `${user.name}_${user.surname}`,
+      JSON.stringify({ user }),
+    );
+  }
+  updateUsersLogged(nameInput.elem.value, surnameInput.elem.value);
 }
 
 export function removeUser(): void {
   const keys = Object.keys(localStorage);
   for (const key of keys) {
-    const storedUser = JSON.parse(localStorage.getItem(key) ?? "{}");
+    const storedUser = JSON.parse(localStorage.getItem(key) || "{}");
     if (storedUser.isLogged) localStorage.removeItem(key);
   }
 }
