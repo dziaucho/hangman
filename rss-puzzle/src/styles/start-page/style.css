@@ -1,14 +1,19 @@
 .start-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   height: 100%;
   background-color: #f1f0f0;
   padding: 100px;
 }
 
+.desc-text {
+  line-height: 30px;
+}
+
 .delete-button {
-  width: 100px;
+  width: 120px;
   height: 50px;
   text-align: center;
   color: #000000;

@@ -2,7 +2,7 @@ import { createUser } from "../../users/user-storage-functions";
 import { entrySection, nameInput, surnameInput } from "./entry-page";
 import { startSection } from "../start-page/start-page";
 
-function goStart(): void {
+export function goStart(): void {
   entrySection.addClass("hide");
   startSection.removeClass("hide");
 }
