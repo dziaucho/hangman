@@ -8,12 +8,6 @@ function goEntry(): void {
   startSection.addClass('hide');
 }
 
-function test(): void {
-  alert();
+export function test(): void {
+  goEntry();
 }
-
-deleteButton.elem.addEventListener('click', test);
-
-/*
-deleteButton.elem.addEventListener('click', goEntry);
-deleteButton.elem.addEventListener('click', removeUser);
