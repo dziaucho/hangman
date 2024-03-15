@@ -1,5 +1,5 @@
 import { BaseTag } from "../../elements/base/base";
-import { test } from "./start-page-event";
+import { deleteUserEvent } from "./start-page-event";
 
 export const startSection: BaseTag<HTMLElement> = new BaseTag<HTMLElement>(
   "section",
@@ -12,4 +12,4 @@ export const deleteButton: BaseTag<HTMLButtonElement> =
 startSection.addClass("hide");
 deleteButton.elem.innerText = "delete user";
 
-deleteButton.elem.addEventListener("click", test);
+deleteButton.elem.addEventListener("click", deleteUserEvent);
