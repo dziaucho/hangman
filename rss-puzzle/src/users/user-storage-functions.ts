@@ -53,7 +53,6 @@ export function removeUser(): void {
   }
 }
 
-
 export function getLastUser(): string | null {
   const keys = Object.keys(localStorage);
   for (const key of keys) {
