@@ -29,4 +29,14 @@ export class BaseTag<T extends HTMLElement = HTMLElement> {
   public removeClass(oldClass: string): void {
     if (this.elem) this.elem.classList.remove(oldClass);
   }
+
+  public changeParent(newParent: HTMLElement | BaseTag): void {
+    if (this.parentElement instanceof HTMLElement) {
+      this.parentElement.removeChild(this.elem);
+    }
+    if (this.parentElement instanceof BaseTag)
+      this.parentElement.elem.removeChild(this.elem);
+    this.parentElement = newParent;
+    this.addElemToDoc(this.parentElement);
+  }
 }

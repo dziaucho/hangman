@@ -1,7 +1,6 @@
 .start-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   height: 100%;
   background-color: #f1f0f0;
   padding: 100px;

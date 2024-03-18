@@ -43,9 +43,7 @@ appNameHeading.elem.innerText = "rss puzzle";
 
 greetUserText.elem.innerText = `yo, ${getLastUser()}`;
 
-descText.elem.innerHTML = `assemble sentences from jumbled words.<br>
-  the game integrates various levels of difficulty, hint options,
-  and a unique puzzle - like experience with artwork.`;
+descText.elem.innerText = "assemble sentences from jumbled words. the game integrates various levels of difficulty";
 
 deleteButton.elem.innerText = "delete user";
 startButton.elem.innerText = "start game";

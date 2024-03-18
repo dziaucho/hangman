@@ -5,9 +5,26 @@ export const gameSection: BaseTag<HTMLElement> = new BaseTag<HTMLElement>(
   "game-section",
   document.body,
 );
-const gameHeading: BaseTag<HTMLHeadingElement> =
-  new BaseTag<HTMLHeadingElement>("h2", "game-heading", gameSection);
+
+const formingWrapHeading: BaseTag<HTMLHeadElement> =
+  new BaseTag<HTMLHeadElement>("h2", "forming-wrap-heading", gameSection);
+
+export const formingWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
+  "div",
+  "forming-wrapper",
+  gameSection,
+);
+
+const mixedWrapHeading: BaseTag<HTMLHeadElement> = new BaseTag<HTMLHeadElement>(
+  "h2",
+  "mixed-wrap-heading",
+  gameSection,
+);
+
+export const mixedWrapper: BaseTag<HTMLDivElement> =
+  new BaseTag<HTMLDivElement>("div", "mixed-wrapper", gameSection);
+
+formingWrapHeading.elem.innerText = "put the words here in the correct order";
+mixedWrapHeading.elem.innerText = "these ones. they are mixed :)";
 
 gameSection.addClass("hide");
-
-gameHeading.elem.innerText = "game section";

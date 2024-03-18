@@ -2,8 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 35px;
   height: 100%;
   background-color: #f1f0f0;
-  padding: 100px;
+  padding: 200px;
+}
+
+.forming-wrap-heading,
+.mixed-wrap-heading {
+  font-size: 20px;
+}
+
+.mixed-wrap-heading {
+  margin-top: auto;
+}
+
+.forming-wrapper,
+.mixed-wrapper {
+  width: 90%;
+  height: 50px;
+  background-color: #faf9f9;
+  border: 2px solid #696868;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.word {
+  display: inline;
+  padding: 5px 10px;
+  background-color: #f1f0f0;
+  border: 2px solid #b7b7b7;
+  border-radius: 5px;
+  cursor: pointer;
 }
