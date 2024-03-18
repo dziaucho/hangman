@@ -13,17 +13,27 @@ export function pushMixedWord(): void {
     wordsParMixed.push(word);
   }
 
-  wordsParMixedClick()
+  wordsParClick()
 }
 
-function wordsParMixedClick(): void {
+function wordsParClick(): void {
   wordsParMixed.forEach((word) => {
-    word.elem.addEventListener('click', test(word));
+    word.elem.addEventListener('click', switchParent(word));
   })
 }
 
-function test(word: BaseTag) {
+function switchParent(word: BaseTag) {
   return function (): void {
-    word.changeParent(formingWrapper);
-  }
+    if (word.parentElement === mixedWrapper) {
+      word.changeParent(formingWrapper);
+      wordsParCorrect.push(word);
+      const index = wordsParMixed.indexOf(word);
+      wordsParMixed.slice(index, 1);
+    } else {
+      word.changeParent(mixedWrapper);
+      wordsParMixed.push(word);
+      const index = wordsParMixed.indexOf(word);
+      wordsParCorrect.slice(index, 1);
+    }
+  };
 }
