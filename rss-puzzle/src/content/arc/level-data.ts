@@ -66,11 +66,27 @@ export class LevelData {
   }
 
   public goNextRoundData(): void {
-    if (this.curRoundNum < this.roundsAmount) {
+    if (this.curRoundNum < this.roundsAmount - 1) {
       this.curRoundNum += 1;
       this.curRoundObj = this.obj.rounds[this.curRoundNum].words;
       this.linesAmount = this.curRoundObj.length;
       this.roundsSentences = this.getSentences();
+      this.curSentenceIndex = 0;
+      this.curSentence = this.roundsSentences[this.curSentenceIndex];
+      this.curMixedSentence = this.mixWords(this.curSentence);
+    } else {
+      if (this.objIndex < this.levelsObj.length - 1) {
+        this.objIndex += 1;
+        this.obj = this.levelsObj[this.objIndex];
+        this.roundsAmount = this.obj.rounds.length;
+        this.curRoundNum = 0;
+        this.curRoundObj = this.obj.rounds[this.curRoundNum].words;
+        this.linesAmount = this.curRoundObj.length;
+        this.roundsSentences = this.getSentences();
+        this.curSentenceIndex = 0;
+        this.curSentence = this.roundsSentences[this.curSentenceIndex];
+        this.curMixedSentence = this.mixWords(this.curSentence);
+      }
     }
   }
 
@@ -78,7 +94,13 @@ export class LevelData {
     if (this.curSentenceIndex < this.linesAmount) {
       this.curSentenceIndex += 1;
       this.curSentence = this.roundsSentences[this.curSentenceIndex];
-      this.curMixedSentence = this.mixWords(this.curSentence);
+      if (this.curSentence) {
+        this.curMixedSentence = this.mixWords(this.curSentence);
+      } else {
+        this.goNextRoundData();
+      }
+    } else {
+      this.goNextRoundData();
     }
   }
 
