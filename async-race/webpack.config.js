@@ -33,9 +33,6 @@ module.exports = {
   },
 
   resolve: {
-    alias: {
-      img: path.join(__dirname, "src", "components", "img"),
-    },
     extensions: [".ts", ".js"],
   },
 
@@ -43,9 +40,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "./src/components/img"),
-          to: path.resolve(__dirname, "./dist/components/img"),
-          force: true,
+          from: path.resolve(__dirname, "./src/components/svg"),
+          to: path.resolve(__dirname, "./dist/components/svg"),
         },
       ],
     }),
