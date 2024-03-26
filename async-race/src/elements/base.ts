@@ -8,7 +8,7 @@ class BaseTag<T extends HTMLElement = HTMLElement> {
     tagClass: string,
     parentElement: HTMLElement | BaseTag,
   ) {
-    this.elem = document.createElement(tagName);
+    this.elem = document.createElement(tagName) as T;
     this.parentElement = parentElement;
     this.elem.className = tagClass;
     this.addElemToDoc(this.parentElement);
