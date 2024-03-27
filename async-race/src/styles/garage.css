@@ -1,16 +1,87 @@
 .garage-section {
-  --garage-bg: #ece1d9;
+  --garage-bg: #cbc9c8;
   --garage-text: #324860;
+  --border: #324860;
+  --input-bg: #f4f0ee;
+  --button-bg: #706b69;
 }
 
 .garage-section {
   background-color: var(--garage-bg);
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  padding: 20px;
 }
 
 .garage-heading {
   color: var(--garage-text);
   font-size: 40px;
   text-align: center;
+}
+
+.garage-wrapper {
+  display: flex;
+}
+
+.left-garage-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 50%;
+}
+
+.right-garage-wrapper {
+  width: 50%;
+}
+
+.car-preview {
+  width: 30%;
+}
+
+.preview-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-model-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-model,
+.button-create {
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  height: 30px;
+  background-color: var(--input-bg);
+  text-align: center;
+}
+
+.button-create {
+  cursor: pointer;
+}
+
+.button-create:hover {
+  background-color: var(--border);
+  color: var(--input-bg);
+  opacity: 0.5;
+}
+
+.model-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 70%;
+}
+
+.car-model-text,
+.car-model-value {
+  font-size: 20px;
+}
+
+.car-model-text {
+  font-weight: 800;
 }

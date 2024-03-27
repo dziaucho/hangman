@@ -1,6 +1,6 @@
 import BaseTag from "./base";
 
-class InputTag<
+export default class InputTag<
   T extends HTMLInputElement = HTMLInputElement,
 > extends BaseTag<T> {
   constructor(
