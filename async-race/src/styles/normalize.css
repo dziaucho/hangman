@@ -1,0 +1,26 @@
+* {
+  font-family: "Overpass Mono";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+.hide {
+  display: none;
+}

@@ -25,6 +25,8 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.json",
   },
-  rules: {},
+  rules: {
+    "@typescript-eslint/no-unused-vars": "off",
+  },
   plugins: ["prettier", "import", "@typescript-eslint"],
 };

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const EslintPlugin = require("eslint-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -52,7 +52,8 @@ module.exports = {
 
     new CleanWebpackPlugin(),
 
-    new EslintPlugin({ extensions: ["ts"] }),
+    new ESLintPlugin({ extensions: ["ts"] }),
+    new MiniCssExtractPlugin(),
   ],
 
   devServer: {

@@ -1,4 +1,4 @@
-class BaseTag<T extends HTMLElement = HTMLElement> {
+export default class BaseTag<T extends HTMLElement = HTMLElement> {
   elem: T;
 
   parentElement: HTMLElement | BaseTag;
@@ -20,16 +20,6 @@ class BaseTag<T extends HTMLElement = HTMLElement> {
     if (parentElement instanceof BaseTag)
       parentElement.elem.appendChild(this.elem);
   }
-
-  /*
-  public addClass(newClass: string): void {
-    if (this.elem) this.elem.classList.add(newClass);
-  }
-
-  public removeClass(oldClass: string): void {
-    if (this.elem) this.elem.classList.remove(oldClass);
-  }
-  */
 
   public changeParent(newParent: HTMLElement | BaseTag): void {
     const parentElem =

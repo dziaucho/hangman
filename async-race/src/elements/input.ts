@@ -1,4 +1,4 @@
-import "./base";
+import BaseTag from "./base";
 
 class InputTag<
   T extends HTMLInputElement = HTMLInputElement,
