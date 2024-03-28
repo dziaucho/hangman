@@ -27,6 +27,7 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/no-unused-vars": "off",
+    "no-console": "off",
   },
   plugins: ["prettier", "import", "@typescript-eslint"],
 };

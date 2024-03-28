@@ -21,14 +21,16 @@
 
 .garage-wrapper {
   display: flex;
+  height: 100%;
 }
 
 .left-garage-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
   width: 50%;
+  gap: 20%;
+  justify-content: center;
 }
 
 .right-garage-wrapper {
@@ -52,12 +54,15 @@
 }
 
 .input-model,
-.button-create {
+.button-create,
+.color-pick {
   border: 2px solid var(--border);
   border-radius: 5px;
   height: 30px;
   background-color: var(--input-bg);
   text-align: center;
+  width: 90%;
+  height: 30px;
 }
 
 .button-create {
