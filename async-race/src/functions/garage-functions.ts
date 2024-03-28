@@ -23,7 +23,7 @@ async function getColor(index: number) {
   }
 }
 
-async function createCarArea(index: number) {
+export default async function createCarArea(index: number) {
   const carGarageWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
     "div",
     "car-garage-wrapper",
@@ -69,5 +69,3 @@ async function createCarArea(index: number) {
     console.error("Error:", error);
   }
 }
-
-createCarArea(3);

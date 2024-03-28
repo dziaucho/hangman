@@ -4,4 +4,4 @@ import "./functions/garage-functions";
 
 /* test */
 
-import "./api/garage-api";
+import "./events/garage-events";

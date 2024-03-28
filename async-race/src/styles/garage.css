@@ -24,7 +24,7 @@
   height: 80%;
 }
 
-.garage-wrapper > div {
+.garage-wrapper>div {
   flex: 1;
 }
 
@@ -43,10 +43,11 @@
 
 .car-garage-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid var(--border);
-  padding-bottom: 10px;
+  padding: 5px 0;
 }
 
 .car-garage-image {
