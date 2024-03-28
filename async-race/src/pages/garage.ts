@@ -26,11 +26,8 @@ const leftGarageWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
   garageWrapper,
 );
 
-const rightGarageWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
-  "div",
-  "right-garage-wrapper",
-  garageWrapper,
-);
+export const rightGarageWrapper: BaseTag<HTMLDivElement> =
+  new BaseTag<HTMLDivElement>("div", "right-garage-wrapper", garageWrapper);
 
 const previewWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
   "div",
@@ -38,7 +35,7 @@ const previewWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
   leftGarageWrapper,
 );
 
-const carPreview: SVGCar = new SVGCar("car-preview", previewWrapper);
+export const carPreview: SVGCar = new SVGCar("car-preview", previewWrapper);
 
 const inputModelWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
   "div",

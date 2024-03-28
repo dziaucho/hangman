@@ -3,7 +3,7 @@ import Car from "../elements/car";
 
 const endpointGarage: string = "/garage";
 
-function getCars(): Promise<Car[]> {
+export function getCars(): Promise<Car[]> {
   return fetch(API_BASE_URL + endpointGarage)
     .then((response) => {
       if (!response.ok) {
@@ -19,7 +19,7 @@ function getCars(): Promise<Car[]> {
     });
 }
 
-function sendData(car: Car): Promise<void> {
+export function sendData(car: Car): Promise<void> {
   const requestOptions: RequestInit = {
     method: "POST",
     headers: {
@@ -39,7 +39,7 @@ function sendData(car: Car): Promise<void> {
     });
 }
 
-function updateData(car: Car): Promise<void> {
+export function updateData(car: Car): Promise<void> {
   const requestOptions: RequestInit = {
     method: "PUT",
     headers: {
@@ -59,7 +59,7 @@ function updateData(car: Car): Promise<void> {
     });
 }
 
-function deleteData(id: number): Promise<void> {
+export function deleteData(id: number): Promise<void> {
   const requestOptions: RequestInit = {
     method: "DELETE",
     headers: {

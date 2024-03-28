@@ -21,20 +21,42 @@
 
 .garage-wrapper {
   display: flex;
-  height: 100%;
+  height: 80%;
+}
+
+.garage-wrapper > div {
+  flex: 1;
 }
 
 .left-garage-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
   gap: 20%;
   justify-content: center;
 }
 
 .right-garage-wrapper {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-garage-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.car-garage-image {
+  width: 10%;
+}
+
+.car-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .car-preview {
@@ -58,11 +80,9 @@
 .color-pick {
   border: 2px solid var(--border);
   border-radius: 5px;
-  height: 30px;
   background-color: var(--input-bg);
   text-align: center;
   width: 90%;
-  height: 30px;
 }
 
 .button-create {
