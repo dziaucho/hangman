@@ -69,14 +69,15 @@ const carModelText: BaseTag<HTMLParagraphElement> =
 const carModelValue: BaseTag<HTMLParagraphElement> =
   new BaseTag<HTMLParagraphElement>("p", "car-model-value", modelWrapper);
 
-const colorPick: InputTag<HTMLInputElement> = new InputTag<HTMLInputElement>(
-  "input",
-  "color-pick",
-  inputModelWrapper,
-  "color",
-  undefined,
-  "#f6b73c",
-);
+export const colorPick: InputTag<HTMLInputElement> =
+  new InputTag<HTMLInputElement>(
+    "input",
+    "color-pick",
+    inputModelWrapper,
+    "color",
+    undefined,
+    "#000000",
+  );
 
 garageHeading.elem.innerText = "garage";
 buttonCreate.elem.innerText = "create";
