@@ -1,0 +1,175 @@
+* {
+  font-family: "Overpass Mono";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+/* Overpass Mono */
+
+@font-face {
+  font-family: Overpass Mono;
+  src: url(a69617e90bce444bae82.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Overpass Mono;
+  src: url(a519aa4b5b443c7c3fd8.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Overpass Mono;
+  src: url(c569f31850d7046f7207.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Overpass Mono;
+  src: url(18e7af3d53c05b6a6436.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Overpass Mono;
+  src: url(210ed9d1134b699e40f6.ttf);
+  font-weight: 700;
+}
+
+.garage-section {
+  --garage-bg: #cbc9c8;
+  --garage-text: #324860;
+  --border: #324860;
+  --input-bg: #f4f0ee;
+  --button-bg: #706b69;
+}
+
+.garage-section {
+  background-color: var(--garage-bg);
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+}
+
+.garage-heading {
+  color: var(--garage-text);
+  font-size: 40px;
+  text-align: center;
+}
+
+.garage-wrapper {
+  display: flex;
+  height: 80%;
+}
+
+.garage-wrapper > div {
+  flex: 1;
+}
+
+.left-garage-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20%;
+  justify-content: center;
+}
+
+.right-garage-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-garage-wrapper {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border);
+  padding: 5px 0;
+}
+
+.car-garage-image {
+  width: 10%;
+}
+
+.car-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.car-preview {
+  width: 30%;
+}
+
+.preview-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-model-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-model,
+.button-create,
+.color-pick {
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  background-color: var(--input-bg);
+  text-align: center;
+  width: 90%;
+}
+
+.button-create {
+  cursor: pointer;
+}
+
+.button-create:hover {
+  background-color: var(--border);
+  color: var(--input-bg);
+  opacity: 0.5;
+}
+
+.model-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 70%;
+}
+
+.car-model-text,
+.car-model-value {
+  font-size: 20px;
+}
+
+.car-model-text {
+  font-weight: 800;
+}
+
+
+
