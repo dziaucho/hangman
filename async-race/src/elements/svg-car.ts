@@ -10,7 +10,7 @@ export default class SVGCar {
       parentElement,
     ).elem as HTMLObjectElement;
 
-    this.carSvgObject.setAttribute("data", "../components/svg/car.svg");
+    this.carSvgObject.setAttribute("data", "./components/svg/car.svg");
     this.carSvgObject.setAttribute("type", "image/svg+xml");
   }
 

@@ -51,11 +51,18 @@ const inputModel: InputTag<HTMLInputElement> = new InputTag<HTMLInputElement>(
   "input your model",
 );
 
-const buttonCreate: BaseTag<HTMLButtonElement> = new BaseTag<HTMLButtonElement>(
-  "button",
-  "button-create",
-  inputModelWrapper,
-);
+export const colorPick: InputTag<HTMLInputElement> =
+  new InputTag<HTMLInputElement>(
+    "input",
+    "color-pick",
+    inputModelWrapper,
+    "color",
+    undefined,
+    "#000000",
+  );
+
+export const buttonCreate: BaseTag<HTMLButtonElement> =
+  new BaseTag<HTMLButtonElement>("button", "button-create", inputModelWrapper);
 
 const modelWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
   "div",
@@ -69,16 +76,7 @@ const carModelText: BaseTag<HTMLParagraphElement> =
 const carModelValue: BaseTag<HTMLParagraphElement> =
   new BaseTag<HTMLParagraphElement>("p", "car-model-value", modelWrapper);
 
-export const colorPick: InputTag<HTMLInputElement> =
-  new InputTag<HTMLInputElement>(
-    "input",
-    "color-pick",
-    inputModelWrapper,
-    "color",
-    undefined,
-    "#000000",
-  );
-
 garageHeading.elem.innerText = "garage";
 buttonCreate.elem.innerText = "create";
 carModelText.elem.innerText = "model:";
+inputModel.elem.setAttribute("required", "true");
