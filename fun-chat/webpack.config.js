@@ -36,7 +36,8 @@ module.exports = {
     extensions: [".ts", ".js"],
   },
 
-  plugins: [ /*
+  plugins: [
+    /*
     new CopyPlugin({
       patterns: [
         {
