@@ -1,7 +1,7 @@
 import BaseTag from "../elements/base";
 import InputTag from "../elements/input";
 
-const authSection: BaseTag<HTMLElement> = new BaseTag<HTMLElement>(
+export const authSection: BaseTag<HTMLElement> = new BaseTag<HTMLElement>(
   "section",
   "auth-section",
   document.body,
