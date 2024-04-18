@@ -37,15 +37,14 @@ module.exports = {
   },
 
   plugins: [
-    /*
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "./src/components/svg"),
-          to: path.resolve(__dirname, "./dist/components/svg"),
+          from: path.resolve(__dirname, "./src/components/img"),
+          to: path.resolve(__dirname, "./dist/components/img"),
         },
       ],
-    }), */
+    }),
 
     new HtmlWebpackPlugin({
       title: "fun chat",
