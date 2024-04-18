@@ -9,8 +9,8 @@ export default class InputTag<
     typeInput: string,
     nameInput: string,
     isRequired: boolean,
-    pattern?: string,
     placeholder?: string,
+    pattern?: string,
     value?: string,
   ) {
     super("input", tagClass, parentElement);

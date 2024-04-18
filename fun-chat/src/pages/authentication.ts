@@ -6,32 +6,46 @@ const authSection: BaseTag<HTMLElement> = new BaseTag<HTMLElement>(
   "auth-section",
   document.body,
 );
-const loginForm: BaseTag<HTMLFormElement> = new BaseTag<HTMLFormElement>(
-  "form",
-  "login-form",
+
+const authWrapper: BaseTag<HTMLDivElement> = new BaseTag<HTMLDivElement>(
+  "div",
+  "auth-wrapper",
   authSection,
 );
-const usernameInput: InputTag<HTMLInputElement> =
+
+export const loginForm: BaseTag<HTMLFormElement> = new BaseTag<HTMLFormElement>(
+  "form",
+  "login-form",
+  authWrapper,
+);
+
+export const usernameInput: InputTag<HTMLInputElement> =
   new InputTag<HTMLInputElement>(
     "username-input",
     loginForm,
     "text",
     "username",
-    true,
-    "^[A-Z][a-zA-Z0-9]*",
+    false,
+    "username",
   );
-const passwordInput: InputTag<HTMLInputElement> =
+
+export const passwordInput: InputTag<HTMLInputElement> =
   new InputTag<HTMLInputElement>(
     "password-input",
     loginForm,
     "password",
     "password",
-    true,
-    "^(?=.*[A-Z])(?=.*d)[A-Zd]{5,}",
+    false,
+    "password",
   );
+
 const submitButton: BaseTag<HTMLButtonElement> = new BaseTag<HTMLButtonElement>(
   "button",
   "submit-button",
   loginForm,
-  "submit",
 );
+
+export const unvalidParagr: BaseTag<HTMLParagraphElement> =
+  new BaseTag<HTMLParagraphElement>("p", "unvalid-paragr", authWrapper);
+
+submitButton.elem.innerText = "submit";
