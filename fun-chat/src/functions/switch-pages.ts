@@ -17,7 +17,7 @@ import {
 import mainSection from "../pages/main";
 
 function putName(): void {
-  userInfoText.elem.innerText = usernameInput.elem.value;
+  userInfoText.elem.innerText = `yo, ${usernameInput.elem.value}`;
 }
 
 export function goAbout(): void {
@@ -59,5 +59,6 @@ export function goAuth(): void {
   logoutButton.elem.classList.add("hide");
   authButton.elem.classList.add("hide");
 
+  userInfoText.elem.innerText = "";
   clearAuthInputs();
 }

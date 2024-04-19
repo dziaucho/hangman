@@ -1,0 +1,42 @@
+.header {
+  background-color: var(--marshy);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-name-text {
+  margin-right: auto;
+  color: var(--medium-dark-blue);
+  font-weight: 800;
+  font-size: 25px;
+  user-select: none;
+}
+
+.user-info-text {
+  font-weight: 800;
+  color: var(--medium-dark-blue);
+}
+
+.header > button {
+  width: 100px;
+  height: 30px;
+  background-color: var(--medium-dark-blue);
+  color: var(--emerald);
+  border-radius: 5px;
+  border: none;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.header > button:hover {
+  transform: scale(1.02);
+}
+
+.header > button:active {
+  opacity: 0.8;
+}

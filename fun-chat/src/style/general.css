@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-blue);
+  color: aliceblue;
+}
+
+.hide {
+  display: none;
+}

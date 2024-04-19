@@ -36,7 +36,9 @@ but i can do it much more faster than js/ts. and, probably, it's truely better t
 top 3 annoying staff:
 
 3 when gpt start using "ты", instead "вы"
+
 2 when i need fix smth, instead do smth
+
 1 when after run project i see this red "REPLACE BLA BLA BLA WITH BLA BLA BLA"
 
 like, who is a machine? me? you? did you see problem? did you know how fix this? so, maybe you fix it, so i can do more harder, important and interesting staff????
@@ -54,6 +56,7 @@ with all this files when i work i have a billion opened tabs, kekw
 all i know about ts:
 
 — ": type" everywhere;
+
 — "<T(??????)>" for smth 'cos without this i have errors;
 
 that's all
@@ -75,3 +78,35 @@ i need someone to show me correct arc and explain what and why
 ---
 
 i don't care it look's ugly, ok?
+
+---
+
+let's go style before api staff which scare me more than anything else!
+
+oh, also i need finish my little joke
+
+---
+
+hmm....
+
+i want to seperate css like i separated ts, but i think i will use tag selectors, so some rules in "header.css" will may impact on rules, for example, in "footer.ts"....
+
+and i will not refactor this)))0))00))
+
+---
+
+i hope my english looks like english people of xx centery. i can say smth, and write smth, maybe it looks chaotic and mistacable but in general still understoodable. just ruin the wall, and evthg will be ok
+
+---
+
+i'm sooooooo lazy for @media so the trouble elements will have % in properties, bu-ga-ga
+
+---
+
+not bad, i kinda like it. and i feel i have mana
+
+atleast while i don't start api stuff)00))0
+
+i'm going to a concert now! стары ольса and мнімая ось. can u imagine this? belarusan artists in belarus, OMG
+
+like soviet kvartirnik, with a secret about meeting place until concert day

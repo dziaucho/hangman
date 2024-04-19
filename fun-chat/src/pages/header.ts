@@ -2,7 +2,7 @@ import BaseTag from "../elements/base";
 
 const header: BaseTag<HTMLElement> = new BaseTag<HTMLElement>(
   "header",
-  "main-header",
+  "header",
   document.body,
 );
 const appNameText: BaseTag<HTMLParagraphElement> =

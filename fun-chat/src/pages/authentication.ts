@@ -46,6 +46,6 @@ const submitButton: BaseTag<HTMLButtonElement> = new BaseTag<HTMLButtonElement>(
 );
 
 export const unvalidParagr: BaseTag<HTMLParagraphElement> =
-  new BaseTag<HTMLParagraphElement>("p", "unvalid-paragr", authWrapper);
+  new BaseTag<HTMLParagraphElement>("p", "unvalid-text", authWrapper);
 
 submitButton.elem.innerText = "submit";

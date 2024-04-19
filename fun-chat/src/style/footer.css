@@ -1,0 +1,27 @@
+.footer {
+  background-color: var(--marshy);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer a {
+  font-weight: 800;
+  color: var(--medium-dark-blue);
+  font-size: 20px;
+}
+
+.footer img {
+  width: 25px;
+}
+
+.footer a:hover {
+  transform: scale(1.02);
+}
+
+.footer a:active {
+  opacity: 0.8;
+}

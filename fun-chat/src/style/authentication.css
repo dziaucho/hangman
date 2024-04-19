@@ -1,0 +1,70 @@
+.auth-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-wrapper {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.login-form {
+  width: 200px;
+  padding: 10px;
+  background-color: var(--dusty-dark-blue);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-form input {
+  height: 25px;
+  background-color: var(--dark-blue);
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--light-emerald);
+  border: none;
+  border-radius: 10px;
+}
+
+.login-form ::placeholder {
+  color: var(--light-emerald);
+  opacity: 0.6;
+}
+
+.login-form button {
+  width: 60px;
+  height: 20px;
+  background-color: var(--light-emerald);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  transform: scale(1.02);
+}
+
+.login-form button:active {
+  opacity: 0.8;
+}
+
+.unvalid-text {
+  position: absolute;
+  color: var(--salmon);
+  font-weight: 500;
+  top: 100%;
+}

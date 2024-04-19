@@ -1,3 +1,7 @@
 @import url(./style/fonts.css);
 @import url(./style/normalize.css);
+@import url(./style/variables.css);
+@import url(./style/header.css);
+@import url(./style/footer.css);
 @import url(./style/authentication.css);
+@import url(./style/general.css);
