@@ -18,11 +18,11 @@ export function checkValidUsername(): boolean {
     .filter((char) => !char.match(/[A-Za-z0-9]/))
     .join("");
   if (!/[A-Z]/.test(value[0])) {
-    unvalidParagr.elem.innerHTML += "First letter should be capitalized.</br>";
+    unvalidParagr.elem.innerHTML += "first letter should be capitalized</br>";
   }
   if (invalidCharacters) {
     unvalidParagr.elem.innerHTML +=
-      "Invalid characters. Only Latin letters and Arabic numerals are allowed.</br>";
+      "invalid characters. only latin letters and arabic numerals are allowed</br>";
   }
 
   return false;
@@ -32,7 +32,6 @@ export function checkValidPassword(): boolean {
   const regExp: RegExp = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{5,}$/;
   const { value } = passwordInput.elem;
   const isValid = regExp.test(value);
-  console.log(isValid);
 
   if (isValid) {
     return true;
@@ -40,15 +39,15 @@ export function checkValidPassword(): boolean {
 
   if (!/(?=.*[A-Z])/.test(value)) {
     unvalidParagr.elem.innerHTML +=
-      "Password should contain at least one uppercase letter.</br>";
+      "password should contain at least one uppercase letter</br>";
   }
   if (!/(?=.*\d)/.test(value)) {
     unvalidParagr.elem.innerHTML +=
-      "Password should contain at least one digit.</br>";
+      "password should contain at least one digit</br>";
   }
   if (value.length < 5) {
     unvalidParagr.elem.innerHTML +=
-      "Password should be at least 5 characters long.</br>";
+      "password should be at least 5 characters long</br>";
   }
 
   return false;
