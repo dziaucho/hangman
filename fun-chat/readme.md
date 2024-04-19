@@ -21,3 +21,12 @@ like, i know i can put valid functions (or other huge file) in different files a
 ---
 
 i'm sooooooooo lazy for creating svg element, so all image will be png, lol
+
+---
+
+erlier i tryed to create style rules befor interactivity, but now i do it after
+hmmm
+
+i kinda feel this work style is better. like, i can waste HOURS just for looking colors, font, etc. somtimes i like it, sometimes don't
+
+but i can do it much more faster than js/ts. and, probably, it's truely better to do it later

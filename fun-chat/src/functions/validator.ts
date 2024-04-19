@@ -29,9 +29,10 @@ export function checkValidUsername(): boolean {
 }
 
 export function checkValidPassword(): boolean {
-  const regExp: RegExp = /^(?=.*[A-Z])(?=.*\d)[A-Z\d]{5,}$/;
+  const regExp: RegExp = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{5,}$/;
   const { value } = passwordInput.elem;
   const isValid = regExp.test(value);
+  console.log(isValid);
 
   if (isValid) {
     return true;
