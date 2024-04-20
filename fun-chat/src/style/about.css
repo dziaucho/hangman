@@ -1,0 +1,19 @@
+.about-section {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-img {
+  width: 300px;
+}
+
+.about-text {
+  color: var(--dusty-yellow);
+  font-weight: 800;
+  font-size: 20px;
+  user-select: none;
+}

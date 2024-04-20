@@ -5,7 +5,7 @@ import {
   authButton,
   messagesButton,
 } from "../pages/header";
-import aboutSection from "../pages/about";
+import { aboutSection } from "../pages/about";
 import clearAuthInputs from "./input";
 
 import {

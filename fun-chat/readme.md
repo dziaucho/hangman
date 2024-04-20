@@ -110,3 +110,7 @@ atleast while i don't start api stuff)00))0
 i'm going to a concert now! стары ольса and мнімая ось. can u imagine this? belarusan artists in belarus, OMG
 
 like soviet kvartirnik, with a secret about meeting place until concert day
+
+---
+
+NOOOOO, I'M TOO STUPID FOR YOUTUBE API (ALL API ON EARTH), SO WE CAN'T ACHIVE RICKROLL, NOOOOOOOOOOOOO
