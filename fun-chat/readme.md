@@ -114,3 +114,33 @@ like soviet kvartirnik, with a secret about meeting place until concert day
 ---
 
 NOOOOO, I'M TOO STUPID FOR YOUTUBE API (ALL API ON EARTH), SO WE CAN'T ACHIVE RICKROLL, NOOOOOOOOOOOOO
+
+---
+
+it's time to start async/await/api/promis/bla-bla-bla
+
+i don't understand it at all :(
+
+---
+
+i lost my mana
+
+---
+
+mmm, create env...
+
+---
+
+mmm, i'm cryied for 15 minutes, then i just create .env file and copy-paste example....
+
+i don't undertood enthg
+
+---
+
+okay, i don't understand websocket (haha, i only now found out i need to use it), but it looks MORE easely 'cos without all this big structure with {} \*\* 100
+
+i cryed for an hour, let's goooooo!
+
+(funny tiktok i found: inscription, — don't forget about waterbalance in this learning night, girls! woman on video: crying and licks a tear)
+
+i KNOW i looks like drama queen. but i TIRED to learn new things. i WANT to WORK OFF things that i already know. and i WANT to do it MORE SLOWLY

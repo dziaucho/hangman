@@ -6,3 +6,4 @@ import "./pages/footer";
 import "./events/authentication";
 import "./events/header";
 import "./style.css";
+import "./api/api-url";
