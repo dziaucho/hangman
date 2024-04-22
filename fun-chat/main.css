@@ -1,0 +1,259 @@
+/* Dosis */
+
+@font-face {
+  font-family: Dosis;
+  src: url(f30ea17d890609d3a67b.ttf);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Dosis;
+  src: url(407aded8c959785ce225.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Dosis;
+  src: url(f68bcdbc44f0cb702a4a.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Dosis;
+  src: url(40bfe3de1354a2b1be8b.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Dosis;
+  src: url(7a463c514085e7be1560.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Dosis;
+  src: url(4d83b764d8d1aefc7fd3.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Dosis;
+  src: url(0771ef7954066fb1161c.ttf);
+  font-weight: 800;
+}
+
+* {
+  font-family: "Dosis";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+body {
+  --dark-blue: #201127;
+  --medium-dark-blue: #201433;
+  --dusty-dark-blue: #1b1e34;
+  --marshy: #355d68;
+  --emerald: #6aaf9d;
+  --light-emerald: #94c5ac;
+  --dusty-yellow: #ffeb99;
+  --light-orange: #ffc27a;
+  --dark-orange: #ec9a6d;
+  --red-orange: #d9626b;
+  --salmon: #c24b6e;
+  --cherry: #a73169;
+}
+
+.header {
+  background-color: var(--marshy);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-name-text {
+  margin-right: auto;
+  color: var(--medium-dark-blue);
+  font-weight: 800;
+  font-size: 25px;
+  user-select: none;
+}
+
+.user-info-text {
+  font-weight: 800;
+  color: var(--medium-dark-blue);
+}
+
+.header > button {
+  width: 100px;
+  height: 30px;
+  background-color: var(--medium-dark-blue);
+  color: var(--emerald);
+  border-radius: 5px;
+  border: none;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.header > button:hover {
+  transform: scale(1.02);
+}
+
+.header > button:active {
+  opacity: 0.8;
+}
+
+.footer {
+  background-color: var(--marshy);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer a {
+  font-weight: 800;
+  color: var(--medium-dark-blue);
+  font-size: 20px;
+}
+
+.footer img {
+  width: 25px;
+}
+
+.footer a:hover {
+  transform: scale(1.02);
+}
+
+.footer a:active {
+  opacity: 0.8;
+}
+
+.auth-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-wrapper {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.login-form {
+  width: 200px;
+  padding: 10px;
+  background-color: var(--dusty-dark-blue);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-form input {
+  height: 25px;
+  background-color: var(--dark-blue);
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--light-emerald);
+  border: none;
+  border-radius: 10px;
+}
+
+.login-form ::placeholder {
+  color: var(--light-emerald);
+  opacity: 0.6;
+}
+
+.login-form button {
+  width: 60px;
+  height: 20px;
+  background-color: var(--light-emerald);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  transform: scale(1.02);
+}
+
+.login-form button:active {
+  opacity: 0.8;
+}
+
+.unvalid-text {
+  position: absolute;
+  color: var(--salmon);
+  font-weight: 500;
+  top: 100%;
+}
+
+.about-section {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-img {
+  width: 300px;
+}
+
+.about-text {
+  color: var(--dusty-yellow);
+  font-weight: 800;
+  font-size: 20px;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-blue);
+  color: aliceblue;
+}
+
+.hide {
+  display: none;
+}
+
+
+
