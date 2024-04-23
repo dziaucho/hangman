@@ -144,3 +144,17 @@ i cryed for an hour, let's goooooo!
 (funny tiktok i found: inscription, — don't forget about waterbalance in this learning night, girls! woman on video: crying and licks a tear)
 
 i KNOW i looks like drama queen. but i TIRED to learn new things. i WANT to WORK OFF things that i already know. and i WANT to do it MORE SLOWLY
+
+---
+
+i'm afraid about final task. i don't know anything. and i don’t understand if i can do something in a team
+
+what if i burn out like a month ago?
+
+---
+
+i think i start understanding how to work with requests and api
+
+in first time i'm started from requests / http / https / telnet and understand NOTHING
+
+now i start with requests in js and it MUCH MORE EASY

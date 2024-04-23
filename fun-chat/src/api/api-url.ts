@@ -1,5 +1,6 @@
-// const API_BASE_URL = "ws://127.0.0.1:4000";
-// export default API_BASE_URL;
+const socket = new WebSocket("ws://127.0.0.1:4000");
+
+export default socket;
 
 // test
 
@@ -13,8 +14,6 @@ const userLoginMessage = {
     },
   },
 };
-
-const socket = new WebSocket("ws://127.0.0.1:4000");
 
 socket.onopen = function onOpen(event) {
   console.log("WebSocket connection established");
