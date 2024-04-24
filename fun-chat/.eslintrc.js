@@ -28,10 +28,10 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.json",
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "prettier", "import"],
   rules: {
     "@typescript-eslint/no-unused-vars": "off",
     "no-console": "off",
+    "class-methods-use-this": "off",
   },
-  plugins: ["prettier", "import", "@typescript-eslint"],
 };

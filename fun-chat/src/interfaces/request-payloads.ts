@@ -1,11 +1,11 @@
-interface UserLogin {
+export interface UserLogin {
   user: {
     login: string;
     password: string;
   };
 }
 
-interface UserLogout {
+export interface UserLogout {
   user: {
     login: string;
     password: string;
