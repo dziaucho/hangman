@@ -42,26 +42,13 @@ class Request<T> {
   }
 
   /*
-    onError() {
-      socket.onerror = (error) => {
-        console.log(error);
-        errorWrapper.elem.classList.remove("hide");
-        errorMessage.elem.innerText = (error as ErrorEvent).message;
-      };
-    }
-    */
+  onError() {
+    socket.onerror = (error) => {
+      console.error(error);
+      this.showError(error.toString());
+    };
+  }
+  */
 }
 
 export default Request;
-
-// тест
-
-const userLoginMessage = new Request(RequestType.userLogin, {
-  user: {
-    login: "example_login",
-    password: "example_password",
-  },
-});
-
-userLoginMessage.sendRequest();
-userLoginMessage.getRequest();

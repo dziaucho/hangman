@@ -38,7 +38,7 @@ export function checkValidPassword(): boolean {
     return true;
   }
 
-  if (!/^[A-Za-z\d]*/.test(value)) {
+  if (!/^[A-Za-z\d]+$/.test(value)) {
     unvalidParagr.elem.innerHTML +=
       "— <b>password</b> should contain only latin letters and arabic digits<br>";
     return false;

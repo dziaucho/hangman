@@ -39,11 +39,8 @@ export const passwordInput: InputTag<HTMLInputElement> =
     "password",
   );
 
-const submitButton: BaseTag<HTMLButtonElement> = new BaseTag<HTMLButtonElement>(
-  "button",
-  "submit-button",
-  loginForm,
-);
+export const submitButton: BaseTag<HTMLButtonElement> =
+  new BaseTag<HTMLButtonElement>("button", "submit-button", loginForm);
 
 export const unvalidParagr: BaseTag<HTMLParagraphElement> =
   new BaseTag<HTMLParagraphElement>("p", "unvalid-text", authWrapper);

@@ -8,16 +8,15 @@ import {
 import { aboutSection } from "../pages/about";
 import clearAuthInputs from "./input";
 
-import {
-  usernameInput,
-  passwordInput,
-  authSection,
-} from "../pages/authentication";
+import { passwordInput, authSection } from "../pages/authentication";
 
 import mainSection from "../pages/main";
 
-function putName(): void {
-  userInfoText.elem.innerText = `yo, ${usernameInput.elem.value}`;
+import userLogRequest from "../api/elements";
+import RequestType from "../enums/request-type";
+
+function putName(username: string): void {
+  userInfoText.elem.innerText = `yo, ${username}`;
 }
 
 export function goAbout(): void {
@@ -36,7 +35,7 @@ export function goAbout(): void {
   }
 }
 
-export function goMain(): void {
+export function goMain(username: string): void {
   mainSection.elem.classList.remove("hide");
   aboutSection.elem.classList.add("hide");
   authSection.elem.classList.add("hide");
@@ -46,7 +45,7 @@ export function goMain(): void {
   logoutButton.elem.classList.remove("hide");
   authButton.elem.classList.add("hide");
 
-  putName();
+  putName(username);
 }
 
 export function goAuth(): void {
@@ -58,6 +57,10 @@ export function goAuth(): void {
   messagesButton.elem.classList.add("hide");
   logoutButton.elem.classList.add("hide");
   authButton.elem.classList.add("hide");
+
+  userLogRequest.type = RequestType.userLogout;
+  userLogRequest.sendRequest();
+  userLogRequest.getRequest();
 
   userInfoText.elem.innerText = "";
   clearAuthInputs();

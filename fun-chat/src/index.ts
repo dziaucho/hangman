@@ -9,3 +9,4 @@ import "./style.css";
 import "./api/socket";
 import "./classes/request";
 import "./api/error-handler";
+import "./events/onload";
