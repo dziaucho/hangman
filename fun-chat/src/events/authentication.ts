@@ -1,9 +1,8 @@
 import {
-  authSection,
   loginForm,
   unvalidParagr,
   usernameInput,
-  submitButton,
+  passwordInput,
 } from "../pages/authentication";
 import { checkValidPassword, checkValidUsername } from "../functions/validator";
 import { goMain } from "../functions/switch-pages";
@@ -15,9 +14,8 @@ function handleSubmit(event: Event) {
   const isUsername = checkValidUsername();
   const isPassword = checkValidPassword();
   if (isUsername && isPassword) {
-    console.log("checkwed");
     getUserInfo();
-    goMain(usernameInput.elem.value);
+    goMain(usernameInput.elem.value, passwordInput.elem.value);
   }
 }
 

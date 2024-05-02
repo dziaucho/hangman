@@ -8,7 +8,7 @@ import {
 import { aboutSection } from "../pages/about";
 import clearAuthInputs from "./input";
 
-import { passwordInput, authSection } from "../pages/authentication";
+import { authSection } from "../pages/authentication";
 
 import mainSection from "../pages/main";
 
@@ -35,7 +35,7 @@ export function goAbout(): void {
   }
 }
 
-export function goMain(username: string): void {
+export function goMain(username: string, password: string): void {
   mainSection.elem.classList.remove("hide");
   aboutSection.elem.classList.add("hide");
   authSection.elem.classList.add("hide");
@@ -44,6 +44,14 @@ export function goMain(username: string): void {
   messagesButton.elem.classList.add("hide");
   logoutButton.elem.classList.remove("hide");
   authButton.elem.classList.add("hide");
+  userLogRequest.type = RequestType.userLogin;
+  if (userLogRequest.payload !== null) {
+    userLogRequest.payload.user.login = username;
+    userLogRequest.payload.user.password = password;
+
+    userLogRequest.sendRequest();
+    userLogRequest.getRequest();
+  }
 
   putName(username);
 }

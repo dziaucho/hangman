@@ -158,3 +158,11 @@ i think i start understanding how to work with requests and api
 in first time i'm started from requests / http / https / telnet and understand NOTHING
 
 now i start with requests in js and it MUCH MORE EASY
+
+---
+
+happy spaghetti code day!
+
+hah, i like how sounds "software engineering folklore"
+
+folklore is such a good word for it
